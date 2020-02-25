@@ -79,6 +79,13 @@ const app = new Vue({
                 textFee1:this.textFee1,
                 Advertiser:this.Advertiser,
                 advert_id:category,
+                mobile:this.mobile,
+                chat:this.chat,
+                email:this.email,
+                checkemail:this.checkemail,
+                titleAdvert:this.titleAdvert,
+                text:this.text,
+                TypeAdvert:this.TypeAdvert
 
             }).then(response => {
 

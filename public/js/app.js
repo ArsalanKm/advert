@@ -49585,7 +49585,14 @@ var app = new Vue({
         textFee: this.textFee,
         textFee1: this.textFee1,
         Advertiser: this.Advertiser,
-        advert_id: category
+        advert_id: category,
+        mobile: this.mobile,
+        chat: this.chat,
+        email: this.email,
+        checkemail: this.checkemail,
+        titleAdvert: this.titleAdvert,
+        text: this.text,
+        TypeAdvert: this.TypeAdvert
       }).then(function (response) {});
     },
     send_advert2: function send_advert2(id) {

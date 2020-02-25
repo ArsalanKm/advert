@@ -9,15 +9,15 @@
 
             <select name="cities" id="" style="" class="city_select" v-model="city">
 
-                <option value="0" class="form-control">
+                <option value="ساری" class="form-control">
                     ساری
                 </option>
 
-                <option value="1" class="form-control">
+                <option value="بابل" class="form-control">
                     بابل
                 </option>
 
-                <option value="2" class="form-control">
+                <option value="مازندران" class="form-control">
                     مارندران
                 </option>
             </select>
@@ -106,12 +106,12 @@
 
             <span class="check1">
     ارائه
-            <input type="radio" class="form-control">
+            <input type="radio" class="" :value="1" v-model="TypeAdvert">
     </span>
             <span class="check2">
             درخواستی
 
-            <input type="radio" class="form-control">
+            <input type="radio" class="" value="1" v-model="TypeAdvert">
             </span>
 
         </div>
@@ -214,7 +214,7 @@
                             چت دیوار فعال شود
 
             </span>
-            <input class="form-control" type="radio" style="position:relative;width: 2px;top: -30px" v-model="chat">
+            <input  type="radio" style="position:relative;width: 2px;top: -30px" v-model="chat" :value="1">
         </div>
     </div>
 
@@ -234,8 +234,8 @@
                            ایمیل در آگهی نمایش داده نشود.
 
             </span>
-            <input class="form-control" type="radio" style="position:relative;width: 2px;top: -30px"
-                   v-model="checkemail">
+            <input class="" type="radio" style="position:relative;width: 2px;top: -30px"
+                   v-model="checkemail" :value="1">
         </div>
     </div>
     <div class="col-lg-12" style="margin-top: 30px">
