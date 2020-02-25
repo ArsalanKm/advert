@@ -1,0 +1,261 @@
+body {
+    font-family: 'B Yekan';
+    font-size: 16px;
+    background-color: #fbfafa;
+}
+
+.navbar-default {
+    background-color: #1f6fb2;
+    border-color: black;
+    height: 55px;
+    border-right: 1px solid #1372bf;
+}
+
+.dropdown-toggle .icon-user {
+    width: 43px;
+    height: 44px;
+    border-radius: 100%;
+    float: left;
+    color: white;
+    background-color: #a5a5a5;
+    margin-top: -3px;
+    text-align: center;
+    padding-top: 8px;
+    font-size: 26px;
+    margin-bottom: 26px;
+}
+
+li {
+    list-style: none;
+}
+
+.col-lg-1 {
+    float: left;
+}
+
+.dropdown-toggle::after {
+    border-left: 0px !important;
+    border-right: 0px !important;
+}
+
+.envelop {
+    width: 43px;
+    height: 43px;
+    border-radius: 100%;
+    color: white;
+    font-size: 26px;
+    float: left;
+    position: relative;
+    top: -2px;
+    right: 12px;
+    background-color: #a5a5a5;
+    text-align: center;
+}
+
+.envelop .email {
+    color: white;
+}
+
+.dropdown-menu.show {
+    margin-top: 15px;
+}
+
+.dropdown-menu li {
+    height: 30px;
+}
+
+.top-right {
+    float: right;
+    font-size: 30px;
+    color: white;
+    margin-top: -5px;
+}
+
+.sidebar {
+    background-color: white;
+    display: block;
+    height: 620px;
+    position: absolute;
+    width: 254px;
+    top: 0px;
+    right: -16px;
+    z-index: 25;
+    border: 1px solid #cccccc;
+}
+
+.sidebar ul li {
+    color: white;
+    line-height: 70px;
+    cursor: pointer;
+}
+
+.sidebar ul li i {
+    margin-left: 16px;
+}
+
+.sidebar ul li a {
+    margin-right: 10px;
+    color: black;
+    cursor: pointer;
+}
+
+.sidebar ul {
+    text-align: right;
+}
+
+#menu {
+    background-color: #eeeeee;
+    right: 0;
+    width: 98%;
+    position: relative;
+    margin-top: -22px;
+    transition: all 200ms linear;
+    text-align: center;
+}
+
+a:hover {
+    color: blue !important;
+}
+
+#menu1 {
+    background-color: #eeeeee;
+    right: 0;
+    width: 98%;
+    position: relative;
+    margin-top: -22px;
+    transition: all 200ms linear;
+    text-align: center;
+}
+
+#menu2 {
+    background-color: #eeeeee;
+    right: 0;
+    width: 98%;
+    position: relative;
+    margin-top: -22px;
+    transition: all 200ms linear;
+    text-align: center;
+}
+
+#menu3 {
+    background-color: #eeeeee;
+    right: 0;
+    width: 98%;
+    position: relative;
+    margin-top: -22px;
+    transition: all 200ms linear;
+    text-align: center;
+}
+
+#menu4 {
+    background-color: #eeeeee;
+    right: 0;
+    width: 98%;
+    position: relative;
+    margin-top: -22px;
+    transition: all 200ms linear;
+    text-align: center;
+}
+
+.content {
+    border: 2px solid #eeeeee;
+    height: 174px;
+    background-color: #1f6fb2;
+    border-radius: 10px;
+
+}
+
+.content i {
+    color: #fff;
+    text-align: left;
+    margin-top: 12%;
+    font-size: 30px;
+    position: absolute;
+    right: 72%;
+}
+
+.content p {
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 2px rgb(142, 144, 146);
+    margin-top: 15%;
+    text-align: center;
+}
+
+.content span {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    line-height: 18px;
+    right: -126px;
+    width: 100px;
+    bottom: 0;
+    display: block;
+    left: 75px;
+    height: 100px;
+}
+
+.test .col-lg-3 {
+    max-width: 25%;
+    display: inline-block;
+    float: left;
+    margin-top: 10px;
+}
+
+.col-lg-9 {
+    float: left;
+}
+
+section.col-lg-4 {
+    margin-top: 10px !important;
+    position: relative;
+    float: right;
+    display: inline-block;
+}
+
+.sidebar {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+#category_orders ul {
+    padding: 0;
+}
+
+#category_orders ul li {
+    float: right;
+}
+
+.panel-body {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.panel {
+    border: 1px solid #eeeeee;
+}
+
+.panel-heading {
+    margin: 0 auto;
+}
+
+.card-header h3 {
+    text-align: center;
+    padding-top: 5px;
+    font-size: 18px;
+}
+.card-header{
+    border-radius: 4px!important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.form-control {
+    font-size: 14px;
+}
+.panel-body{
+    padding-top: 10px   ;
+}
