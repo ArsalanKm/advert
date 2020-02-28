@@ -307,7 +307,7 @@
                     <li v-for="submenu in submenus" @click="Sendsubcats(submenu.id)">
 
 
-                        <span v-if="submenu.parent_id==advertcat.id">
+                        <span v-show="submenu.parent_id==advertcat.id">
                             @{{ submenu.name }}
                         </span>
                     </li>
@@ -324,7 +324,7 @@
 
                 <span class="cat_menu" v-for="menus in menu">
                 <ul class="send-advert2" v-for="submenu in submenus" @click="send_advert2(submenu.id)">
-                     <li v-if="submenu.id==menus.parent_id">
+                     <li v-show="submenu.id==menus.parent_id">
                             @{{ menus.name }}
                         </li>
                 </ul>
@@ -343,16 +343,19 @@
                 <div class="card" style="min-height: 2042px;text-align: right;margin-top: 10px">
 
 
-                    <span v-if="category.parent_id==27">
+                    <span v-show="category.parent_id==27">
 
                     @include ("layouts.FormAdvert.StateForm")
 
                     </span>
 
-                    <span v-else-if="category.parent_id==28">
+                    <span v-show="category.parent_id==28 ">
 
                     @include ("layouts.CarsForm.CarsForm")
 
+                    </span>
+                    <span v-show="category.parent_id!=28 && category.parent_id!=27">
+                        @include("layouts.PublicForm.PublicForm")
                     </span>
 
                 </div>

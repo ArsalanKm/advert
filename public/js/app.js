@@ -49570,7 +49570,8 @@ var app = new Vue({
     titleAdvert: "",
     text: "",
     Advertiser: "",
-    advert_id: ""
+    advert_id: "",
+    images: []
   },
   mounted: function mounted() {
     this.getcategory();
@@ -49593,7 +49594,9 @@ var app = new Vue({
         titleAdvert: this.titleAdvert,
         text: this.text,
         TypeAdvert: this.TypeAdvert
-      }).then(function (response) {});
+      }).then(function (response) {
+        console.log(response.data);
+      });
     },
     send_advert2: function send_advert2(id) {
       var _this = this;

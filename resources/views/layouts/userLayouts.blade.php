@@ -43,6 +43,24 @@
 
 
     });
+    // $(document).ready(function () {
+    //     $('select').niceSelect();
+    // });
+    Dropzone.options.dropzone={
+
+        paramName:"file",
+        maxFilesize:5,
+
+        success:function(file,response){
+            $("#boatAddForm").append(('<input type="text" ' +
+                'name="images[]" ' +
+                'value="' + response+'"" >'));
+
+        }
+
+
+    };
+
 </script>
 </body>
 </html>

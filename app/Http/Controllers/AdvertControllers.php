@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use Illuminate\Http\Request;
 use App\Estate;
 use App\Advert;
@@ -51,7 +52,7 @@ class AdvertControllers extends Controller
 
         $ad->noemail = $checkemail;
 
-        $ad->subject = $titleAdvert ;
+        $ad->subject = $titleAdvert;
 
         $ad->type = $typeAdvert;
 
@@ -78,11 +79,29 @@ class AdvertControllers extends Controller
             $advert->advert_id = $ad->id;
 
 
-            if ($advert->save()) {
-                return $advert;
-            }
+//            ($advert->save());
+//
+//            echo $image = implode(',', $request->images);
+//            $temp = new Image();
+//            $temp->image = $image;
+//            $temp->advet_id = $ad->id;
+//
+//            if ($temp->save()) {
+//                return $advert;
+//            }
+            return  $request->all();
 
 
         }
+    }
+
+    public function addimage(Request $request)
+    {
+
+
+        $imageName = time() . "." . $request->file->getClientOriginalName();
+        $request->file->move(public_path('images'), $imageName);
+
+        return response()->json($imageName);
     }
 }

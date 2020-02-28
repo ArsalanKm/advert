@@ -1,3 +1,4 @@
+
 <div class="col-lg-12">
 
     <div class="col-lg-10">
@@ -66,7 +67,7 @@
             <label for="">تصاویر</label>
 
 
-            <form action="/" method="post" class="dropzone">
+            <form action="/addimage" method="post" class="dropzone" id="dropzone">
                 {{csrf_field()}}
                 {{--<input type="file" name="file" />--}}
             </form>
@@ -254,7 +255,9 @@
             <span style="font-size: 11px">تمام جزئیات و نکات قابل توجه آگهی خود را به صورت کامل و دقیق ذکر کنید. توجه به این مورد به صورت قابل توجهی ابهامات کاربر را برطرف خواهد کرد و شانس موفقیت آگهی شما را افزایش خواهد داد.</span>
         </div>
     </div>
-
+<div id="boatAddForm">
+    <input type="text" name="images[]" value="">
+</div>
     <div class="col-lg-12" style="margin-top: 30px;text-align: left">
 
         <button @click="AddState()" type="button" class="btn btn-danger"

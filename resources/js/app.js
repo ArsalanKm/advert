@@ -57,8 +57,9 @@ const app = new Vue({
         checkemail: "",
         titleAdvert: "",
         text: "",
-        Advertiser:"",
-        advert_id:"",
+        Advertiser: "",
+        advert_id: "",
+        images: [],
 
 
     },
@@ -70,24 +71,25 @@ const app = new Vue({
     methods: {
 
         AddState: function () {
-            var category=$("#category").val();
+            var category = $("#category").val();
             axios.post('/addstate', {
                 city: this.city,
-                area:this.area,
-                numberRoom:this.numberRoom,
-                textFee:this.textFee,
-                textFee1:this.textFee1,
-                Advertiser:this.Advertiser,
-                advert_id:category,
-                mobile:this.mobile,
-                chat:this.chat,
-                email:this.email,
-                checkemail:this.checkemail,
-                titleAdvert:this.titleAdvert,
-                text:this.text,
-                TypeAdvert:this.TypeAdvert
+                area: this.area,
+                numberRoom: this.numberRoom,
+                textFee: this.textFee,
+                textFee1: this.textFee1,
+                Advertiser: this.Advertiser,
+                advert_id: category,
+                mobile: this.mobile,
+                chat: this.chat,
+                email: this.email,
+                checkemail: this.checkemail,
+                titleAdvert: this.titleAdvert,
+                text: this.text,
+                TypeAdvert: this.TypeAdvert,
 
             }).then(response => {
+                console.log(response.data);
 
             })
         },

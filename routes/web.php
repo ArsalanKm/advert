@@ -40,4 +40,5 @@ Route::post('/send_advert2',"HomeControllers@send_advert2");
 
 Route::post('/addstate','AdvertControllers@addstate');
 
+Route::post('/addimage','AdvertControllers@addimage');
 
