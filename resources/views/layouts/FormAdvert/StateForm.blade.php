@@ -1,4 +1,5 @@
-
+<form action="/addstate" method="post">
+    {{csrf_field()}}
 <div class="col-lg-12">
 
     <div class="col-lg-10">
@@ -8,7 +9,7 @@
 
             <label for="">شهر</label>
 
-            <select name="cities" id="" style="" class="city_select" v-model="city">
+            <select name="city" id="" style="" class="city_select" v-model="city">
 
                 <option value="ساری" class="form-control">
                     ساری
@@ -67,10 +68,7 @@
             <label for="">تصاویر</label>
 
 
-            <form action="/addimage" method="post" class="dropzone" id="dropzone">
-                {{csrf_field()}}
-                {{--<input type="file" name="file" />--}}
-            </form>
+
 
 
         </div>
@@ -80,7 +78,7 @@
 
 
     {{--******************--}}
-    <div class="col-lg-12" style="margin-top: 20px;">
+    <div class="col-lg-12" style="margin-top: 164px;">
         <div class="form-group">
 
 
@@ -107,12 +105,12 @@
 
             <span class="check1">
     ارائه
-            <input type="radio" class="" :value="1" v-model="TypeAdvert">
+            <input type="radio" class="" :value="1" v-model="TypeAdvert" name="TypeAdvert">
     </span>
             <span class="check2">
             درخواستی
 
-            <input type="radio" class="" value="1" v-model="TypeAdvert">
+            <input type="radio" class="" value="1" v-model="TypeAdvert" name="TypeAdvert">
             </span>
 
         </div>
@@ -131,23 +129,23 @@
 
             <span class="check1">
     شخصی
-            <input name="Advertiser" type="radio" class="" v-model="Advertiser" :value="1">
+            <input name="Advertiser" type="radio" class="" v-model="Advertiser" :value="1" style="right: 48px;">
                 Message@{{Advertiser}}
     </span>
             <span class="check2">
             مشاور املاک
 
-            <input name="Advertiser" type="radio" class="" v-model="Advertiser" :value="0">
+            <input name="Advertiser" type="radio" class="" v-model="Advertiser" :value="0" style="right: 123px;top: -20px;">
             </span>
 
         </div>
-        <input type="hidden" v-bind:value="category.id" id="category">
+        <input type="hidden" v-bind:value="category.id" id="category" name="advert_id">
 
     </div>
     <div class="col-lg-4" style="float: right;margin-top: 60px">
         <div class="form-group">
             <label for="">ودیعه (تومان)</label>
-            <select name="form-control" id="" style="width: 78%;border-radius: 4px">
+            <select class="form-control" id="" style="width: 78%;border-radius: 4px">
 
                 <option value="0">قیمت مورد نظر</option>
                 <option value="1">مجانی</option>
@@ -159,12 +157,12 @@
     </div>
     <div class="col-lg-8" style="float: left;margin-top: 60px">
         <div class="form-group">
-            <input type="text" name="deposit" value=""  style="width: 100%" v-model="textFee">
+            <input type="text" name="textFee" value="" style="width: 100%" v-model="textFee">
         </div>
     </div>
 
     {{--****************************--}}
-    <div class="col-lg-4" style="float: right;margin-top: 60px;position: relative;right: -355px">
+    <div class="col-lg-4" style="float: right;margin-top: 60px;position: relative;right: -390px">
         <div class="form-group">
             <label for="">اجاره (تومان)</label>
             <select name="form-control" id="" style="width: 78%;border-radius: 4px">
@@ -179,7 +177,7 @@
     </div>
     <div class="col-lg-8" style="float: left;position: relative;top: -50px">
         <div class="form-group">
-            <input type="text" name="rent" value=""  style="width: 100%" v-model="textFee1">
+            <input type="text" name="textFee1" value="" style="width: 100%" v-model="textFee1">
         </div>
     </div>
 
@@ -188,7 +186,7 @@
         <div class="form-group">
             <label for="">تعداد اتاق</label>
 
-            <select v-model="numberRoom" class="form-control" name="room" id=""
+            <select v-model="numberRoom" class="form-control" name="numberRoom" id=""
                     style="width: 100%;border: 1px solid #ccc;border-radius: 4px;height: 34px;">
                 <option value="0">بدون اتاق</option>
                 <option value="1">یک</option>
@@ -202,7 +200,7 @@
     <div class="col-lg-12">
         <div class="fom-group">
             <label for="">شماره موبایل</label>
-            <input type="text" class="form-control" v-model="mobile">
+            <input type="text" class="form-control" v-model="mobile" name="mobile">
             <span style="font-size: 11px">کد تایید به شماره زیر ارسال خواهد شد.تماس و چت نیز با این شماره انجام میشود.</span>
 
         </div>
@@ -215,14 +213,14 @@
                             چت دیوار فعال شود
 
             </span>
-            <input  type="radio" style="position:relative;width: 2px;top: -30px" v-model="chat" :value="1">
+            <input type="radio" style="position:relative;width: 2px;top: 2px" v-model="chat" :value="1"  name="chat">
         </div>
     </div>
 
     <div class="col-lg-12">
         <div class="form-group">
             <label for="">ایمیل</label>
-            <input type="email" class="form-control" v-model="email">
+            <input type="email" class="form-control" v-model="email" name="email">
             <span style="font-size: 11px">آدرس ایمیل خود را به درستی وارد کنید .لینک مدیریت آگهی به ایمیل شما ارسال میشود.</span>
         </div>
     </div>
@@ -235,14 +233,14 @@
                            ایمیل در آگهی نمایش داده نشود.
 
             </span>
-            <input class="" type="radio" style="position:relative;width: 2px;top: -30px"
-                   v-model="checkemail" :value="1">
+            <input class="" type="radio" style="position:relative;width: 2px;top: 2px"
+                   v-model="checkemail" :value="1" name="checkemail">
         </div>
     </div>
     <div class="col-lg-12" style="margin-top: 30px">
         <div class="form-group">
             <label for="">عنوان آگهی</label>
-            <input type="text" class="form-control" v-model="titleAdvert">
+            <input type="text" class="form-control" v-model="titleAdvert" name="titleAdvert">
             <span style="font-size: 11px">از عنوان های کوتاه و مفید استفاده کنید. اشاره به محله ی ملک و متراژ آن موجب بیشتر شدن آگهی میشود.</span>
         </div>
     </div>
@@ -251,16 +249,15 @@
     <div class="col-lg-12" style="margin-top: 30px">
         <div class="form-group">
             <label for="">توضیحات آگهی</label>
-            <textarea type="" class="form-control" v-model="text"></textarea>
+            <textarea type="" class="form-control" v-model="text" name="text"></textarea>
             <span style="font-size: 11px">تمام جزئیات و نکات قابل توجه آگهی خود را به صورت کامل و دقیق ذکر کنید. توجه به این مورد به صورت قابل توجهی ابهامات کاربر را برطرف خواهد کرد و شانس موفقیت آگهی شما را افزایش خواهد داد.</span>
         </div>
     </div>
-<div id="boatAddForm">
-    <input type="text" name="images[]" value="">
-</div>
+    <div id="boatAddForm">
+    </div>
     <div class="col-lg-12" style="margin-top: 30px;text-align: left">
 
-        <button @click="AddState()" type="button" class="btn btn-danger"
+        <button  type="submit" class="btn btn-danger"
                 style="background-color: #c00c1a;color: white;width: 150px">
 
             ارسال رایگان آگهی
@@ -269,4 +266,11 @@
 
 
 </div>
+</form>
+
+
+<form action="/addimage" method="post" class="dropzone" id="dropzone" style="position: absolute;float: right;top: 14%;width: 93%;right: 3%;">
+    {{csrf_field()}}
+    {{--<input type="file" name="file" />--}}
+</form>
 

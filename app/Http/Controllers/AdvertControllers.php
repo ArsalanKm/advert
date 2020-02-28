@@ -6,6 +6,8 @@ use App\Image;
 use Illuminate\Http\Request;
 use App\Estate;
 use App\Advert;
+use Kavenegar;
+
 
 class AdvertControllers extends Controller
 {
@@ -60,10 +62,39 @@ class AdvertControllers extends Controller
 
         $ad->text = $text;
 
+        $ad->code = uniqid();
+
 
         if ($ad->save()) {
 
+            try {
+                $api = new \Kavenegar\KavenegarApi("5671714B5377432B5849577563654861325077422B5A6E51762B4F306A6B41474E6949696C4A6E7A426F6F3D");
+                $sender = "10004346";
+                $message = "ارسلان بهترین برنامه نویس کد تایید :  ".$ad->code;
+                $receptor = $request->mobile;
+                $result = $api->Send($sender, $receptor, $message);
+                if ($result) {
+                    foreach ($result as $r) {
+                        echo "messageid = $r->messageid";
+                        echo "message = $r->message";
+                        echo "status = $r->status";
+                        echo "statustext = $r->statustext";
+                        echo "sender = $r->sender";
+                        echo "receptor = $r->receptor";
+                        echo "date = $r->date";
+                        echo "cost = $r->cost";
+                    }
+                }
+            } catch (\Kavenegar\Exceptions\ApiException $e) {
+                // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
+                echo $e->errorMessage();
+            } catch (\Kavenegar\Exceptions\HttpException $e) {
+                // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
+                echo $e->errorMessage();
+            }
 
+
+//****************************************************
             $advert = new Estate();
 
             $advert->area = $area;
@@ -79,8 +110,8 @@ class AdvertControllers extends Controller
             $advert->advert_id = $ad->id;
 
 
-//            ($advert->save());
-//
+            ($advert->save());
+
 //            echo $image = implode(',', $request->images);
 //            $temp = new Image();
 //            $temp->image = $image;
@@ -89,7 +120,6 @@ class AdvertControllers extends Controller
 //            if ($temp->save()) {
 //                return $advert;
 //            }
-            return  $request->all();
 
 
         }
@@ -103,5 +133,35 @@ class AdvertControllers extends Controller
         $request->file->move(public_path('images'), $imageName);
 
         return response()->json($imageName);
+    }
+
+
+    public function sendsms($mobile = "09905304009")
+    {
+        try {
+            $api = new \Kavenegar\KavenegarApi("5671714B5377432B5849577563654861325077422B5A6E51762B4F306A6B41474E6949696C4A6E7A426F6F3D");
+            $sender = "10004346";
+            $message = "خدمات پیام کوتاه کاوه نگار";
+            $receptor = $mobile;
+            $result = $api->Send($sender, $receptor, $message);
+            if ($result) {
+                foreach ($result as $r) {
+                    echo "messageid = $r->messageid";
+                    echo "message = $r->message";
+                    echo "status = $r->status";
+                    echo "statustext = $r->statustext";
+                    echo "sender = $r->sender";
+                    echo "receptor = $r->receptor";
+                    echo "date = $r->date";
+                    echo "cost = $r->cost";
+                }
+            }
+        } catch (\Kavenegar\Exceptions\ApiException $e) {
+            // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
+            echo $e->errorMessage();
+        } catch (\Kavenegar\Exceptions\HttpException $e) {
+            // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
+            echo $e->errorMessage();
+        }
     }
 }

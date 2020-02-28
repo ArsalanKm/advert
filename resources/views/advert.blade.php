@@ -242,6 +242,7 @@
             right: 121px;
             top: 3px;
         }
+
         .check1 {
             width: 85px;
             height: 16px;
@@ -260,19 +261,21 @@
             top: 16px;
         }
 
-        .check1 input{
+        .check1 input {
+            width: 24px;
             width: 24px;
             height: 16px;
             position: relative;
-            right: 45px;
-            top: -18px;
+            right: 53px;
+            top: 4px;
         }
-        .check2 input{
+
+        .check2 input {
             width: 24px;
             height: 16px;
             position: relative;
             right: 70px;
-            top: -17px;
+            top: 6px;
         }
 
     </style>

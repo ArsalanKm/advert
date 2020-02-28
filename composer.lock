@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94d4bf9ac7f4a933030e46a346ee2917",
+    "content-hash": "5b80898daff5838c4ad1d2347afec131",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -326,24 +326,24 @@
         },
         {
             "name": "fideloper/proxy",
-            "version": "4.2.2",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fideloper/TrustedProxy.git",
-                "reference": "790194d5d3da89a713478875d2e2d05855a90a81"
+                "reference": "ec38ad69ee378a1eec04fb0e417a97cfaf7ed11a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/790194d5d3da89a713478875d2e2d05855a90a81",
-                "reference": "790194d5d3da89a713478875d2e2d05855a90a81",
+                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/ec38ad69ee378a1eec04fb0e417a97cfaf7ed11a",
+                "reference": "ec38ad69ee378a1eec04fb0e417a97cfaf7ed11a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "^5.0|^6.0|^7.0",
+                "illuminate/contracts": "^5.0|^6.0|^7.0|^8.0",
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "illuminate/http": "^5.0|^6.0|^7.0",
+                "illuminate/http": "^5.0|^6.0|^7.0|^8.0",
                 "mockery/mockery": "^1.0",
                 "phpunit/phpunit": "^6.0"
             },
@@ -376,7 +376,7 @@
                 "proxy",
                 "trusted proxy"
             ],
-            "time": "2019-12-20T13:11:11+00:00"
+            "time": "2020-02-22T01:51:47+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -465,6 +465,100 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "kavenegar/laravel",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kavenegar/kavenegar-laravel.git",
+                "reference": "0d015cc415f074541832d961112a227f05d64aa3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kavenegar/kavenegar-laravel/zipball/0d015cc415f074541832d961112a227f05d64aa3",
+                "reference": "0d015cc415f074541832d961112a227f05d64aa3",
+                "shasum": ""
+            },
+            "require": {
+                "kavenegar/php": "*"
+            },
+            "type": "laravel-package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kavenegar\\Laravel\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Kavenegar": "Kavenegar\\Laravel\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kavenegar\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kavenegar API Team",
+                    "email": "support@kavenegar.com"
+                }
+            ],
+            "description": "laravel 4 and 5 kavenegar integration",
+            "keywords": [
+                "api",
+                "kavenegar",
+                "laravel",
+                "sms"
+            ],
+            "time": "2019-10-05T08:21:57+00:00"
+        },
+        {
+            "name": "kavenegar/php",
+            "version": "v1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kavenegar/kavenegar-php.git",
+                "reference": "884561b8d8c91b01f7db25284c2be9923c809412"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kavenegar/kavenegar-php/zipball/884561b8d8c91b01f7db25284c2be9923c809412",
+                "reference": "884561b8d8c91b01f7db25284c2be9923c809412",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kavenegar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kavenegar API Team",
+                    "email": "support@kavenegar.com"
+                }
+            ],
+            "description": "A PHP wrapper for Kavenegar's API",
+            "homepage": "http://github.com/Kavenegar/kavenegar-php",
+            "keywords": [
+                "api",
+                "kavenegar",
+                "sms"
+            ],
+            "time": "2019-02-26T12:49:19+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1342,16 +1436,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.9.2",
+            "version": "3.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "7779489a47d443f845271badbdcedfe4df8e06fb"
+                "reference": "7e1633a6964b48589b142d60542f9ed31bd37a92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/7779489a47d443f845271badbdcedfe4df8e06fb",
-                "reference": "7779489a47d443f845271badbdcedfe4df8e06fb",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/7e1633a6964b48589b142d60542f9ed31bd37a92",
+                "reference": "7e1633a6964b48589b142d60542f9ed31bd37a92",
                 "shasum": ""
             },
             "require": {
@@ -1425,7 +1519,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2019-12-17T08:18:51+00:00"
+            "time": "2020-02-21T04:36:14+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2983,6 +3077,7 @@
                 "illuminate/console": "5.6.*|5.7.*|5.8.*|^6.0",
                 "illuminate/http": "5.6.*|5.7.*|5.8.*|^6.0",
                 "illuminate/support": "5.6.*|5.7.*|5.8.*|^6.0",
+                "kavenegar/laravel": "*",
                 "php": "^7.1",
                 "symfony/var-dumper": "^4.1.1"
             },

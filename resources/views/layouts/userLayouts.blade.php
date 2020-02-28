@@ -53,8 +53,8 @@
 
         success:function(file,response){
             $("#boatAddForm").append(('<input type="text" ' +
-                'name="images[]" ' +
-                'value="' + response+'"" >'));
+                'name="images[1]" ' +
+                'value="'+response+'"  >'));
 
         }
 
