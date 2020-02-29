@@ -72,7 +72,7 @@ class AdvertControllers extends Controller
             try {
                 $api = new \Kavenegar\KavenegarApi("5671714B5377432B5849577563654861325077422B5A6E51762B4F306A6B41474E6949696C4A6E7A426F6F3D");
                 $sender = "10004346";
-                $message = "ارسلان بهترین برنامه نویس کد تایید :  " . $ad->code;
+                $message = "you recieved this message from arsalan best programmer bro :  " . $ad->code;
                 $receptor = $request->mobile;
                 $result = $api->Send($sender, $receptor, $message);
                 if ($result) {
@@ -117,7 +117,7 @@ class AdvertControllers extends Controller
             echo $image = implode(',', $request->images);
             $temp = new Image();
             $temp->image = $image;
-            $temp->advet_id = $ad->id;
+            $temp->advert_id = $ad->id;
 
             if ($temp->save()) {
                 return $advert;

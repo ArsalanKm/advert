@@ -1,9 +1,5 @@
 <form action="/addcars" method="post">
     {{csrf_field()}}
-
-    @{{category.id}}
-
-
     <div class="col-lg-12">
 
         <div class="col-lg-10">
@@ -22,7 +18,6 @@
 
 
             </div>
-
 
         </div>
 
@@ -203,7 +198,7 @@
 
         {{--noe agahi--}}
 
-    <span v-if="category.id== 45">
+        <span v-if="category.id== 45">
 
 
         <div class="col-lg-12" style="float: right">
@@ -352,7 +347,7 @@
             </div>
         </div>
 
-        <div class="col-lg-12" style="margin-top: 30px;text-align: left">
+        <div class="col-lg-12" style="margin-top: 30px;text-align: left;margin-bottom: 20px">
 
             <button type="submit" class="btn btn-danger" style="background-color: #c00c1a;color: white;width: 150px">
 
@@ -372,7 +367,7 @@
 <form action="/addimage" method="post" class="dropzone" id="dropzone1"
       style="position: absolute;float: right;top: 14%;width: 93%;right: 3%;">
     {{csrf_field()}}
-    {{--<input type="file" name="file" />--}}
+
 </form>
 
 

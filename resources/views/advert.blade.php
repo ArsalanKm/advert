@@ -11,12 +11,14 @@
 
         header {
             background: white !important;
+            font-family: special;
         }
 
         .card {
             height: 450px;
             width: 100%;
             margin-top: 25px;
+            font-family: special;
 
         }
 
@@ -335,7 +337,7 @@
 
 
             </div>
-            <div class="send-advert3">
+            <div class="send-advert3" style="height: 2200px">
 
 
                 <div class="card" style="height: 100px;text-align: right;padding: 20px">
@@ -343,7 +345,7 @@
                     @{{ category.name}}
 
                 </div>
-                <div class="card" style="min-height: 2042px;text-align: right;margin-top: 10px">
+                <div class="card" style="height: auto;text-align: right;margin-top: 10px">
 
 
                     <span v-show="category.parent_id==43">

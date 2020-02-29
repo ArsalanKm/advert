@@ -202,7 +202,8 @@
             </div>
         </div>
 
-        <div class="col-lg-12" style="margin-top: 30px;text-align: left">
+        <div class="col-lg-12" style="margin-top: 30px;text-align: left;margin-bottom: 20px;
+">
 
             <button type="submit" class="btn btn-danger" style="background-color: #c00c1a;color: white;width: 150px">
 

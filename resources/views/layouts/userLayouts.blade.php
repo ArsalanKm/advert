@@ -27,7 +27,15 @@
     <link rel="stylesheet" type="text/css" href="/font-awesome/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/dropzone.css">
 </head>
-<body>
+<style>
+    @font-face {
+        font-family: special;
+        src:
+                url('/public/fonts/yekan.ttf') format('truetype');
+    }
+</style>
+<body style="font-family: special">
+
 @include('layouts.header.header')
 
 @yield('content')
@@ -46,45 +54,45 @@
     // $(document).ready(function () {
     //     $('select').niceSelect();
     // });
-    Dropzone.options.dropzone={
+    Dropzone.options.dropzone = {
 
-        paramName:"file",
-        maxFilesize:5,
+        paramName: "file",
+        maxFilesize: 5,
 
-        success:function(file,response){
+        success: function (file, response) {
             $("#boatAddForm").append(('<input type="text" ' +
                 'name="images[1]" ' +
-                'value="'+response+'"  >'));
+                'value="' + response + '"  >'));
 
         }
 
 
     };
 
-    Dropzone.options.dropzone1={
+    Dropzone.options.dropzone1 = {
 
-        paramName:"file",
-        maxFilesize:5,
+        paramName: "file",
+        maxFilesize: 5,
 
-        success:function(file,response){
+        success: function (file, response) {
             $("#boatAddForm1").append(('<input type="text" ' +
                 'name="images[]" ' +
-                'value="'+response+'"  >'));
+                'value="' + response + '"  >'));
 
         }
 
 
     };
 
-    Dropzone.options.dropzone2={
+    Dropzone.options.dropzone2 = {
 
-        paramName:"file",
-        maxFilesize:5,
+        paramName: "file",
+        maxFilesize: 5,
 
-        success:function(file,response){
+        success: function (file, response) {
             $("#boatAddForm2").append(('<input type="text" ' +
                 'name="images[]" ' +
-                'value="'+response+'"  >'));
+                'value="' + response + '"  >'));
 
         }
 

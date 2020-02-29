@@ -99,7 +99,6 @@ const app = new Vue({
 
 
         send_advert2: function (id) {
-            alert(id);
             axios.post('/send_advert2', {
                 id: id
             })
