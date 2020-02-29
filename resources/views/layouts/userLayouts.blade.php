@@ -61,6 +61,36 @@
 
     };
 
+    Dropzone.options.dropzone1={
+
+        paramName:"file",
+        maxFilesize:5,
+
+        success:function(file,response){
+            $("#boatAddForm1").append(('<input type="text" ' +
+                'name="images[]" ' +
+                'value="'+response+'"  >'));
+
+        }
+
+
+    };
+
+    Dropzone.options.dropzone2={
+
+        paramName:"file",
+        maxFilesize:5,
+
+        success:function(file,response){
+            $("#boatAddForm2").append(('<input type="text" ' +
+                'name="images[]" ' +
+                'value="'+response+'"  >'));
+
+        }
+
+
+    };
+
 </script>
 </body>
 </html>

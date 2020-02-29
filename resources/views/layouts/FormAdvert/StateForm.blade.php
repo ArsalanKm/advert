@@ -1,4 +1,4 @@
-<form action="/addstate" method="post">
+<form action="/addcars" method="post">
     {{csrf_field()}}
 <div class="col-lg-12">
 
@@ -155,16 +155,16 @@
         </div>
 
     </div>
-    <div class="col-lg-8" style="float: left;margin-top: 60px">
+    <div class="col-lg-8" style="float: left;margin-top: 90px">
         <div class="form-group">
             <input type="text" name="textFee" value="" style="width: 100%" v-model="textFee">
         </div>
     </div>
 
     {{--****************************--}}
-    <div class="col-lg-4" style="float: right;margin-top: 60px;position: relative;right: -390px">
+    <div class="col-lg-4" style="float: right;margin-top: 50px;position: relative;right: -390px">
         <div class="form-group">
-            <label for="">اجاره (تومان)</label>
+            <span style="display: block">اجاره (تومان)</span>
             <select name="form-control" id="" style="width: 78%;border-radius: 4px">
 
                 <option value="0">قیمت مورد نظر</option>
@@ -175,9 +175,9 @@
         </div>
 
     </div>
-    <div class="col-lg-8" style="float: left;position: relative;top: -50px">
+    <div class="col-lg-8" style="float: left;position: relative;top: -50px;">
         <div class="form-group">
-            <input type="text" name="textFee1" value="" style="width: 100%" v-model="textFee1">
+            <input type="text" name="textFee1" value="" style="width: 100%;height: 36px" v-model="textFee1" >
         </div>
     </div>
 
@@ -269,7 +269,7 @@
 </form>
 
 
-<form action="/addimage" method="post" class="dropzone" id="dropzone" style="position: absolute;float: right;top: 14%;width: 93%;right: 3%;">
+<form action="/addCarImage" method="post" class="dropzone" id="dropzone" style="position: absolute;float: right;top: 14%;width: 93%;right: 3%;">
     {{csrf_field()}}
     {{--<input type="file" name="file" />--}}
 </form>

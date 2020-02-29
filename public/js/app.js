@@ -49575,6 +49575,7 @@ var app = new Vue({
   },
   mounted: function mounted() {
     this.getcategory();
+    $(".send-advert3").hide();
   },
   methods: {
     AddState: function AddState() {

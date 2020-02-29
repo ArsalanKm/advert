@@ -36,9 +36,14 @@ Route::post('/Sendsubmenu', 'HomeControllers@Sendsubmenu');
 Route::post('/subcats', 'HomeControllers@subcats');
 
 Route::post('/catmenus', 'HomeControllers@catmenus');
-Route::post('/send_advert2',"HomeControllers@send_advert2");
+Route::post('/send_advert2', "HomeControllers@send_advert2");
 
-Route::post('/addstate','AdvertControllers@addstate');
+Route::post('/addstate', 'AdvertControllers@addstate');
 
-Route::post('/addimage','AdvertControllers@addimage');
-Route::get('/sendsms','AdvertControllers@sendsms');
+Route::post('/addimage', 'AdvertControllers@addimage');
+Route::get('/sendsms', 'AdvertControllers@sendsms');
+
+Route::post('/addcars', 'AdvertControllers@addcars');
+
+Route::post('/addpublic', 'AdvertControllers@addpublic');
+

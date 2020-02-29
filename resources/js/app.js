@@ -62,9 +62,12 @@ const app = new Vue({
         images: [],
 
 
+
     },
     mounted: function () {
         this.getcategory();
+        $(".send-advert3").hide();
+
     },
 
 

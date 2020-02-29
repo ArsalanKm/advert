@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoryTable extends Migration
+class CreateAdvertsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateCategoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->Increments('id');
-            $table->string('name')->nullable();
-            $table->unsignedInteger('parent_id');
+        Schema::table('adverts', function (Blueprint $table) {
+
+            $table->string('brand')->nullable();
         });
     }
 
@@ -27,6 +26,9 @@ class CreateCategoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::table('adverts', function (Blueprint $table) {
+
+            $table->string('brand')->nullable();
+        });
     }
 }
