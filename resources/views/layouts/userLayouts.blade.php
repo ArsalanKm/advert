@@ -20,21 +20,23 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url("/css/style.css")}}">
+
     <link rel="stylesheet" type="text/css" href="/css/app.css">
     <link rel="stylesheet" type="text/css" href="/css/admin.css">
     <link rel="stylesheet" type="text/css" href="/css/fontawesome.min.css">
     <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="/font-awesome/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/dropzone.css">
+    <script type="text/javascript" src="/js/cycle.js"></script>
 </head>
 <style>
     @font-face {
         font-family: special;
-        src:
-                url('/public/fonts/yekan.ttf') format('truetype');
+        src: url('/public/fonts/yekan.ttf') format('truetype');
     }
 </style>
-<body style="font-family: special">
+<body style="font-family: iran">
 
 @include('layouts.header.header')
 
@@ -98,6 +100,16 @@
 
 
     };
+
+
+    $('.slider').cycle({
+        fx: 'fade',
+        speed: 'fast',
+        timeout: 1000,
+        pager: '#nav_item',
+
+
+    });
 
 </script>
 </body>

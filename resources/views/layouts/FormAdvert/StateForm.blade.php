@@ -82,7 +82,7 @@
                 <label for="">متراژ(مترمربع)</label>
 
 
-                <input name="area" type="text" class="form-control" v-model="area">
+                <input name="area" type="text" class="form-control" >
 
 
             </div>
@@ -211,10 +211,13 @@
 
             <div class="form-group">
             <span style="margin-right: 20px">
-                            چت دیوار فعال شود
+                          ؟  چت دیوار فعال شود
 
             </span>
-                <input type="radio" style="position:relative;width: 2px;top: 2px" v-model="chat" :value="1" name="chat">
+                خیر
+                <input type="radio" style="position:relative;width: 2px;top: 2px" :value="0" name="chat">
+                بله
+                <input type="radio" style="position:relative;width: 2px;top: 2px"  :value="1" name="chat">
             </div>
         </div>
 
@@ -231,11 +234,16 @@
 
             <div class="form-group">
             <span style="margin-right: 20px">
-                           ایمیل در آگهی نمایش داده نشود.
+                           ایمیل در آگهی نمایش داده شود.
 
             </span>
+                بله
                 <input class="" type="radio" style="position:relative;width: 2px;top: 2px"
-                       v-model="checkemail" :value="1" name="checkemail">
+                       value="1" name="checkemail">
+
+                خیر
+                <input class="" type="radio" style="position:relative;width: 2px;top: 2px"
+                       value="0" name="checkemail">
             </div>
         </div>
         <div class="col-lg-12" style="margin-top: 30px">

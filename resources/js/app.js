@@ -60,7 +60,7 @@ const app = new Vue({
         Advertiser: "",
         advert_id: "",
         images: [],
-
+        code: "",
 
 
     },
@@ -72,6 +72,22 @@ const app = new Vue({
 
 
     methods: {
+
+        /********verify code*/
+        verifyCode: function () {
+            axios.post('/verifyCode', {
+                code: this.code,
+            }).then((response) => {
+
+
+                $(".warning .progress").attr("id", "verifyCode");
+                $(".manage-text").hide();
+                $("#line").hide();
+
+
+            });
+        },
+
 
         AddState: function () {
             var category = $("#category").val();

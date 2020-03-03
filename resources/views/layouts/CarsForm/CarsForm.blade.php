@@ -246,7 +246,7 @@
 
 
                 فروشی
-                <input class="form-control" type="checkbox" name="type[]" value="0" style="margin-top: -16px;
+                <input class="form-control" type="radio" name="type[]" value="0" style="margin-top: -16px;
             width: 24px;height: 16px;position: relative;right: 63px;">
             </div>
 
@@ -261,7 +261,7 @@
 
 
                 اجاره ای
-                <input class="form-control" type="checkbox" name="type[]" value="0
+                <input class="form-control" type="radio" name="type[]" value="1
 
 " style="margin-top: -16px;width: 24px;
             height: 16px;position: relative;right: 63px;">
@@ -279,7 +279,7 @@
 
 
                 درخواستی
-                <input class="form-control" type="checkbox" name="type[]" value="0" style="margin-top: -16px;
+                <input class="form-control" type="radio" name="type[]" value="2" style="margin-top: -16px;
             width: 24px;height: 16px;position: relative;right: 63px;">
             </div>
 
@@ -299,11 +299,13 @@
 
             <div class="form-group">
             <span style="margin-right: 20px">
-                            چت دیوار فعال شود
+                          ؟  چت دیوار فعال شود
 
             </span>
-                <input name="chat" class="form-control" type="checkbox" style="position:relative;width: 2px;top: -30px"
-                       value="0">
+                خیر
+                <input type="radio" style="position:relative;width: 2px;top: 2px" :value="0" name="chat">
+                بله
+                <input type="radio" style="position:relative;width: 2px;top: 2px" :value="1" name="chat">
             </div>
         </div>
 
@@ -321,11 +323,16 @@
 
             <div class="form-group">
             <span style="margin-right: 20px">
-                           ایمیل در آگهی نمایش داده نشود.
+                           ایمیل در آگهی نمایش داده شود.
 
             </span>
-                <input name="checkemail" class="form-control" type="checkbox"
-                       style="position:relative;width: 2px;top: -30px" value="0">
+                بله
+                <input class="" type="radio" style="position:relative;width: 2px;top: 2px"
+                       value="1" name="checkemail">
+
+                خیر
+                <input class="" type="radio" style="position:relative;width: 2px;top: 2px"
+                       value="0" name="checkemail">
             </div>
         </div>
 

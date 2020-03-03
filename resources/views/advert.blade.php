@@ -18,7 +18,7 @@
             height: 450px;
             width: 100%;
             margin-top: 25px;
-            font-family: special;
+            font-family: iran;
 
         }
 
@@ -66,6 +66,7 @@
             padding: 0px 45px;
             margin-top: 15px;
             font-weight: bold !important;
+            font-family: iran;
         }
 
         .send-advert1 li {
@@ -282,7 +283,7 @@
 
     </style>
 
-    <div class="col-lg-12" id="app">
+    <div class="col-lg-12" id="app" style="font-family: iran">
 
         <div class="col-lg-9">
             <div class="advert_title">

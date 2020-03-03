@@ -49571,13 +49571,24 @@ var app = new Vue({
     text: "",
     Advertiser: "",
     advert_id: "",
-    images: []
+    images: [],
+    code: ""
   },
   mounted: function mounted() {
     this.getcategory();
     $(".send-advert3").hide();
   },
   methods: {
+    /********verify code*/
+    verifyCode: function verifyCode() {
+      axios.post('/verifyCode', {
+        code: this.code
+      }).then(function (response) {
+        $(".warning .progress").attr("id", "verifyCode");
+        $(".manage-text").hide();
+        $("#line").hide();
+      });
+    },
     AddState: function AddState() {
       var category = $("#category").val();
       axios.post('/addstate', {
@@ -49602,7 +49613,6 @@ var app = new Vue({
     send_advert2: function send_advert2(id) {
       var _this = this;
 
-      alert(id);
       axios.post('/send_advert2', {
         id: id
       }).then(function (response) {

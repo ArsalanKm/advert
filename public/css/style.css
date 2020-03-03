@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'iran';
+
+    src: url('../fonts/IRAN Sans Regular .ttf?#') format('truetype');
+
+}
+
+body {
+    font-family: iran;
+}
+
+.send-advert3 {
+    font-family: iran;
+}
+
+.send-advert2 {
+    font-family: iran;
+}
+
+.send-advert1 {
+    font-family: iran;
+}
+
+.send-advert {
+    font-family: iran;
+}
+
+.progress-manage {
+    margin: 0 auto;
+    width: 25%;
+    top: 19%;
+    position: absolute;
+    overflow: visible;
+    margin-top: 80px;
+}
+
+.progress-manage ul {
+
+    padding: 0;
+}
+
+.progress-manage ul li {
+    float: right;
+    font-size: 16px;
+    width: 154px;
+    text-align: right;
+}
+
+.progress-manage ul li p {
+
+    position: relative;
+    right: -30px;
+    top: 10px;
+}
+
+.progress {
+    overflow: visible !important;
+    font-size: 10px;
+    height: 4px !important;
+
+}
+
+.progress-manage ul span {
+    /*width: 154px;*/
+    display: block;
+}
+
+.progress-manage ul li i {
+    height: 14px;
+    width: 14px;
+    border-radius: 100%;
+    display: block;
+    float: right;
+    position: relative;
+    right: -14px;
+    background: gray;
+    top: -5px;
+}
+
+.nav-tabs {
+    position: absolute;
+    float: right;
+    direction: rtl;
+    right: 0;
+    top: 77%;
+    width: 100%;
+
+}
+
+.tab-content {
+    position: absolute;
+    float: right;
+    direction: rtl;
+    right: 0px;
+    top: 86%;
+    width: 100%;
+}
+
+.information li {
+    float: right;
+    width: 50%;
+}
+
+.information li p {
+    text-align: right;
+    width: 100%;
+    font-size: 17px;
+}
+
+.information li span {
+    font-weight: bold;
+}
+
+.slider img {
+    width: 200px;
+    height: 180px;
+    margin-left: 55px;
+    margin-top: 60px;
+
+}
+
+#nav_item li {
+    float: left;
+    margin-left: 10px;
+
+}
+
+#nav_item li img {
+    width: 50px;
+    height: 50px;
+}
+
+#verifyCode{
+    background-color: #00ff62}
+
+.warning .progress {
+    background-color: #ffde59
+}

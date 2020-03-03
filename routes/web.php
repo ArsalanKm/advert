@@ -47,3 +47,7 @@ Route::post('/addcars', 'AdvertControllers@addcars');
 
 Route::post('/addpublic', 'AdvertControllers@addpublic');
 
+
+Route::get('/manage/{category_id}/{id}','ManageControllers@index')->name('manage');
+
+Route::post('/verifyCode','AdvertControllers@verifyCode');
