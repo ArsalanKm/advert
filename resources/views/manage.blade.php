@@ -77,7 +77,7 @@ use App\HelperFunction\Helper;
                 <a class="nav-link active" data-toggle="tab" href="#home">پیش نمایش</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#menu1">ویرایش</a>
+                <a class="nav-link" href="/edit/{{$category_id}}/{{$id}}">ویرایش</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#menu2">ارتقاء</a>

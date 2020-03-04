@@ -43,6 +43,7 @@ class AdvertControllers extends Controller
         $typeAdvert = $request->TypeAdvert;
 
 
+
         /* this is for saving in the Estate table in the Database*/
 
 
@@ -112,6 +113,7 @@ class AdvertControllers extends Controller
             $advert->typeAdvert = $Advertiser;
 
             $advert->advert_id = $ad->id;
+            $advert->advertiser=$Advertiser;
 
 
             ($advert->save());

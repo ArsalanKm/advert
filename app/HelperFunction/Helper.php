@@ -2,6 +2,7 @@
 
 namespace App\HelperFunction;
 
+use App\Advert;
 use App\Car;
 use App\Estate;
 use App\Image;
@@ -90,6 +91,7 @@ class Helper
 
 
     }
+
 
 
 }

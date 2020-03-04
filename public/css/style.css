@@ -130,9 +130,13 @@ body {
     height: 50px;
 }
 
-#verifyCode{
-    background-color: #00ff62}
+#verifyCode {
+    background-color: #00ff62
+}
 
 .warning .progress {
     background-color: #ffde59
 }
+
+
+

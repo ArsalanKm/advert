@@ -127,14 +127,14 @@
                 <span class="check1">
     شخصی
                     {{--if value equals to 1 it is personal advert--}}
-                    <input name="Advertiser" type="radio" class="" v-model="Advertiser" :value="1" style="right: 48px;">
+                    <input name="Advertiser" type="radio" class=""  value="1" style="right: 48px;">
 
     </span>
                 <span class="check2">
             مشاور املاک
                     {{--if value equals to 0 it is from amlak shop--}}
 
-                    <input name="Advertiser" type="radio" class="" v-model="Advertiser" :value="0"
+                    <input name="Advertiser" type="radio" class="" value="0"
                            style="right: 123px;top: -20px;">
             </span>
 
@@ -278,7 +278,7 @@
 </form>
 
 
-<form action="/addimage" method="post" class="dropzone" id="dropzone"
+<form action="/addimage" method="post" class="dropzone" id="dropzone5"
       style="position: absolute;float: right;top: 14%;width: 93%;right: 3%;">
     {{csrf_field()}}
     {{--<input type="file" name="file" />--}}

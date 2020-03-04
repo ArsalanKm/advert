@@ -101,6 +101,21 @@
 
     };
 
+    Dropzone.options.dropzone5 = {
+
+        paramName: "file",
+        maxFilesize: 5,
+
+        success: function (file, response) {
+            $("#editimage").append(('<input type="text" ' +
+                'name="images[]" ' +
+                'value="' + response + '"  >'));
+
+        }
+
+
+    };
+
 
     $('.slider').cycle({
         fx: 'fade',

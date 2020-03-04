@@ -48,6 +48,11 @@ Route::post('/addcars', 'AdvertControllers@addcars');
 Route::post('/addpublic', 'AdvertControllers@addpublic');
 
 
-Route::get('/manage/{category_id}/{id}','ManageControllers@index')->name('manage');
+Route::get('/manage/{category_id}/{id}', 'ManageControllers@index')->name('manage');
 
-Route::post('/verifyCode','AdvertControllers@verifyCode');
+Route::post('/verifyCode', 'AdvertControllers@verifyCode');
+
+Route::get('/edit/{category_id}/{id}', 'ManageControllers@edit');
+
+Route::post('/editadvert', 'ManageControllers@editadvert');
+Route::post('/editimage', 'ManageControllers@editimage');
