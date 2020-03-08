@@ -49,6 +49,20 @@
 <script type="text/javascript" src="/js/dropzone.js"></script>
 
 <script type="text/javascript">
+    $("#check2").click(function () {
+
+
+        if ($(this).is(":checked")) {
+            $("#price2").val("  6000توان");
+            $('#pardakht').fadeIn(500);
+
+        } else {
+            $("#price2").val("هیچ چیز");
+            $('#pardakht').fadeOut(500);
+
+
+        }
+    });
     $(".send-advert2").click(function () {
 
 
@@ -125,6 +139,7 @@
 
 
     });
+
 
 </script>
 </body>

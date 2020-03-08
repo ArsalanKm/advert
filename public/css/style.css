@@ -138,5 +138,50 @@ body {
     background-color: #ffde59
 }
 
+.ladder {
+    width: 24px;
+    height: 24px;
+    background-image: url("/img/divar.png");
+    background-repeat: no-repeat !important;
+    background-position: -1008px 0 !important;
+    display: inline-block;
+    vertical-align: middle;
+}
 
 
+#urgent {
+    width: 24px;
+    height: 24px;
+    background-image: url("/img/divar.png");
+    background-repeat: no-repeat !important;
+    background-position: -288px -48px !important;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#renew {
+    width: 24px;
+    height: 24px;
+    background-image: url("/img/divar.png");
+    background-repeat: no-repeat !important;
+    background-position: -192px -48px !important;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#price {
+    text-align: right;
+}
+
+#price2 {
+    border: none;
+}
+
+#pardakht {
+    display: none;
+    position: relative;
+    right: 160px;
+    top: 20px;
+    width: 250px;
+    font-size: 17px;
+}

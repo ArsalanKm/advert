@@ -255,32 +255,116 @@ use App\HelperFunction\Helper;
             </div>
             <div class="tab-pane container fade" id="menu1">...</div>
             <div class="tab-pane container fade" id="menu2" style="background: white;top: 22px">
-                <div class="col-lg-12">
-                    <p>
+                <div class="col-lg-12" style="position: absolute;right: 0">
+                    <p style="margin-top: 16px;
+
+text-align: right;
+
+padding: 10px;">
                         لطفا از لیست زیر موارد را انتخاب و پرداخت نمایید:
                     </p>
                     <table class="table table-striped table-bordered table-hover">
-                        <thead>
+                        <thead style="background: #c8c8c9">
                         <tr>
-                            <th>اانتخاب</th>
-                            <th>نام هزیننه</th>
-                            <th>مبلغ</th>
-                            <th>وضعیت</th>
-                            <th>کد هدیه</th>
+                            <th style="width: 20px">اانتخاب</th>
+                            <th style="width: 51px">نام هزیننه</th>
+                            <th style="width: 45px">مبلغ</th>
+                            <th style="width: 70px;text-align: center">وضعیت</th>
+                            <th style="width: 45px">کد هدیه</th>
                             <th>توضیحات</th>
                         </tr>
 
                         </thead>
                         <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>
-                            <td>5</td>                        </tr>
+                            <td>
+                                <input type="checkbox" disabled>
+
+                            </td>
+                            <td>
+                                <span class="ladder"></span>نردبان
+                            </td>
+                            <td>10000 تومان</td>
+                            <td style="line-height: 3">
+                                <span class="btn btn-default "
+                                      style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                            </td>
+                            <td></td>
+                            <td>
+                                <span style="color: #8f5500">بعد از انتشار آکهب این هزینه قابل پرداخت هست .</span>
+                                <p>آآگهی تازه تر در همان دسته بندی شهر و گروه نمایش داده میشود.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="check2"></td>
+                            <td>
+                                <span id="urgent"></span>فوری
+
+                            </td>
+
+                            <td>6000 تومان</td>
+                            <td style="line-height: 3">
+                                <span class="btn btn-default"
+                                      style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                            </td>
+                            <td></td>
+                            <td>
+                                <span style="color: #8f5500">بعد از انتشار آکهب این هزینه قابل پرداخت هست .</span>
+                                <p>آآگهی تازه تر در همان دسته بندی شهر و گروه نمایش داده میشود.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" disabled></td>
+
+                            <td>
+                                <span id="urgent"></span>
+                                <span class="ladder"></span>نردبان و فوری
+                            </td>
+
+
+                            <td>10000 تومان</td>
+                            <td style="line-height: 3">
+                                <span class="btn btn-default"
+                                      style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                            </td>
+                            <td></td>
+                            <td>
+                                <span style="color: #8f5500">بعد از انتشار آکهب این هزینه قابل پرداخت هست .</span>
+                                <p>آآگهی تازه تر در همان دسته بندی شهر و گروه نمایش داده میشود.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" disabled></td>
+
+                            <td>
+                                <span id="renew"></span>
+                                تمدید
+                            </td>
+
+
+                            <td>1000 تومان</td>
+                            <td style="line-height: 3">
+                                <span class="btn btn-default"
+                                      style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                            </td>
+                            <td></td>
+                            <td>
+                                <span style="color: #8f5500">بعد از انتشار آکهب این هزینه قابل پرداخت هست .</span>
+                                <p>آآگهی تازه تر در همان دسته بندی شهر و گروه نمایش داده میشود.</p>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
+
+
+                                <div id="price">
+                                    جمع مبلغ قابل پرداخت:
+
+                                    <input type="text" id="price2">
+                                </div>
+                    <div style="text-align: right">
+                    <input type="submit" class="btn btn-success" value="پرداخت از طریق بانک های عضو شتاب"  id="pardakht">
+                    </div>
                 </div>
 
 
