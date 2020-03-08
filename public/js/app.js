@@ -49584,9 +49584,16 @@ var app = new Vue({
       axios.post('/verifyCode', {
         code: this.code
       }).then(function (response) {
-        $(".warning .progress").attr("id", "verifyCode");
-        $(".manage-text").hide();
-        $("#line").hide();
+        console.log(response);
+
+        if (response.data == "\r\nno") {
+          sweetalert__WEBPACK_IMPORTED_MODULE_0___default()("کد وارد شده نادرست است");
+          ک;
+        } else {
+          $(".warning .progress").attr("id", "verifyCode");
+          $(".manage-text").hide();
+          $("#line").hide();
+        }
       });
     },
     AddState: function AddState() {

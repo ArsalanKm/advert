@@ -19,14 +19,27 @@ use App\HelperFunction\Helper;
                         <p> ثبت شده
                         </p>
                     </li>
-                    <li class="warning">
-                        <i style="background-color: #ffde59"></i>
-                        <span class="progress">
+                    @if($advert->status==1)
+                        <li class="warning">
+                            <i style="background-color: #ffde59"></i>
+                            <span id="verifyCode" class="progress">
                 </span>
-                        <p> تائید شماره
-                        </p>
+                            <p> تائید شماره
+                            </p>
 
-                    </li>
+                        </li>
+                    @else
+                        <li class="warning">
+                            <i style="background-color: #ffde59"></i>
+                            <span class="progress">
+                </span>
+                            <p> تائید شماره
+                            </p>
+
+                        </li>
+
+                    @endif
+
                     <li class="red">
                         <i style="background-color: red"></i>
                         <span class="progress" style="background-color: red;display: none">
@@ -48,28 +61,55 @@ use App\HelperFunction\Helper;
             </div>
         </div>
 
+        @if($advert->status==1)
 
-        <div class="manage-text col-lg-12" style="font-family: iran;margin-top: 114px;text-align: center;">
-            <p style="font-size: 20px"> پیامکی حاوی کد تایید به شما ارسال خواهد شد. لطفا کد را در اینجا وارد کنید .</p>
-            <div class="col-lg-2" style="position: relative;right: -42%;">
-                <div class="form-group">
-                    <label style="float: right;margin-right: 0">کد تایید</label>
+            <div class="manage-text col-lg-12"
+                 style="font-family: iran;margin-top: 114px;text-align: center;display: none">
+                <p style="font-size: 20px"> پیامکی حاوی کد تایید به شما ارسال خواهد شد. لطفا کد را در اینجا وارد کنید
+                    .</p>
+                <div class="col-lg-2" style="position: relative;right: -42%;">
+                    <div class="form-group">
+                        <label style="float: right;margin-right: 0">کد تایید</label>
 
-                    <input type="text" class="form-control" name="code" v-model="code">
+                        <input type="text" class="form-control" name="code" v-model="code">
 
-                    <button class="btn btn-success" type="" style="margin-top: 10px" @click="verifyCode()">تایید
-                    </button>
+                        <button class="btn btn-success" type="" style="margin-top: 10px" @click="verifyCode()">تایید
+                        </button>
+
+                    </div>
 
                 </div>
 
             </div>
-
-        </div>
-
-        <span class="col-lg-12" id="line"
-              style="width: 100%;height: 0px;color: #cccccc;display: block;border: 1px solid #ccc;">
+            <span class="col-lg-12" id="line"
+                  style="width: 100%;height: 0px;color: #cccccc;display: block;border: 1px solid #ccc;margin-top: 200px">
 
     </span>
+        @else
+            <div class="manage-text col-lg-12" style="font-family: iran;margin-top: 114px;text-align: center;">
+                <p style="font-size: 20px"> پیامکی حاوی کد تایید به شما ارسال خواهد شد. لطفا کد را در اینجا وارد کنید
+                    .</p>
+                <div class="col-lg-2" style="position: relative;right: -42%;">
+                    <div class="form-group">
+                        <label style="float: right;margin-right: 0">کد تایید</label>
+
+                        <input type="text" class="form-control" name="code" v-model="code">
+
+                        <button class="btn btn-success" type="" style="margin-top: 10px" @click="verifyCode()">تایید
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <span class="col-lg-12" id="line"
+                  style="width: 100%;height: 0px;color: #cccccc;display: block;border: 1px solid #ccc;">
+
+    </span>
+        @endif
+
+
 
 
         <ul class="nav nav-tabs">

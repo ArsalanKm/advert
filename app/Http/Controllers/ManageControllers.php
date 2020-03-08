@@ -7,6 +7,7 @@ use App\Estate;
 use Illuminate\Http\Request;
 use App\Advert;
 use App\Image;
+use App\Http\Requests\EditRequest;
 
 class ManageControllers extends Controller
 {
@@ -34,14 +35,16 @@ class ManageControllers extends Controller
 
     }
 
-    public function editadvert(Request $request)
+    public function editadvert(EditRequest $request)
     {
         if ($request->area) {
 
 
+
+
             $state = Estate::where('advert_id', $request->advert_id)->update([
                 'area' => $request->area,
-                'deposit' => $request->deposit,
+                    'deposit' => $request->deposit,
                 'rent' => $request->rent,
                 'room_number' => $request->numberRoom,
                 'typeAdvert' => $request->TypeAdvert,

@@ -329,9 +329,14 @@ class AdvertControllers extends Controller
 
     {
         $code=$request->code;
-        $db_code=Advert::where('code',$code)->first();
-        return $db_code;
+        $db_code=Advert::where('code',$code)->update([
+            'status'=>1,
 
+        ]);
+
+        if($db_code)
+            return "yes";
+        else return "no";
 
     }
 }

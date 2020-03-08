@@ -304,29 +304,35 @@ use App\HelperFunction\Helper;
                     {{csrf_field()}}
                     <div class="col-lg-12">
 
+                        @if(($errors->first('city')))
+                            <div class="alert alert-danger"
+                                 style="position: absolute;top: -54px;right: 14px;width: 96.5%;">
+                                {{$errors->first("city")}}
+                            </div>
+                        @endif
                         <div class="col-lg-10">
 
                             <div class="form-group">
 
-                                <label for="">شهر
+                                <label for="">شهر</label>
 
-                                    <select name="city" id="" style="" class="city_select">
+                                <select name="city" id="" style="" class="city_select">
 
-                                        <option value="ساری" class="form-control">
-                                            ساری
-                                        </option>
+                                    <option value="ساری" class="form-control">
+                                        ساری
+                                    </option>
 
-                                        <option value="بابل" class="form-control">
-                                            بابل
-                                        </option>
+                                    <option value="بابل" class="form-control">
+                                        بابل
+                                    </option>
 
-                                        <option value="مازندران" class="form-control">
-                                            مارندران
-                                        </option>
+                                    <option value="مازندران" class="form-control">
+                                        مارندران
+                                    </option>
 
-                                        <option selected data-display="{{$advert->city}}">{{$advert->city}}</option>
+                                    <option selected data-display="{{$advert->city}}">{{$advert->city}}</option>
 
-                                    </select>
+                                </select>
 
 
                             </div>
@@ -382,6 +388,12 @@ use App\HelperFunction\Helper;
                         {{--******************--}}
                         @if($state)
                             <div class="col-lg-12" style="margin-top: 200px;">
+                                @if($errors->first("area"))
+                                    <div class="alert alert-danger"
+                                         style="position: absolute;top: -54px;right: 14px;width: 96.5%;">
+                                        {{$errors->first("area")}}
+                                    </div>
+                                @endif
                                 <div class="form-group">
 
 
@@ -409,12 +421,14 @@ use App\HelperFunction\Helper;
 
                                 <span class="check1">
     ارائه
-            <input type="radio" class="" :value="1" name="TypeAdvert" <?php if ($state->typeAdvert==1) echo "checked"?> )>
+            <input type="radio" class="" :value="1" name="TypeAdvert"
+                   <?php if ($state->typeAdvert == 1) echo "checked"?> )>
     </span>
                                 <span class="check2">
             درخواستی
 
-            <input type="radio" class="" value="0" name="TypeAdvert"  <?php if ($state->typeAdvert==0) echo "checked"?>>
+            <input type="radio" class="" value="0"
+                   name="TypeAdvert" <?php if ($state->typeAdvert == 0) echo "checked"?>>
             </span>
 
                             </div>
@@ -435,7 +449,7 @@ use App\HelperFunction\Helper;
     شخصی
                                         {{--if value equals to 1 it is personal advert--}}
                                         <input name="Advertiser" type="radio" class="" value="1"
-                                               style="right: 48px;"  <?php if ($state->advertiser==1) echo "checked"?>>
+                                               style="right: 48px;" <?php if ($state->advertiser == 1) echo "checked"?>>
 
     </span>
                                     <span class="check2">
@@ -443,7 +457,7 @@ use App\HelperFunction\Helper;
                                         {{--if value equals to 0 it is from amlak shop--}}
 
                                         <input name="Advertiser" type="radio" class="" value="0"
-                                               style="right: 123px;top: -20px;" <?php if ($state->advertiser==0) echo "checked"?>>>
+                                               style="right: 123px;top: -20px;" <?php if ($state->advertiser == 0) echo "checked"?>>>
             </span>
 
                                 </div>
@@ -464,6 +478,13 @@ use App\HelperFunction\Helper;
 
                             </div>
                             <div class="col-lg-8" style="float: left;margin-top: 90px">
+                                @if(($errors->first('deposit')))
+
+                                    <div class="alert alert-danger"
+                                         style="position: absolute;top: -27px;right: 14px;width: 96.5%;">
+                                        {{$errors->first("deposit")}}
+                                    </div>
+                                @endif
                                 <div class="form-group">
                                     <input type="text" name="deposit" value="{{$state->deposit}}"
                                            style="width: 100%;text-align: center">
@@ -487,6 +508,14 @@ use App\HelperFunction\Helper;
 
                             </div>
                             <div class="col-lg-8" style="float: left;position: relative;top: -45px;">
+                                @if($errors->first("rent"))
+
+                                    <div class="alert alert-danger"
+                                         style="position: absolute;top: -27px;right: 14px;width: 96.5%;">
+                                        {{$errors->first("rent")}}
+                                    </div>
+                                @endif
+
                                 <div class="form-group" style="text-align: center">
                                     <input type="text" name="rent" value="{{$state->rent}}"
                                            style="width: 100%;text-align: center"
@@ -497,6 +526,13 @@ use App\HelperFunction\Helper;
 
 
                             <div class="col-lg-12">
+                                @if(($errors->first("numberRoom")))
+
+                                    <div class="alert alert-danger"
+                                         style="position: absolute;top: -30px;right: 14px;width: 96.5%;">
+                                        {{$errors->first("numberRoom")}}
+                                    </div>
+                                @endif
                                 <div class="form-group">
                                     <label for="">تعداد اتاق</label>
 
@@ -516,6 +552,12 @@ use App\HelperFunction\Helper;
                             </div>
                         @endif
                         <div class="col-lg-12">
+                            @if(($errors->first("mobile")))
+                                <div class="alert alert-danger"
+                                     style="position: absolute;top: -54px;right: 14px;width: 96.5%;">
+                                    {{$errors->first("mobile")}}
+                                </div>
+                            @endif
                             <div class="fom-group">
                                 <label for="">شماره موبایل</label>
                                 <input type="text" class="form-control" name="mobile" value="{{$advert->mobile}}">
@@ -541,6 +583,13 @@ use App\HelperFunction\Helper;
                         </div>
 
                         <div class="col-lg-12">
+                            @if(($errors->first("email")))
+
+                                <div class="alert alert-danger"
+                                     style="position: absolute;top: -27px;right: 14px;width: 96.5%;">
+                                    {{$errors->first("email")}}
+                                </div>
+                            @endif
                             <div class="form-group">
                                 <label for="">ایمیل</label>
                                 <input type="email" class="form-control" name="email" value="{{$advert->email }}">
@@ -566,6 +615,14 @@ use App\HelperFunction\Helper;
                             </div>
                         </div>
                         <div class="col-lg-12" style="margin-top: 30px">
+                            @if(($errors)->first('subject'))
+
+                                <div class="alert alert-danger"
+                                     style="position: absolute;top: -27px;right: 14px;width: 96.5%;">
+                                    {{$errors->first("subject")}}
+                                </div>
+                            @endif
+
                             <div class="form-group">
                                 <label for="">عنوان آگهی</label>
                                 <input type="text" class="form-control" name="subject" value="{{$advert->subject}}">
@@ -575,6 +632,13 @@ use App\HelperFunction\Helper;
 
 
                         <div class="col-lg-12" style="margin-top: 30px">
+                            @if(count($errors)>0)
+
+                                <div class="alert alert-danger"
+                                     style="position: absolute;top: -45px;right: 14px;width: 96.5%;">
+                                    {{$errors->first("text")}}
+                                </div>
+                            @endif
                             <div class="form-group">
                                 <label for="">توضیحات آگهی</label>
                                 <textarea type="" class="form-control" name="text">{{$advert->text}}</textarea>
@@ -599,6 +663,18 @@ use App\HelperFunction\Helper;
                     <div id="editimage">
                     </div>
                 </form>
+                @if(count($errors)>0)
+
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>
+                                    {{$error}}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
 
                 <form action="/editimage" method="post" class="dropzone" id="dropzone5"

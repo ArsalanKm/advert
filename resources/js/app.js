@@ -78,13 +78,18 @@ const app = new Vue({
             axios.post('/verifyCode', {
                 code: this.code,
             }).then((response) => {
+                console.log(response);
+                if (response.data == "\r\nno") {
+                    swal("کد وارد شده نادرست است")
+                    ک
+                } else {
 
 
-                $(".warning .progress").attr("id", "verifyCode");
-                $(".manage-text").hide();
-                $("#line").hide();
+                    $(".warning .progress").attr("id", "verifyCode");
+                    $(".manage-text").hide();
+                    $("#line").hide();
 
-
+                }
             });
         },
 
