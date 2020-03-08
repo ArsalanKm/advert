@@ -74,6 +74,11 @@ const app = new Vue({
     methods: {
 
         /********verify code*/
+
+        // hide_menu: function () {
+        //     $(".home_page").fadeOut(1000);
+        //
+        // },
         verifyCode: function () {
             axios.post('/verifyCode', {
                 code: this.code,

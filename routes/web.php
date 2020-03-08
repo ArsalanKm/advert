@@ -56,3 +56,5 @@ Route::get('/edit/{category_id}/{id}', 'ManageControllers@edit');
 
 Route::post('/editadvert', 'ManageControllers@editadvert');
 Route::post('/editimage', 'ManageControllers@editimage');
+
+Route::post("/deleteadvert", "ManageControllers@deleteadvert");

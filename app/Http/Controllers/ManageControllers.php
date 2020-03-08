@@ -40,11 +40,9 @@ class ManageControllers extends Controller
         if ($request->area) {
 
 
-
-
             $state = Estate::where('advert_id', $request->advert_id)->update([
                 'area' => $request->area,
-                    'deposit' => $request->deposit,
+                'deposit' => $request->deposit,
                 'rent' => $request->rent,
                 'room_number' => $request->numberRoom,
                 'typeAdvert' => $request->TypeAdvert,
@@ -89,6 +87,14 @@ class ManageControllers extends Controller
         $request->file->move(public_path('images'), $imageName);
 
         return response()->json($imageName);
+    }
+
+    public function deleteadvert(Request $request)
+    {
+        $advert_id = $request->advert_id;
+        $advert = Advert::find($advert_id)->delete();
+        return redirect('/advert');
+
     }
 
 }

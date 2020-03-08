@@ -6,7 +6,7 @@ use App\HelperFunction\Helper;
 
 @section('content')
 
-    <div id="app">
+    <div id="app" style="height: auto">
 
         <div class="col-lg-12">
             <div class="progress-manage progress col-lg-4" style="width: 492px">
@@ -110,8 +110,6 @@ use App\HelperFunction\Helper;
         @endif
 
 
-
-
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#home">پیش نمایش</a>
@@ -134,7 +132,7 @@ use App\HelperFunction\Helper;
             <div class="tab-pane col-lg-12 active" id="home">
 
 
-                <div class="">
+                <div class="home_page">
 
 
                     <div class="col-lg-8" style="margin-right: 51px;">
@@ -252,15 +250,57 @@ use App\HelperFunction\Helper;
 
 
                     </div>
-                    <div class="tab-pane container fade" id="menu1">...</div>
-                    <div class="tab-pane container fade" id="menu2">
 
-
-                    </div>
                 </div>
             </div>
+            <div class="tab-pane container fade" id="menu1">...</div>
+            <div class="tab-pane container fade" id="menu2" style="background: white;top: 22px">
+                <div class="col-lg-12">
+                    <p>
+                        لطفا از لیست زیر موارد را انتخاب و پرداخت نمایید:
+                    </p>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>اانتخاب</th>
+                            <th>نام هزیننه</th>
+                            <th>مبلغ</th>
+                            <th>وضعیت</th>
+                            <th>کد هدیه</th>
+                            <th>توضیحات</th>
+                        </tr>
+
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>5</td>                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+
+            <div class="tab-pane container fade" id="menu4" style="top: 10px;right: -15px">
+
+                <form action="/deleteadvert" method="post">
+
+                    {{csrf_field()}}
+                    <input type="text" value="{{$advert->id}}" name="advert_id">
+                    <input type="submit" value="حذف" class="btn btn-danger">
+                </form>
+
+            </div>
+
+
         </div>
     </div>
+
 
 
 
