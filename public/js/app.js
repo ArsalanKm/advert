@@ -49727,6 +49727,15 @@ var app = new Vue({
       })["catch"](function (error) {
         sweetalert__WEBPACK_IMPORTED_MODULE_0___default()('not ok');
       });
+    },
+
+    /***status***/
+    set_status: function set_status(id) {
+      axios.post('/admin/status', {
+        id: id
+      }).then(function (response) {
+        location.href = "/admin/advert";
+      })["catch"](function (error) {});
     }
   }
 });

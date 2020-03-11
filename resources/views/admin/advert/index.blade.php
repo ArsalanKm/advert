@@ -26,6 +26,7 @@
                                     <thead>
 
                                     <tr>
+                                        <th>شماره آگهی</th>
                                         <th>موضوع آگهی</th>
                                         <th>ایمیل</th>
                                         <th>شماره موبایل</th>
@@ -39,6 +40,8 @@
                                     <tbody>
                                     @foreach($advert as $adverts)
                                         <tr>
+                                            <td>{{$adverts->id}}</td>
+
                                             <td>{{$adverts->subject}}</td>
                                             <td>{{$adverts->email}}</td>
                                             <td>{{$adverts->mobile}}</td>
@@ -51,15 +54,28 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                @if($adverts->status==1)
-                                                    <i class="icon icon-ok" style="color: #0b2e13;cursor: pointer"></i>
-                                                @else                                                    <i
-                                                    class="icon icon-remove" style="color: red;cursor: pointer"></i>
+                                                @if($adverts->check==1)
+                                                    <i class="icon icon-ok-circle"
+                                                       @click="set_status('{{$adverts->id}}')"
+                                                       style="color: #0b2e13;cursor: pointer"></i>
+                                                @elseif($adverts->check==0)                                                <i
+                                                    class="icon icon-remove-circle"
+                                                    @click="set_status('{{$adverts->id}}')"
+                                                    style="color: red;cursor: pointer"></i>
 
                                                 @endif
                                             </td>
-                                            <td style="text-align: center"><a style="cursor: pointer;color: red"><i
-                                                        class="icon- icon-trash"></i></a></td>
+                                            <td style="text-align: center">
+                                                <form action="/admin/removeadvert" method="post">
+                                                    {{csrf_field()}}
+                                                    <input type="hidden" value="{{$adverts->id}}" name="advert_id">
+                                                    <button type="submit"
+                                                            style="cursor: pointer;color: red;background:none;border: none">
+                                                        <i
+                                                            class="icon- icon-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach()
                                     </tbody>

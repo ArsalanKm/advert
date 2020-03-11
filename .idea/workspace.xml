@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_11_095835_create_orders_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/advert/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminControllers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderControllers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_09_134226_create_orders_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/advert/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/advert/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,7 +192,7 @@
       <workItem from="1583689150952" duration="54000" />
       <workItem from="1583759804729" duration="7151000" />
       <workItem from="1583840678533" duration="6512000" />
-      <workItem from="1583919727097" duration="6990000" />
+      <workItem from="1583919727097" duration="10383000" />
     </task>
     <servers />
   </component>

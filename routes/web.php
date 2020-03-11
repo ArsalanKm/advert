@@ -22,6 +22,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('getcategories', 'CategoryControllers@getcategories');
     Route::post('/deletecategory', 'CategoryControllers@removecategory');
     Route::get('/advert', 'AdminControllers@advert');
+    Route::post('/removeadvert', 'AdminControllers@removeadvert');
+    Route::post('/status', 'AdminControllers@status');
 
 
 });

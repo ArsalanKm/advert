@@ -267,6 +267,20 @@ const app = new Vue({
                 });
 
         },
+        /***status***/
+        set_status: function (id) {
+            axios.post('/admin/status', {
+                id: id,
+
+            })
+                .then((response) => {
+                    location.href = "/admin/advert";
+
+                })
+                .catch((error) => {
+                });
+
+        }
 
 
     }
