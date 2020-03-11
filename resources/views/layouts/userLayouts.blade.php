@@ -42,7 +42,6 @@
 
 @yield('content')
 <script type="text/javascript" src="/js/dropzone.js"></script>
-
 <script type="text/javascript" src="/js/app.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
@@ -53,7 +52,8 @@
 
 
         if ($(this).is(":checked")) {
-            $("#price2").val("  6000توان");
+            $("#price2").val("6000");
+            $("#cost").val("urgent");
             $('#pardakht').fadeIn(500);
 
         } else {

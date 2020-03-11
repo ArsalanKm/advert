@@ -357,13 +357,22 @@ padding: 10px;">
                     </table>
 
 
-                                <div id="price">
-                                    جمع مبلغ قابل پرداخت:
+                    <div id="price">
+                        جمع مبلغ قابل پرداخت:
 
-                                    <input type="text" id="price2">
-                                </div>
+                        <input type="text" id="price2">
+
+                        <input type="text" id="cost">
+                        <input type="text" id="advert_id" value="{{$advert->id}}">
+                    </div>
                     <div style="text-align: right">
-                    <input type="submit" class="btn btn-success" value="پرداخت از طریق بانک های عضو شتاب"  id="pardakht">
+                        <a href="/order/{{$advert->id}}" class="btn btn-success"
+                           id="pardakht" @click="addorder()">
+                            {{csrf_field()}}
+
+                            پرداخت از طریق بانک های عضو شتاب
+
+                        </a>
                     </div>
                 </div>
 
@@ -375,7 +384,7 @@ padding: 10px;">
                 <form action="/deleteadvert" method="post">
 
                     {{csrf_field()}}
-                    <input type="text" value="{{$advert->id}}" name="advert_id">
+                    <input type="text" value="{{$advert->id}}" id="advert_id">
                     <input type="submit" value="حذف" class="btn btn-danger">
                 </form>
 

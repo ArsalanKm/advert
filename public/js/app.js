@@ -49572,7 +49572,10 @@ var app = new Vue({
     Advertiser: "",
     advert_id: "",
     images: [],
-    code: ""
+    code: "",
+    price: "",
+    cost: "",
+    OrderAdvertId: ""
   },
   mounted: function mounted() {
     this.getcategory();
@@ -49584,6 +49587,20 @@ var app = new Vue({
     //     $(".home_page").fadeOut(1000);
     //
     // },
+
+    /**** add order *****/
+    addorder: function addorder() {
+      var price = $("#price2").val();
+      var cost = $("#cost").val();
+      var advert_id = $("#advert_id").val();
+      axios.post('/addorder', {
+        price: price,
+        cost: cost,
+        advert_id: advert_id
+      }).then(function (response) {
+        console.log(response);
+      });
+    },
     verifyCode: function verifyCode() {
       axios.post('/verifyCode', {
         code: this.code

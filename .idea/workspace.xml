@@ -2,11 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/HelperFunction/bitpay.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderControllers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_09_134226_create_orders_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/php/get.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/php/send.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/php/sender.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_29_070127_create_cars_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_29_085151_create_adverts_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_02_064030_create_adverts_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_03_154012_create_adverts_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_04_122707_create_estates_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_08_075109_create_adverts_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/userLayouts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/userLayouts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,6 +143,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -186,7 +203,11 @@
       <workItem from="1583586336662" duration="2218000" />
       <workItem from="1583648176833" duration="57000" />
       <workItem from="1583648588278" duration="391000" />
-      <workItem from="1583650212309" duration="16618000" />
+      <workItem from="1583650212309" duration="16644000" />
+      <workItem from="1583689150952" duration="54000" />
+      <workItem from="1583759804729" duration="7151000" />
+      <workItem from="1583840678533" duration="6512000" />
+      <workItem from="1583919727097" duration="483000" />
     </task>
     <servers />
   </component>
@@ -216,7 +237,22 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="105" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583760681499">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="105" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583760681499" />
+    <state x="187" y="232" key="NewPhpClassDialog" timestamp="1583761835778">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="187" y="232" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1583761835778" />
+    <state x="210" y="351" key="NewPhpFileDialog" timestamp="1583760664531">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="210" y="351" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1583760664531" />
     <state x="279" y="58" key="SettingsEditor" timestamp="1583651296940">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -61,6 +61,9 @@ const app = new Vue({
         advert_id: "",
         images: [],
         code: "",
+        price: "",
+        cost: "",
+        OrderAdvertId:"",
 
 
     },
@@ -79,6 +82,25 @@ const app = new Vue({
         //     $(".home_page").fadeOut(1000);
         //
         // },
+        /**** add order *****/
+        addorder: function () {
+            var price = $("#price2").val();
+            var cost = $("#cost").val();
+            var advert_id = $("#advert_id").val();
+
+
+            axios.post('/addorder', {
+                price: price,
+                cost: cost,
+                advert_id: advert_id,
+            }).then((response) => {
+                console.log(response);
+
+
+            });
+        },
+
+
         verifyCode: function () {
             axios.post('/verifyCode', {
                 code: this.code,

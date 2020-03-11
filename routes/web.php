@@ -58,3 +58,9 @@ Route::post('/editadvert', 'ManageControllers@editadvert');
 Route::post('/editimage', 'ManageControllers@editimage');
 
 Route::post("/deleteadvert", "ManageControllers@deleteadvert");
+
+Route::get('/order/{id}', 'OrderControllers@order');
+
+Route::post("/addorder", "OrderControllers@addorder");
+Route::post("/buyback", 'OrderControllers@buyback');
+
