@@ -21,6 +21,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('addcategory', 'CategoryControllers@addcategory');
     Route::get('getcategories', 'CategoryControllers@getcategories');
     Route::post('/deletecategory', 'CategoryControllers@removecategory');
+    Route::get('/advert', 'AdminControllers@advert');
 
 
 });
@@ -62,5 +63,13 @@ Route::post("/deleteadvert", "ManageControllers@deleteadvert");
 Route::get('/order/{id}', 'OrderControllers@order');
 
 Route::post("/addorder", "OrderControllers@addorder");
+/* this route is for dargah it does not have csrfToken
+we have to put this directory in VerifyCsrfToken */
 Route::post("/buyback", 'OrderControllers@buyback');
+
+
+
+
+
+
 

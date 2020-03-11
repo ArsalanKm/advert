@@ -63,7 +63,7 @@ const app = new Vue({
         code: "",
         price: "",
         cost: "",
-        OrderAdvertId:"",
+        OrderAdvertId: "",
 
 
     },
@@ -93,6 +93,7 @@ const app = new Vue({
                 price: price,
                 cost: cost,
                 advert_id: advert_id,
+
             }).then((response) => {
                 console.log(response);
 
