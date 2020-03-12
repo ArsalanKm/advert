@@ -21,18 +21,18 @@ use App\HelperFunction\Helper;
                     </li>
                     @if($advert->status==1)
                         <li class="warning">
-                            <i style="background-color: #ffde59"></i>
+                            <i style="background-color: #00ff62"></i>
                             <span id="verifyCode" class="progress">
-                </span>
+                                      </span>
                             <p> تائید شماره
                             </p>
 
                         </li>
                     @else
                         <li class="warning">
-                            <i style="background-color: #ffde59"></i>
+                            <i style="background-color: "></i>
                             <span class="progress">
-                </span>
+                                       </span>
                             <p> تائید شماره
                             </p>
 
@@ -40,21 +40,44 @@ use App\HelperFunction\Helper;
 
                     @endif
 
-                    <li class="red">
-                        <i style="background-color: red"></i>
-                        <span class="progress" style="background-color: red;display: none">
-                </span>
-                        <p> در انتظار بررسی
-                        </p>
-                    </li>
-                    <li class="end" style="width: 0px">
-                        <i style="background-color: #632c00"></i>
-                        <span class="progress" style="background-color: #632c00;display: none">
-                </span>
-                        <p style="position: relative;right: 5px;top: -2px">انتشار</p>
 
 
-                    </li>
+                    @if($advert->check==1)
+                        <li class="red">
+                            <i style="background-color: #00ff62"></i>
+                            <span class="progress" style="background-color: #00ff62;">
+                </span>
+                            <p> در انتظار بررسی
+                            </p>
+                        </li>
+                    @else
+                        <li class="red">
+                            <i style="background-color: red"></i>
+                            <span class="progress" style="background-color: red;display: none">
+                </span>
+                            <p> در انتظار بررسی
+                            </p>
+                        </li>
+                    @endif
+                    @if($advert->check==1)
+                        <li class="end" style="width: 0px">
+                            <i style="background-color: #00ff62"></i>
+                            <span class="progress" style="background-color: #00ff62;display: ">
+                </span>
+                            <p style="position: relative;right: 5px;top: -2px">انتشار</p>
+
+
+                        </li>
+                    @else
+                        <li class="end" style="width: 0px">
+                            <i style="background-color: #632c00"></i>
+                            <span class="progress" style="background-color: #632c00;display: none">
+                </span>
+                            <p style="position: relative;right: 5px;top: -2px">انتشار</p>
+
+
+                        </li>
+                    @endif
                 </ul>
 
 
@@ -278,7 +301,11 @@ padding: 10px;">
                         <tbody>
                         <tr>
                             <td>
-                                <input type="checkbox" disabled>
+                                @if($advert->check==1)
+                                <input type="checkbox"  id="check1">
+                                    @else
+                                    <input type="checkbox" disabled>
+                                @endif
 
                             </td>
                             <td>
@@ -296,7 +323,10 @@ padding: 10px;">
                             </td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" id="check2"></td>
+                            <td>
+
+                                <input type="checkbox" id="check2">
+                            </td>
                             <td>
                                 <span id="urgent"></span>فوری
 
@@ -314,7 +344,13 @@ padding: 10px;">
                             </td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" disabled></td>
+                            <td>
+                                @if($advert->check==1)
+                                    <input type="checkbox" id="check3" >
+                                @else
+                                    <input type="checkbox" disabled>
+                                @endif
+                            </td>
 
                             <td>
                                 <span id="urgent"></span>
@@ -334,7 +370,12 @@ padding: 10px;">
                             </td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" disabled></td>
+                            <td>
+                                @if($advert->check==1)
+                                    <input type="checkbox"  id="check4">
+                                @else
+                                    <input type="checkbox" disabled>
+                                @endif                            </td>
 
                             <td>
                                 <span id="renew"></span>

@@ -91,68 +91,125 @@ class Helper
 
 
     }
+    public  static function modalcar($id){
 
-    public static function modalcar($id)
-    {
-        $car = Car::where('advert_id', $id)->first();
+
+        $car=Car::where('advert_id',$id)->first();
+
         if ($car) {
-            echo "<table class=\"table table-bordered table-striped table-hover\""
-                . "style=\"direction: rtl;text-align: center\">" .
-                "<thead>
-           <tr>
-                                            <th>برند</th>
-                                            <th>سال ساخت</th>
-                                            <th>کارکرد</th>
-                                            <th>نوع آگهی</th>
-                                            <th>قیمت</th>
-                                            <th>رنگ</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                        <td>{{$car->brand}}</td>
-                                        <td>{{$car->year}}</td>
-                                        <td>{{$car->sunation}}</td>
-                                        <td>
-                                        @if($car->type==0)
-                                        {{'فروشی'}}
-                                        @else
-                                        {{'درخواستی'}}
-                                        @endif
-                                        </td>
-                                        <td>{{$car->fee}}</td>
-                                        <td>{{$car->color}}</td>
-        </tr>
 
-                                        </tbody>";
+            if($car->type==1){
+
+                $type="<span style='color: green;'>فروشی</span>";
+
+            }elseif ($car->type==2){
+                $type="<span style='color: darkred;'>اجاره ای</span>";
+
+            }elseif ($car->type==3) {
+                $type="<span style='color: red;'>درخواستی</span>";
+
+
+
+            }
+
+            echo "                        <table class=\"table table-bordered table-striped table-hover\" style=\"text-align: center;\">
+
+                                                <thead>
+
+                                                <tr>
+
+                                                    <th>برند خودرو</th>
+                                                    <th>سال ساخت</th>
+                                                    <th>کارکرد به کیلومتر</th>
+                                                    <th>نوع آگهی</th>
+                                                    <th>قیمت</th>
+                                                    <th>رنگ</th>
+                                                  </tr>
+
+                                                </thead>
+                                                <tbody>
+
+
+                                                <tr>
+
+                                                <td>$car->brand</td>
+                                                <td>$car->year</td>
+                                                <td>$car->run_time</td>
+                                                <td>
+
+
+
+
+                                       $type
+
+
+
+
+                                                </td>
+                                                <td>$car->fee</td>
+                                                <td>$car->color</td>
+
+
+                                                    </tr>
+
+
+                                                </tbody>
+
+
+
+                                            </table>
+                    ";
+
         }
-
     }
 
-    public static function modalstate($id)
+    public  static function modalstate($id)
     {
-        $state = Estate::where('advert_id', $id)->first();
-        if ($state) {
-            echo "<table class=\"table table-bordered table-striped table-hover\""
-                . "style=\"direction: rtl;text-align: center\">" .
-                "<thead>
-   <tr>
-                                    <th>شماره آگهی</th>
-                                    <th>موضوع آگهی</th>
-                                    <th>ایمیل</th>
-                                    <th>شماره موبایل</th>
-                                    <th>شهر</th>
-                                    <th>نوع آگهی</th>
-                                    <th>وضعیت</th>
-                                    <th>حإف</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr></tr>
-                                </tbody>";
+
+        $advert = Estate::where('advert_id', $id)->first();
+
+        if ($advert) {
+
+            echo "                        <table class=\"table table-bordered table-striped table-hover\" style=\"text-align: center;\">
+
+                            <thead>
+
+                            <tr>
+                                <th>رهن</th>
+                                <th>اجاره</th>
+                                <th>تعداد اتاق خواب</th>
+                                <th>نوع</th>
+                                <th>زیر بنا</th>
 
 
+                            </tr>
+
+                            </thead>
+                            <tbody>
+
+
+                        <tr>
+
+                        <td>$advert->deposite </td>
+                        <td>$advert->rent </td>
+                        <td>$advert->number </td>
+                        <td>$advert->typeAdvert  </td>
+                        <td>$advert->area </td>
+
+
+</tr>
+
+
+
+
+                            </tbody>
+
+
+
+                        </table>
+                    ";
         }
+
     }
 }
 
