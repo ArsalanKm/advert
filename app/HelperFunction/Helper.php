@@ -92,9 +92,70 @@ class Helper
 
     }
 
+    public static function modalcar($id)
+    {
+        $car = Car::where('advert_id', $id)->first();
+        if ($car) {
+            echo "<table class=\"table table-bordered table-striped table-hover\""
+                . "style=\"direction: rtl;text-align: center\">" .
+                "<thead>
+           <tr>
+                                            <th>برند</th>
+                                            <th>سال ساخت</th>
+                                            <th>کارکرد</th>
+                                            <th>نوع آگهی</th>
+                                            <th>قیمت</th>
+                                            <th>رنگ</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                        <td>{{$car->brand}}</td>
+                                        <td>{{$car->year}}</td>
+                                        <td>{{$car->sunation}}</td>
+                                        <td>
+                                        @if($car->type==0)
+                                        {{'فروشی'}}
+                                        @else
+                                        {{'درخواستی'}}
+                                        @endif
+                                        </td>
+                                        <td>{{$car->fee}}</td>
+                                        <td>{{$car->color}}</td>
+        </tr>
+
+                                        </tbody>";
+        }
+
+    }
+
+    public static function modalstate($id)
+    {
+        $state = Estate::where('advert_id', $id)->first();
+        if ($state) {
+            echo "<table class=\"table table-bordered table-striped table-hover\""
+                . "style=\"direction: rtl;text-align: center\">" .
+                "<thead>
+   <tr>
+                                    <th>شماره آگهی</th>
+                                    <th>موضوع آگهی</th>
+                                    <th>ایمیل</th>
+                                    <th>شماره موبایل</th>
+                                    <th>شهر</th>
+                                    <th>نوع آگهی</th>
+                                    <th>وضعیت</th>
+                                    <th>حإف</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr></tr>
+                                </tbody>";
 
 
+        }
+    }
 }
+
 
 ?>
 

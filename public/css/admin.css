@@ -79,7 +79,7 @@ li {
     width: 254px;
     top: 0px;
     right: -16px;
-    z-index: 25;
+
     border: 1px solid #cccccc;
 }
 
@@ -131,7 +131,6 @@ a:hover {
     background-color: #eeeeee;
     right: 0;
     width: 98%;
-    position: ;
     margin-top: -22px;
     transition: all 200ms linear;
     text-align: center;
@@ -245,8 +244,9 @@ section.col-lg-4 {
     padding-top: 5px;
     font-size: 18px;
 }
-.card-header{
-    border-radius: 4px!important;
+
+.card-header {
+    border-radius: 4px !important;
 }
 
 a {
@@ -256,6 +256,7 @@ a {
 .form-control {
     font-size: 14px;
 }
-.panel-body{
-    padding-top: 10px   ;
+
+.panel-body {
+    padding-top: 10px;
 }

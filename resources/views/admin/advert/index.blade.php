@@ -1,3 +1,8 @@
+<?php
+
+use App\HelperFunction\Helper;
+
+?>
 @extends('layouts.adminLayouts')
 
 
@@ -39,7 +44,8 @@
                                     </thead>
                                     <tbody>
                                     @foreach($advert as $adverts)
-                                        <tr>
+                                        <tr style="cursor: pointer" data-toggle="modal"
+                                            data-target="#Modal{{$adverts->id}}">
                                             <td>{{$adverts->id}}</td>
 
                                             <td>{{$adverts->subject}}</td>
@@ -58,10 +64,11 @@
                                                     <i class="icon icon-ok-circle"
                                                        @click="set_status('{{$adverts->id}}')"
                                                        style="color: #0b2e13;cursor: pointer"></i>
-                                                @elseif($adverts->check==0)                                                <i
-                                                    class="icon icon-remove-circle"
-                                                    @click="set_status('{{$adverts->id}}')"
-                                                    style="color: red;cursor: pointer"></i>
+                                                @elseif($adverts->check==0)
+                                                    <i
+                                                        class="icon icon-remove-circle"
+                                                        @click="set_status('{{$adverts->id}}')"
+                                                        style="color: red;cursor: pointer"></i>
 
                                                 @endif
                                             </td>
@@ -101,5 +108,34 @@
 
         </ul>
 
+
+        <!-- Modal --><!-- Modal -->
+
+
     </div>
+    @foreach($advert as $adverts)
+
+        <div class="modal " id="Modal{{$adverts->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document" style="margin: 1.75rem 18% !important;">
+                <div class="modal-content" style="width: 900px !important;">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">{{$adverts->subject}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        {{Helper::modalcar($adverts->id)}}
+
+                        {{Helper::modalstate($adverts->id)}}
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    @endforeach
 @endsection
