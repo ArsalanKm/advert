@@ -49575,6 +49575,9 @@ var app = new Vue({
     code: "",
     price: "",
     cost: "",
+    cost1: "",
+    cost2: "",
+    cost3: "",
     OrderAdvertId: ""
   },
   mounted: function mounted() {
@@ -49592,13 +49595,20 @@ var app = new Vue({
     addorder: function addorder() {
       var price = $("#price2").val();
       var cost = $("#cost").val();
+      var cost1 = $("#cost1").val();
+      var cost2 = $("#cost2").val();
+      var cost3 = $("#cost3").val();
       var advert_id = $("#advert_id").val();
       axios.post('/addorder', {
         price: price,
         cost: cost,
+        cost1: cost1,
+        cost2: cost2,
+        cost3: cost3,
         advert_id: advert_id
       }).then(function (response) {
         console.log(response);
+        alert(response.data);
       });
     },
     verifyCode: function verifyCode() {

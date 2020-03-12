@@ -301,9 +301,10 @@ padding: 10px;">
                         <tbody>
                         <tr>
                             <td>
-                                @if($advert->check==1)
-                                <input type="checkbox"  id="check1">
-                                    @else
+                                {{--                                age tayid nashode bashe 0 --}}
+                                @if($advert->check==1 && $order->status==0)
+                                    <input type="checkbox" id="check1">
+                                @else
                                     <input type="checkbox" disabled>
                                 @endif
 
@@ -313,8 +314,14 @@ padding: 10px;">
                             </td>
                             <td>10000 تومان</td>
                             <td style="line-height: 3">
-                                <span class="btn btn-default "
-                                      style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                                @if($order->cost=='reorder' && $order->status==0)
+
+                                    <span class="btn btn-default "
+                                          style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                                @else
+                                    <span class="btn btn-default "
+                                          style="background: green;color: white;line-height: 11px;font-weight: bold">پرداخت شده</span>
+                                @endif
                             </td>
                             <td></td>
                             <td>
@@ -346,7 +353,7 @@ padding: 10px;">
                         <tr>
                             <td>
                                 @if($advert->check==1)
-                                    <input type="checkbox" id="check3" >
+                                    <input type="checkbox" id="check3">
                                 @else
                                     <input type="checkbox" disabled>
                                 @endif
@@ -372,7 +379,7 @@ padding: 10px;">
                         <tr>
                             <td>
                                 @if($advert->check==1)
-                                    <input type="checkbox"  id="check4">
+                                    <input type="checkbox" id="check4">
                                 @else
                                     <input type="checkbox" disabled>
                                 @endif                            </td>
@@ -403,7 +410,10 @@ padding: 10px;">
 
                         <input type="text" id="price2">
 
-                        <input type="text" id="cost">
+                        <input type="text" id="cost" v-model="cost">
+                        <input type="text" id="cost1" v-model="cost1">
+                        <input type="text" id="cost2" v-model="cost2">
+                        <input type="text" id="cost3" v-model="cost3">
                         <input type="text" id="advert_id" value="{{$advert->id}}">
                     </div>
                     <div style="text-align: right">

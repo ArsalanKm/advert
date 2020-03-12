@@ -63,6 +63,9 @@ const app = new Vue({
         code: "",
         price: "",
         cost: "",
+        cost1: "",
+        cost2: "",
+        cost3: "",
         OrderAdvertId: "",
 
 
@@ -86,12 +89,18 @@ const app = new Vue({
         addorder: function () {
             var price = $("#price2").val();
             var cost = $("#cost").val();
+            var cost1 = $("#cost1").val();
+            var cost2 = $("#cost2").val();
+            var cost3 = $("#cost3").val();
             var advert_id = $("#advert_id").val();
 
 
             axios.post('/addorder', {
                 price: price,
                 cost: cost,
+                cost1: cost1,
+                cost2: cost2,
+                cost3: cost3,
                 advert_id: advert_id,
 
             }).then((response) => {

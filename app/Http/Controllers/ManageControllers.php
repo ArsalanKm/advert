@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Estate;
+use App\Order;
 use Illuminate\Http\Request;
 use App\Advert;
 use App\Image;
@@ -17,8 +18,10 @@ class ManageControllers extends Controller
 
         $advert = Advert::find($id);
         $category = Category::find($category_id);
+        $order = Order::where('advert_id', $id)->first();
+
         return view('manage',
-            ['advert' => $advert, 'id' => $id, 'category' => $category,
+            ['order' => $order, 'advert' => $advert, 'id' => $id, 'category' => $category,
                 'category_id' => $category_id]);
 
     }
