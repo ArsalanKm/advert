@@ -68,6 +68,8 @@ Route::post("/addorder", "OrderControllers@addorder");
 /* this route is for dargah it does not have csrfToken
 we have to put this directory in VerifyCsrfToken */
 Route::post("/buyback", 'OrderControllers@buyback');
+/* show advert*/
+Route::get('/{city}','ShowControllers@index');
 
 
 

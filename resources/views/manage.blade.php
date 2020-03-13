@@ -301,11 +301,16 @@ padding: 10px;">
                         <tbody>
                         <tr>
                             <td>
-                                {{--                                age tayid nashode bashe 0 --}}
-                                @if($advert->check==1 && $order->status==0)
-                                    <input type="checkbox" id="check1">
-                                @else
-                                    <input type="checkbox" disabled>
+                                {{--age tayid nashode bashe 0 --}}
+                                @if($advert->check==1)
+                                    @if($order && $order->status==1)
+                                        <input type="checkbox" disabled>
+
+                                    @else
+
+                                        <input type="checkbox" id="check1">
+
+                                    @endif
                                 @endif
 
                             </td>
@@ -314,14 +319,16 @@ padding: 10px;">
                             </td>
                             <td>10000 تومان</td>
                             <td style="line-height: 3">
-                                @if($order->cost=='reorder' && $order->status==0)
+
+                                @if($order &&$order->cost=='reorder' && $order->status==1)
 
                                     <span class="btn btn-default "
-                                          style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                                          style="background: green;color: white;line-height: 11px;font-weight: bold">پرداخت شده</span>
                                 @else
                                     <span class="btn btn-default "
-                                          style="background: green;color: white;line-height: 11px;font-weight: bold">پرداخت شده</span>
+                                          style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
                                 @endif
+
                             </td>
                             <td></td>
                             <td>
@@ -332,7 +339,16 @@ padding: 10px;">
                         <tr>
                             <td>
 
-                                <input type="checkbox" id="check2">
+                                @if($advert->check==1)
+                                    @if($order && $order->status==1)
+                                        <input type="checkbox" disabled>
+
+                                    @else
+
+                                        <input type="checkbox" id="check2">
+
+                                    @endif
+                                @endif
                             </td>
                             <td>
                                 <span id="urgent"></span>فوری
@@ -341,8 +357,14 @@ padding: 10px;">
 
                             <td>6000 تومان</td>
                             <td style="line-height: 3">
-                                <span class="btn btn-default"
-                                      style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                                @if($order &&$order->cost1=='urgent' && $order->status==1)
+
+                                    <span class="btn btn-default "
+                                          style="background: green;color: white;line-height: 11px;font-weight: bold">پرداخت شده</span>
+                                @else
+                                    <span class="btn btn-default "
+                                          style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                                @endif
                             </td>
                             <td></td>
                             <td>
@@ -353,9 +375,14 @@ padding: 10px;">
                         <tr>
                             <td>
                                 @if($advert->check==1)
-                                    <input type="checkbox" id="check3">
-                                @else
-                                    <input type="checkbox" disabled>
+                                    @if($order && $order->status==1)
+                                        <input type="checkbox" disabled>
+
+                                    @else
+
+                                        <input type="checkbox" id="check3">
+
+                                    @endif
                                 @endif
                             </td>
 
@@ -367,8 +394,14 @@ padding: 10px;">
 
                             <td>10000 تومان</td>
                             <td style="line-height: 3">
-                                <span class="btn btn-default"
-                                      style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                                @if($order &&$order->cost2=='urgent_reorder' && $order->status==1)
+
+                                    <span class="btn btn-default "
+                                          style="background: green;color: white;line-height: 11px;font-weight: bold">پرداخت شده</span>
+                                @else
+                                    <span class="btn btn-default "
+                                          style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                                @endif
                             </td>
                             <td></td>
                             <td>
@@ -379,10 +412,15 @@ padding: 10px;">
                         <tr>
                             <td>
                                 @if($advert->check==1)
-                                    <input type="checkbox" id="check4">
-                                @else
-                                    <input type="checkbox" disabled>
-                                @endif                            </td>
+                                    @if($order && $order->status==1)
+                                        <input type="checkbox" disabled>
+
+                                    @else
+
+                                        <input type="checkbox" id="check4">
+
+                                    @endif
+                                @endif                        </td>
 
                             <td>
                                 <span id="renew"></span>
@@ -392,8 +430,14 @@ padding: 10px;">
 
                             <td>1000 تومان</td>
                             <td style="line-height: 3">
-                                <span class="btn btn-default"
-                                      style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                                @if($order &&$order->cost3=='renew' && $order->status==1)
+
+                                    <span class="btn btn-default "
+                                          style="background: green;color: white;line-height: 11px;font-weight: bold">پرداخت شده</span>
+                                @else
+                                    <span class="btn btn-default "
+                                          style="background: gray;color: white;line-height: 11px;font-weight: bold">پرداخت نشده</span>
+                                @endif
                             </td>
                             <td></td>
                             <td>
@@ -410,11 +454,11 @@ padding: 10px;">
 
                         <input type="text" id="price2">
 
-                        <input type="text" id="cost" v-model="cost">
-                        <input type="text" id="cost1" v-model="cost1">
-                        <input type="text" id="cost2" v-model="cost2">
-                        <input type="text" id="cost3" v-model="cost3">
-                        <input type="text" id="advert_id" value="{{$advert->id}}">
+                        <input type="hidden" id="cost" v-model="cost">
+                        <input type="hidden" id="cost1" v-model="cost1">
+                        <input type="hidden" id="cost2" v-model="cost2">
+                        <input type="hidden" id="cost3" v-model="cost3">
+                        <input type="hidden" id="advert_id" value="{{$advert->id}}">
                     </div>
                     <div style="text-align: right">
                         <a href="/order/{{$advert->id}}" class="btn btn-success"
