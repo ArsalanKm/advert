@@ -49578,13 +49578,25 @@ var app = new Vue({
     cost1: "",
     cost2: "",
     cost3: "",
-    OrderAdvertId: ""
+    OrderAdvertId: "",
+    advert: ""
   },
   mounted: function mounted() {
     this.getcategory();
+    this.getadvert();
     $(".send-advert3").hide();
   },
   methods: {
+    /**show advert function**/
+    getadvert: function getadvert() {
+      var _this = this;
+
+      axios.get('/showadvert').then(function (response) {
+        _this.advert = response.data;
+        console.log(response.data);
+      });
+    },
+
     /********verify code*/
     // hide_menu: function () {
     //     $(".home_page").fadeOut(1000);
@@ -49608,7 +49620,6 @@ var app = new Vue({
         advert_id: advert_id
       }).then(function (response) {
         console.log(response);
-        alert(response.data);
       });
     },
     verifyCode: function verifyCode() {
@@ -49649,12 +49660,12 @@ var app = new Vue({
       });
     },
     send_advert2: function send_advert2(id) {
-      var _this = this;
+      var _this2 = this;
 
       axios.post('/send_advert2', {
         id: id
       }).then(function (response) {
-        _this.category = response.data;
+        _this2.category = response.data;
         $(".send-advert2").hide();
         $(".sub_heading").hide();
         $(".send-advert").hide();
@@ -49666,13 +49677,13 @@ var app = new Vue({
 
     /********* SendCategorie**********/
     Sendsubcats: function Sendsubcats(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.post('/subcats', {
         id: id
       }).then(function (response) {
         console.log(response.data);
-        _this2.menu = response.data;
+        _this3.menu = response.data;
         $(".send-advert1").hide();
         $(".send-advert2").toggle();
       });
@@ -49680,27 +49691,27 @@ var app = new Vue({
         id: id
       }).then(function (response) {
         console.log(response.data);
-        _this2.catmenus = response.data; // $(".send-advert1").hide();
+        _this3.catmenus = response.data; // $(".send-advert1").hide();
 
         $(".sub_heading").toggle();
       });
     },
     SendAdvert: function SendAdvert(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       axios.post('/parent', {
         id: id
       }).then(function (response) {
         console.log(response.data);
-        _this3.advertcat = response.data;
+        _this4.advertcat = response.data;
         $(".send-advert").hide();
         $(".send-advert1").toggle();
-        console.log(_this3.advertcat);
+        console.log(_this4.advertcat);
       });
       axios.post('/Sendsubmenu', {
         id: id
       }).then(function (response) {
-        _this3.submenus = response.data;
+        _this4.submenus = response.data;
         $(".send-advert").hide();
       })["catch"](function (error) {
         alert('not ok');
@@ -49719,11 +49730,11 @@ var app = new Vue({
       });
     },
     getcategory: function getcategory() {
-      var _this4 = this;
+      var _this5 = this;
 
       axios.get('/admin/getcategories').then(function (response) {
-        _this4.categories = response.data;
-        console.log(_this4.categories);
+        _this5.categories = response.data;
+        console.log(_this5.categories);
       })["catch"](function (error) {
         console.log(error);
       });

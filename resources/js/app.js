@@ -67,11 +67,15 @@ const app = new Vue({
         cost2: "",
         cost3: "",
         OrderAdvertId: "",
+        advert: "",
 
 
     },
+
+
     mounted: function () {
         this.getcategory();
+        this.getadvert();
         $(".send-advert3").hide();
 
     },
@@ -79,6 +83,15 @@ const app = new Vue({
 
     methods: {
 
+
+        /**show advert function**/
+        getadvert: function () {
+            axios.get('/showadvert').then(response => {
+                this.advert = response.data;
+
+                console.log(response.data);
+            });
+        },
         /********verify code*/
 
         // hide_menu: function () {

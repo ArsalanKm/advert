@@ -69,7 +69,9 @@ Route::post("/addorder", "OrderControllers@addorder");
 we have to put this directory in VerifyCsrfToken */
 Route::post("/buyback", 'OrderControllers@buyback');
 /* show advert*/
-Route::get('/{city}','ShowControllers@index');
+Route::get('/advert/{city}','ShowControllers@index');
+
+Route::get("/showadvert", 'ShowControllers@showadvert');
 
 
 

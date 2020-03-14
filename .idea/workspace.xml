@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="I finished session 143 and today 22 esfand i should finished until 145 par">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ShowControllers.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
+    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="session 144 finished and I finished the conditions in manage.blade.php and now  we are going to create show.blade.php">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdvertControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdvertControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShowControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShowControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +21,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -136,18 +153,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\advert\public\css" />
+      <recent name="C:\xampp\htdocs\advert\resources\js" />
+      <recent name="C:\xampp\htdocs\advert\public\fonts" />
+      <recent name="C:\xampp\htdocs\advert\public\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\advert\public" />
       <recent name="C:\xampp\htdocs\advert\resources\views\layouts" />
       <recent name="C:\xampp\htdocs\advert\resources" />
       <recent name="C:\xampp\htdocs\advert\resources\assets" />
       <recent name="C:\xampp\htdocs\advert\resources\views\admin" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\advert\public\css" />
-      <recent name="C:\xampp\htdocs\advert\resources\js" />
-      <recent name="C:\xampp\htdocs\advert\public\fonts" />
-      <recent name="C:\xampp\htdocs\advert\public\js" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -195,7 +212,9 @@
       <workItem from="1583949423784" duration="7222000" />
       <workItem from="1584000496641" duration="13148000" />
       <workItem from="1584038569503" duration="730000" />
-      <workItem from="1584080435520" duration="4228000" />
+      <workItem from="1584080435520" duration="10698000" />
+      <workItem from="1584171423888" duration="95000" />
+      <workItem from="1584171591983" duration="12031000" />
     </task>
     <task id="LOCAL-00001" summary="I have a bug in displaying the advert information all of the adverts shown insntead of one advert">
       <created>1584000611258</created>
@@ -218,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584029537478</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="session 144 finished and I finished the conditions in manage.blade.php and now  we are going to create show.blade.php">
+      <created>1584084776660</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1584084776660</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,17 +278,18 @@
     <MESSAGE value="I have a bug in displaying the advert information all of the adverts shown insntead of one advert" />
     <MESSAGE value="dar safheye ertegha ba har tik mablagho morede nazar ezafe mishavad" />
     <MESSAGE value="I finished session 143 and today 22 esfand i should finished until 145 par" />
-    <option name="LAST_COMMIT_MESSAGE" value="I finished session 143 and today 22 esfand i should finished until 145 par" />
+    <MESSAGE value="session 144 finished and I finished the conditions in manage.blade.php and now  we are going to create show.blade.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="session 144 finished and I finished the conditions in manage.blade.php and now  we are going to create show.blade.php" />
   </component>
   <component name="WindowStateProjectService">
     <state x="105" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583760681499">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="105" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583760681499" />
-    <state x="424" y="7" key="CommitChangelistDialog2" timestamp="1584029534399">
+    <state x="424" y="7" key="CommitChangelistDialog2" timestamp="1584084773276">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="424" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584029534399" />
+    <state x="424" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584084773276" />
     <state x="187" y="232" key="NewPhpClassDialog" timestamp="1583761835778">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -279,13 +306,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="477" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583650221915" />
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584173401030">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="578" y="329" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1584173401030" />
     <state x="44" y="193" key="run.anything.popup" timestamp="1583953321603">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="44" y="193" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1583953321603" />
-    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1583654215127">
+    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1584173400826">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583654215127" />
+    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1584173400826" />
   </component>
 </project>

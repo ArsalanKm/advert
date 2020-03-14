@@ -122,6 +122,7 @@ class AdvertControllers extends Controller
             $temp = new Image();
             $temp->image = $image;
             $temp->advert_id = $ad->id;
+            $temp->advert_id = $ad->id;
 
             if ($temp->save()) {
                 // we are sending to route
