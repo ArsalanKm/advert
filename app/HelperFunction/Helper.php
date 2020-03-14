@@ -98,14 +98,14 @@ class Helper
 
         if ($car) {
 
-            if($car->type==1){
+            if($car->type==0){
 
                 $type="<span style='color: green;'>فروشی</span>";
 
-            }elseif ($car->type==2){
+            }elseif ($car->type==1){
                 $type="<span style='color: darkred;'>اجاره ای</span>";
 
-            }elseif ($car->type==3) {
+            }elseif ($car->type==2) {
                 $type="<span style='color: red;'>درخواستی</span>";
 
 
@@ -165,6 +165,7 @@ class Helper
 
     public  static function modalstate($id)
     {
+
 
         $advert = Estate::where('advert_id', $id)->first();
 

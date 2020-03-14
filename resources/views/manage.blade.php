@@ -258,12 +258,12 @@ use App\HelperFunction\Helper;
 
                             <div class="slider" style="overflow: hidden">
 
-                                {{Helper::Image($id)}}
+                                {{Helper::Image($advert->id)}}
 
                             </div>
                             <ul id="nav_item">
 
-                                {{Helper::images($id)}}
+                                {{Helper::images($advert->id)}}
 
 
                             </ul>

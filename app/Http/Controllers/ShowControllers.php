@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Advert;
+use Hekmatinasser\Verta\Verta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

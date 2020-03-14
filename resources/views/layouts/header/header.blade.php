@@ -115,9 +115,14 @@
         margin-top: 10px;
     }
 
-   .modal-body .button:hover {
+    .modal-body .button:hover {
         color: white !important;
         background-color: #c00c1a;
+    }
+    #sendAdvert:hover{
+        color: white !important;
+        line-height: 20px;
+
     }
 
 
@@ -130,10 +135,10 @@
         <link rel="stylesheet" type="text/css" href="/css/app.css">
         <link rel="stylesheet" type="text/css" href="/css/fontawesome.min.css">
         <link rel="stylesheet" type="text/css" href="/font-awesome/css/font-awesome.css">
-        <button type="button" class="btn btn-danger">
+        <a href="/advert" type="button" class="btn btn-danger" id="sendAdvert">
             ارسال رایگان آگهی
 
-        </button>
+        </a>
     </div>
     <div class="link">
         <a href="">

@@ -10,7 +10,7 @@ use App\Advert;
 use Illuminate\Support\Facades\Redirect;
 use Kavenegar;
 use function PHPSTORM_META\type;
-
+use Hekmatinasser\Verta\Verta;
 
 class AdvertControllers extends Controller
 {
@@ -41,7 +41,7 @@ class AdvertControllers extends Controller
         $text = $request->text;
 // agahiye darkhasti ya eraeyi
         $typeAdvert = $request->TypeAdvert;
-
+        $date = Verta::now();
 
 
         /* this is for saving in the Estate table in the Database*/
@@ -65,6 +65,7 @@ class AdvertControllers extends Controller
         $ad->category_id = $advert_id;
 
         $ad->text = $text;
+        $ad->date = $date;
 
         $ad->mobile = $mobile;
         $ad->code = rand(10000, 99999);
@@ -113,7 +114,7 @@ class AdvertControllers extends Controller
             $advert->typeAdvert = $Advertiser;
 
             $advert->advert_id = $ad->id;
-            $advert->advertiser=$Advertiser;
+            $advert->advertiser = $Advertiser;
 
 
             ($advert->save());
@@ -201,34 +202,35 @@ class AdvertControllers extends Controller
         $ad->text = $text;
         $ad->mobile = $mobile;
         $ad->code = rand(10000, 99999);
+        $ad->date=Verta::now();
 
 
         if ($ad->save()) {
-//            try {
-//                $api = new \Kavenegar\KavenegarApi("5671714B5377432B5849577563654861325077422B5A6E51762B4F306A6B41474E6949696C4A6E7A426F6F3D");
-//                $sender = "10004346";
-//                $message = "ارسلان بهترین برنامه نویس کد تایید :  " . $ad->code;
-//                $receptor = $mobile;
-//                $result = $api->Send($sender, $receptor, $message);
-//                if ($result) {
-//                    foreach ($result as $r) {
-//                        echo "messageid = $r->messageid";
-//                        echo "message = $r->message";
-//                        echo "status = $r->status";
-//                        echo "statustext = $r->statustext";
-//                        echo "sender = $r->sender";
-//                        echo "receptor = $r->receptor";
-//                        echo "date = $r->date";
-//                        echo "cost = $r->cost";
-//                    }
-//                }
-//            } catch (\Kavenegar\Exceptions\ApiException $e) {
-//                // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
-//                echo $e->errorMessage();
-//            } catch (\Kavenegar\Exceptions\HttpException $e) {
-//                // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
-//                echo $e->errorMessage();
-//            }
+            try {
+                $api = new \Kavenegar\KavenegarApi("5671714B5377432B5849577563654861325077422B5A6E51762B4F306A6B41474E6949696C4A6E7A426F6F3D");
+                $sender = "10004346";
+                $message = "ارسلان بهترین برنامه نویس کد تایید :  " . $ad->code;
+                $receptor = $mobile;
+                $result = $api->Send($sender, $receptor, $message);
+                if ($result) {
+                    foreach ($result as $r) {
+                        echo "messageid = $r->messageid";
+                        echo "message = $r->message";
+                        echo "status = $r->status";
+                        echo "statustext = $r->statustext";
+                        echo "sender = $r->sender";
+                        echo "receptor = $r->receptor";
+                        echo "date = $r->date";
+                        echo "cost = $r->cost";
+                    }
+                }
+            } catch (\Kavenegar\Exceptions\ApiException $e) {
+                // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
+                echo $e->errorMessage();
+            } catch (\Kavenegar\Exceptions\HttpException $e) {
+                // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
+                echo $e->errorMessage();
+            }
 
 
             $car = new Car();
@@ -243,8 +245,8 @@ class AdvertControllers extends Controller
             $car->advert_id = $ad->id;
 
             if ($car->save()) {
-                if ($request->image != null)
-                    echo $image = implode(',', $request->images);
+                if ($request->images != null)
+                     $image = implode(',', $request->images);
                 else {
                     $image = null;
                 }
@@ -329,13 +331,13 @@ class AdvertControllers extends Controller
     public function verifyCode(Request $request)
 
     {
-        $code=$request->code;
-        $db_code=Advert::where('code',$code)->update([
-            'status'=>1,
+        $code = $request->code;
+        $db_code = Advert::where('code', $code)->update([
+            'status' => 1,
 
         ]);
 
-        if($db_code)
+        if ($db_code)
             return "yes";
         else return "no";
 

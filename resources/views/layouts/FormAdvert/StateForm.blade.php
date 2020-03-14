@@ -278,7 +278,7 @@
 </form>
 
 
-<form action="/addimage" method="post" class="dropzone" id="dropzone5"
+<form action="/addimage" method="post" class="dropzone" id="dropzone"
       style="position: absolute;float: right;top: 14%;width: 93%;right: 3%;">
     {{csrf_field()}}
     {{--<input type="file" name="file" />--}}

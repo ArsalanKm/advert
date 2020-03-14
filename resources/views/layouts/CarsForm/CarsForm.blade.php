@@ -11,8 +11,16 @@
 
                 <select name="city" id="" style="" class="city_select">
 
-                    <option value="" class="form-control">
+                    <option value="ساری" class="form-control">
+                        ساری
+                    </option>
 
+                    <option value="بابل" class="form-control">
+                        بابل
+                    </option>
+
+                    <option value="مازندران" class="form-control">
+                        مارندران
                     </option>
                 </select>
 
@@ -192,7 +200,7 @@
         </div>
         <div class="col-lg-8" style="float: left;margin-top: 60px">
             <div class="form-group">
-                <input type="text" name="fee" value="" disabled="disabled" style="width: 100%">
+                <input type="text" name="fee" value="" style="width: 100%">
             </div>
         </div>
 
@@ -372,7 +380,7 @@
 
 
 <form action="/addimage" method="post" class="dropzone" id="dropzone1"
-      style="position: absolute;float: right;top: 14%;width: 93%;right: 3%;">
+      style="position: absolute;float: right;top: 12%;width: 93%;right: 3%;">
     {{csrf_field()}}
 
 </form>

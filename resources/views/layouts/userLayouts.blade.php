@@ -125,7 +125,7 @@
 
         success: function (file, response) {
             $("#boatAddForm1").append(('<input type="text" ' +
-                'name="images[]" ' +
+                'name="images[1]" ' +
                 'value="' + response + '"  >'));
 
         }
