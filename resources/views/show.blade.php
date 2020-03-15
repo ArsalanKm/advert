@@ -65,7 +65,7 @@
 
             <div class="show_adverts_content col-lg-12">
                 <ul class="show_ad">
-                    <li v-for="adverts in advert">
+                    <li v-for="adverts in advert" v-if="adverts.city=='{{$city}}'">
                         <div class="advert_subject">
                             <h5>
                                 @{{adverts.subject}}
@@ -133,6 +133,11 @@
                         </div>
 
                     </li>
+                    <infinite-loading  @infinite="infiniteHandler">
+                        <span slot="no-more">
+                            I am CeO Bitches!!!!!
+                        </span>
+                    </infinite-loading>
                 </ul>
             </div>
 

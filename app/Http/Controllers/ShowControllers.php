@@ -13,7 +13,7 @@ class ShowControllers extends Controller
     public function index($city)
     {
         $advert =  $this->joinTables();
-        return view('show', ['advert' => $advert]);
+        return view('show', ['advert' => $advert,'city'=>$city]);
     }
 
     public function showadvert()
@@ -30,7 +30,7 @@ class ShowControllers extends Controller
             ->leftjoin('images', 'adverts.Id', '=', 'images.advert_id')
             ->leftjoin('estates', 'adverts.Id', '=', 'estates.advert_id')
             ->leftjoin('cars', 'adverts.Id', '=', 'cars.advert_id')
-            ->get();
+            ->paginate(3);
         return $advert;
     }
 }

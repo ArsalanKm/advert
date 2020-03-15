@@ -3,10 +3,13 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+
 require('./bootstrap');
 
 window.Vue = require('vue');
 import swal from 'sweetalert';
+// import InfiniteLoading from "vue-infinite-loading";
+Vue.use(require('vue-infinite-loading'));
 
 /**
  * The following block of code may be used to automatically register your
@@ -67,7 +70,8 @@ const app = new Vue({
         cost2: "",
         cost3: "",
         OrderAdvertId: "",
-        advert: "",
+        advert: [],
+        page: 1,
 
 
     },
@@ -87,11 +91,36 @@ const app = new Vue({
         /**show advert function**/
         getadvert: function () {
             axios.get('/showadvert').then(response => {
-                this.advert = response.data;
+                this.advert = response.data.data;
 
-                console.log(response.data);
+                console.log(response.data.data);
             });
         },
+
+        infiniteHandler: function ($state) {
+
+            let limit = this.advert.length / 6 + 2;
+            axios.get('/showadvert', {params: {page: limit}}).then(response => {
+                this.loadMore($state, response);
+            });
+        },
+        loadMore: function ($state, response) {
+            if (response.data.data.length) {
+                this.advert = this.advert.concat(response.data.data);
+                setTimeout(() => {
+                    $state.loaded();
+                },3000);
+                    if(response.data.total==this.advert.length){
+                        $state.complete();
+                    }
+            }else{
+                $state.complete();
+
+            }
+
+
+        },
+
         /********verify code*/
 
         // hide_menu: function () {
