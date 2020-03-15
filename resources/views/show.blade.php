@@ -1,6 +1,9 @@
 @extends('layouts.userLayouts')
 
 @section('content')
+    <?php
+
+    use Hekmatinasser\Verta\Verta;    ?>
     <div id="app">
 
         <aside>
@@ -81,9 +84,16 @@
 
                         </div>
                         <div class="advert_date">
-                                <span style="color: #cccccc">
-                                    دقایقی پیش
+                            <?php
+                            $dt = new \DateTime();
+
+                            $v = new Verta($dt);
+                            ?>
+                            @foreach($advert as $adverts)
+                                <span v-if="adverts.Id=='{{$adverts->Id}}'">
+                            {{  $v->formatDifference(Verta::parse($adverts->date))}}
                                 </span>
+                            @endforeach
                         </div>
                         <div class="advert_chat">
                             <span class="chatbtn" v-if="adverts.chat==1">
@@ -91,11 +101,12 @@
                                     جت
                                 </p>
                             </span>
-                                <span v-else>
+                            <span v-else>
 
                                 </span>
                         </div>
                         <div class="advert_price">
+
                             <span v-if="adverts.typeAdvert==0">
                             <p style="text-align: right;padding-right: 10px;float: right">
 
@@ -110,6 +121,14 @@
 
                                 @{{adverts.deposit}}  :قیمت رهن
                             </p>
+
+                            </span>
+                            {{--                            <p>@{{ adverts }}</p>--}}
+                            <span v-if="adverts.advert_id==adverts.Id">
+                            <p style="text-align: right;padding-right: 10px;float: right">
+                                :قیمت کل
+
+                                @{{ adverts.fee }}</p>
                             </span>
                         </div>
 

@@ -12,18 +12,25 @@ class ShowControllers extends Controller
 
     public function index($city)
     {
-
-        return view('show');
+        $advert =  $this->joinTables();
+        return view('show', ['advert' => $advert]);
     }
 
     public function showadvert()
 
     {
-        $advert = DB::table('adverts')
-            ->leftjoin('images', 'adverts.id', '=', 'images.advert_id')
-            ->leftjoin('estates', 'adverts.id', '=', 'estates.advert_id')
-            ->get();
+        $advert =  $this->joinTables();
 
         return ($advert);
+    }
+
+    public function joinTables()
+    {
+        $advert = DB::table('adverts')
+            ->leftjoin('images', 'adverts.Id', '=', 'images.advert_id')
+            ->leftjoin('estates', 'adverts.Id', '=', 'estates.advert_id')
+            ->leftjoin('cars', 'adverts.Id', '=', 'cars.advert_id')
+            ->get();
+        return $advert;
     }
 }

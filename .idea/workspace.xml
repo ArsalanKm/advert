@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="session 150 finished successfully and design of the adverts in city page finished almost">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_14_135938_create_adverts_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1584195646.Capture.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1584196127.Capture.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1584197029.x.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1584197188.m.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1584197734.x.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1584197848.Capture.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/1584198117.Capture.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/advert.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/advert.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="bug fixed in add Estate and Car adverts and both of them worth awesome now, showing the adverts of city work well.tomorrow I will want to add date to boxes in show.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/HelperFunction/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/HelperFunction/Helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdvertControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdvertControllers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShowControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShowControllers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/CarsForm/CarsForm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/CarsForm/CarsForm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/FormAdvert/StateForm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/FormAdvert/StateForm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/userLayouts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/userLayouts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manage.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,18 +151,18 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\advert\public\css" />
-      <recent name="C:\xampp\htdocs\advert\resources\js" />
-      <recent name="C:\xampp\htdocs\advert\public\fonts" />
-      <recent name="C:\xampp\htdocs\advert\public\js" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\advert\public" />
       <recent name="C:\xampp\htdocs\advert\resources\views\layouts" />
       <recent name="C:\xampp\htdocs\advert\resources" />
       <recent name="C:\xampp\htdocs\advert\resources\assets" />
       <recent name="C:\xampp\htdocs\advert\resources\views\admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\advert\public\css" />
+      <recent name="C:\xampp\htdocs\advert\resources\js" />
+      <recent name="C:\xampp\htdocs\advert\public\fonts" />
+      <recent name="C:\xampp\htdocs\advert\public\js" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -230,7 +212,8 @@
       <workItem from="1584038569503" duration="730000" />
       <workItem from="1584080435520" duration="10698000" />
       <workItem from="1584171423888" duration="95000" />
-      <workItem from="1584171591983" duration="17827000" />
+      <workItem from="1584171591983" duration="17986000" />
+      <workItem from="1584259341709" duration="5534000" />
     </task>
     <task id="LOCAL-00001" summary="I have a bug in displaying the advert information all of the adverts shown insntead of one advert">
       <created>1584000611258</created>
@@ -267,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584185507580</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="bug fixed in add Estate and Car adverts and both of them worth awesome now, showing the adverts of city work well.tomorrow I will want to add date to boxes in show.">
+      <created>1584199491071</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1584199491071</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,17 +293,22 @@
     <MESSAGE value="I finished session 143 and today 22 esfand i should finished until 145 par" />
     <MESSAGE value="session 144 finished and I finished the conditions in manage.blade.php and now  we are going to create show.blade.php" />
     <MESSAGE value="session 150 finished successfully and design of the adverts in city page finished almost" />
-    <option name="LAST_COMMIT_MESSAGE" value="session 150 finished successfully and design of the adverts in city page finished almost" />
+    <MESSAGE value="bug fixed in add Estate and Car adverts and both of them worth awesome now, showing the adverts of city work well.tomorrow I will want to add date to boxes in show." />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixed in add Estate and Car adverts and both of them worth awesome now, showing the adverts of city work well.tomorrow I will want to add date to boxes in show." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="138" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584261705504">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="138" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1584261705504" />
     <state x="105" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1583760681499">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="105" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583760681499" />
-    <state x="320" y="7" key="CommitChangelistDialog2" timestamp="1584185502462">
+    <state x="0" y="7" key="CommitChangelistDialog2" timestamp="1584266691102">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="320" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584185502462" />
+    <state x="0" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584266691102" />
     <state x="187" y="232" key="NewPhpClassDialog" timestamp="1583761835778">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
