@@ -73,6 +73,9 @@ Route::get('/city/{city}','ShowControllers@index');
 
 Route::get("/showadvert", 'ShowControllers@showadvert');
 
+Route::post("/show_cat","ShowControllers@show_cat");
+Route::get("/admin/mainCategories","CategoryControllers@mainCategories");
+
 
 
 

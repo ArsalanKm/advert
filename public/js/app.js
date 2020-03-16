@@ -49598,25 +49598,73 @@ var app = new Vue({
     cost3: "",
     OrderAdvertId: "",
     advert: [],
-    page: 1
+    page: 1,
+    Scategory: [],
+    Myid: "",
+    maincategoires: [],
+    SecondScategory: []
   },
   mounted: function mounted() {
     this.getcategory();
     this.getadvert();
+    this.getmaincategory();
     $(".send-advert3").hide();
   },
   methods: {
-    /**show advert function**/
-    getadvert: function getadvert() {
+    /* show categories in show advert*/
+    showCat: function showCat(id) {
       var _this = this;
 
+      axios.post('/show_cat', {
+        Myid: id
+      }).then(function (response) {
+        $('.mainCats').css("display", "none");
+        $('.SubCats').css("display", "block");
+        $('.dropdown-menu').css("display", "block");
+        _this.Scategory = response.data;
+        $.each(_this.Scategory, function (key, value) {
+          $('#title').text(value.name);
+        });
+      });
+    },
+    back: function back() {
+      $('.SubCats').css("display", "none");
+      $('.mainCats').css("display", "block");
+    },
+
+    /****show second subcategories in show advert****/
+    send_category: function send_category(id) {
+      var _this2 = this;
+
+      axios.post('/show_cat', {
+        Myid: id
+      }).then(function (response) {
+        _this2.SecondScategory = response.data;
+        $('.SubCats').css("display", "none");
+        $('.SecondSubCats').css("display", "block");
+        $('.dropdown-menu').css("display", "block");
+      });
+    },
+    back2: function back2() {
+      $('.SecondSubCats').css("display", "none");
+      $('.SubCats').css("display", "block");
+    },
+
+    /**show categories**/
+
+    /**show advert function**/
+    getadvert: function getadvert() {
+      var _this3 = this;
+
       axios.get('/showadvert').then(function (response) {
-        _this.advert = response.data.data;
+        _this3.advert = response.data.data;
         console.log(response.data.data);
       });
     },
+
+    /**************show advert function**************/
     infiniteHandler: function infiniteHandler($state) {
-      var _this2 = this;
+      var _this4 = this;
 
       var limit = this.advert.length / 6 + 2;
       axios.get('/showadvert', {
@@ -49624,7 +49672,7 @@ var app = new Vue({
           page: limit
         }
       }).then(function (response) {
-        _this2.loadMore($state, response);
+        _this4.loadMore($state, response);
       });
     },
     loadMore: function loadMore($state, response) {
@@ -49705,12 +49753,12 @@ var app = new Vue({
       });
     },
     send_advert2: function send_advert2(id) {
-      var _this3 = this;
+      var _this5 = this;
 
       axios.post('/send_advert2', {
         id: id
       }).then(function (response) {
-        _this3.category = response.data;
+        _this5.category = response.data;
         $(".send-advert2").hide();
         $(".sub_heading").hide();
         $(".send-advert").hide();
@@ -49722,13 +49770,13 @@ var app = new Vue({
 
     /********* SendCategorie**********/
     Sendsubcats: function Sendsubcats(id) {
-      var _this4 = this;
+      var _this6 = this;
 
       axios.post('/subcats', {
         id: id
       }).then(function (response) {
         console.log(response.data);
-        _this4.menu = response.data;
+        _this6.menu = response.data;
         $(".send-advert1").hide();
         $(".send-advert2").toggle();
       });
@@ -49736,27 +49784,27 @@ var app = new Vue({
         id: id
       }).then(function (response) {
         console.log(response.data);
-        _this4.catmenus = response.data; // $(".send-advert1").hide();
+        _this6.catmenus = response.data; // $(".send-advert1").hide();
 
         $(".sub_heading").toggle();
       });
     },
     SendAdvert: function SendAdvert(id) {
-      var _this5 = this;
+      var _this7 = this;
 
       axios.post('/parent', {
         id: id
       }).then(function (response) {
         console.log(response.data);
-        _this5.advertcat = response.data;
+        _this7.advertcat = response.data;
         $(".send-advert").hide();
         $(".send-advert1").toggle();
-        console.log(_this5.advertcat);
+        console.log(_this7.advertcat);
       });
       axios.post('/Sendsubmenu', {
         id: id
       }).then(function (response) {
-        _this5.submenus = response.data;
+        _this7.submenus = response.data;
         $(".send-advert").hide();
       })["catch"](function (error) {
         alert('not ok');
@@ -49774,12 +49822,21 @@ var app = new Vue({
         alert('not ok');
       });
     },
+    getmaincategory: function getmaincategory() {
+      var _this8 = this;
+
+      axios.get('/admin/mainCategories').then(function (response) {
+        _this8.maincategoires = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
     getcategory: function getcategory() {
-      var _this6 = this;
+      var _this9 = this;
 
       axios.get('/admin/getcategories').then(function (response) {
-        _this6.categories = response.data;
-        console.log(_this6.categories);
+        _this9.categories = response.data;
+        console.log(_this9.categories);
       })["catch"](function (error) {
         console.log(error);
       });

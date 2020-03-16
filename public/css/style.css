@@ -227,6 +227,12 @@ aside {
 
 }
 
+.filter_advert {
+    background: #f4f4f4;
+    height: auto;
+    margin-top: 20px;
+}
+
 .filter_advert ul {
     padding: 0;
     float: right;
@@ -242,14 +248,12 @@ aside {
 
 }
 
-section.col-lg-8 {
+#Top_filters {
     float: right;
-    background: #f4f4f4;
     margin-top: 20px;
-    border-radius: 4px;
     margin-right: 20px;
+    border-radius: 4px;
     border: 1px solid #f3eded;
-    height: 200px;
 }
 
 .switch {
@@ -327,7 +331,7 @@ input:checked + .slid:before {
 
 .show_adverts_content {
     float: right;
-    margin-top: 160px;
+    margin-top: 40px;
 }
 
 .show_ad li .advert_image {
@@ -379,4 +383,162 @@ input:checked + .slid:before {
     display: block;
     border-radius: 7px;
 }
+
+.mainCats option {
+    text-align: right;
+    padding-right: 20px;
+    border-bottom: 1px solid #eeeeee;
+    height: 40px;
+    padding-top: 8px;
+    cursor: pointer;
+}
+
+.SubCats {
+    display: block;
+    width: 371px;
+    height: 40px;
+}
+
+.SecondSubCats {
+    display: block;
+    width: 371px;
+    height: 40px;
+}
+
+.subCats li {
+    width: 100% !important;
+    text-align: right;
+    border-bottom: 1px solid #eeeeee;
+    padding-right: 10px;
+    padding-top: 10px;
+    line-height: 2.5;
+    cursor: pointer;
+    position: relative;
+}
+
+.subCats li h5 {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.subCats li i {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.SecondsubCats li {
+    width: 100% !important;
+    text-align: right;
+    border-bottom: 1px solid #eeeeee;
+    padding-right: 10px;
+    padding-top: 10px;
+    line-height: 2.5;
+    cursor: pointer;
+    position: relative;
+}
+
+.SecondsubCats li h5 {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.SecondsubCats li i {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+
+.dropdown-menu.show {
+    width: 100%;
+    margin: 1px !important;
+}
+
+#adverts_content {
+    float: right;
+    border-radius: 4px;
+    border: 1px solid #f3eded;
+    height: auto;
+    position: relative;
+    right: 14.255%;
+
+}
+
+#type {
+    padding: 0;
+    position: relative;
+    right: 70px;
+    top: 33px;
+}
+
+#type li {
+    width: 90px !important;
+    float: none;
+!important;
+    position: relative;
+}
+
+#type li input {
+    position: absolute;
+    right: 5px;
+}
+
+#type li label {
+    position: absolute;
+    right: 28px;
+}
+
+#Advertiser {
+    padding: 0;
+    position: relative;
+    right: 70px;
+    top: 33px;
+}
+
+#Advertiser li {
+    width: 90px !important;
+    float: none;
+!important;
+    position: relative;
+}
+
+#Advertiser li input {
+    position: absolute;
+    right: 5px;
+}
+
+#Advertiser li label {
+    position: absolute;
+    right: 28px;
+}
+
+
+#shahr {
+    padding: 0;
+    position: relative;
+    right: 70px;
+    top: 33px;
+}
+
+#shahr li {
+    width: 90px !important;
+    float: none;
+!important;
+    position: relative;
+}
+
+#shahr li input {
+    position: absolute;
+    right: 5px;
+}
+
+#shahr li label {
+    position: absolute;
+    right: 28px;
+}
+
+
 

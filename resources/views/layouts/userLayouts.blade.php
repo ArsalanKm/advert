@@ -161,6 +161,12 @@
         }
 
     };
+
+    $("#btn-default").click(function () {
+        $(".dropdown-menu").toggle();
+
+    });
+    /*function has bug**/
     $('.slider').cycle({
         fx: 'fade',
         speed: 'fast',

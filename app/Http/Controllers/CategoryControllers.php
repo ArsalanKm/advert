@@ -13,7 +13,7 @@ class CategoryControllers extends Controller
 
     {
         $data = Category::all();
-        return view('admin.category.index',['categories'=>$data]);
+        return view('admin.category.index', ['categories' => $data]);
     }
 
     public function addcategory(Request $request)
@@ -27,12 +27,19 @@ class CategoryControllers extends Controller
 
     public function getcategories()
     {
-      return  response()->json(Category::orderby('id','asc')->get());
+        return response()->json(Category::orderby('id', 'asc')->get());
 
     }
 
-    public function removecategory(Request $request){
-        $c=Category::find($request->id)->delete();
+    public function mainCategories()
+    {
+        return response()->json(Category::orderby('id', 'asc')->where('parent_id', 0)->get());
+
+    }
+
+    public function removecategory(Request $request)
+    {
+        $c = Category::find($request->id)->delete();
         return "ok";
     }
 }
