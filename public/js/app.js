@@ -49612,6 +49612,18 @@ var app = new Vue({
     $(".send-advert3").hide();
   },
   methods: {
+    makeFavorite: function makeFavorite() {
+      $('#Top_filters').hide();
+      $('#sidebar').hide();
+      $('#show').hide();
+      $('#mydivar').show();
+    },
+    back3: function back3() {
+      $('#show').hide();
+      $('#Top_filters').fadeIn(1000);
+      $('#sidebar').fadeIn(1000);
+    },
+
     /* showinf the specific app**/
     ShowAdvert: function ShowAdvert(id) {
       var _this = this;

@@ -92,7 +92,23 @@ const app = new Vue({
 
 
     methods: {
+        makeFavorite:function(){
 
+            $('#Top_filters').hide();
+            $('#sidebar').hide();
+            $('#show').hide();
+
+            $('#mydivar').show();
+        },
+
+        back3:function(){
+            $('#show').hide();
+
+            $('#Top_filters').fadeIn(1000);
+            $('#sidebar').fadeIn(1000);
+
+
+        },
         /* showinf the specific app**/
         ShowAdvert: function (id) {
             $('#Top_filters').hide();

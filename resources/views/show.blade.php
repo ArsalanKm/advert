@@ -320,7 +320,7 @@
 
         <div id="show" class="show col-lg-8">
             <div class="header col-lg-12">
-                <span class="backbtn col-lg-2">بازگشت</span>
+                <span class="backbtn col-lg-2" @click="back3()">بازگشت</span>
                 <span class="advertAddress col-lg-10">
                     همه ی آگهی ها
                 </span>
@@ -343,15 +343,15 @@
                         دریافت اطلاعات تماس
                     </a>
 
-                    <a class="StartChat" href="">
+                    <span class="StartChat" href="">
 
                         شروع چت
-                    </a>
+                    </span>
 
-                      <a class="makeFavorite" href="">
+                      <span style="cursor: pointer" class="makeFavorite" href="" @click="makeFavorite()">
 
                        نشان دار کردن
-                    </a>
+                    </span>
                 </div>
                 <div class="ad_info col-lg-12">
                     <ul>
@@ -543,6 +543,37 @@
             </span>
 
             </div>
+        </div>
+
+
+
+
+
+        <div id="mydivar">
+
+
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+                <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <h3>HOME</h3>
+                    <p>Some content.</p>
+                </div>
+                <div id="menu1" class="tab-pane fade">
+                    <h3>Menu 1</h3>
+                    <p>Some content in menu 1.</p>
+                </div>
+                <div id="menu2" class="tab-pane fade">
+                    <h3>Menu 2</h3>
+                    <p>Some content in menu 2.</p>
+                </div>
+            </div>
+
         </div>
 
 
