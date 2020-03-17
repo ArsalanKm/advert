@@ -225,8 +225,8 @@ use App\HelperFunction\Helper;
                                     </p>
                                 </li>
 
-                                {{Helper::Estate($id)}}
-                                {{Helper::Car($id)}}
+                                {{\App\HelperFunction\Helper::Estate($id)}}
+                                {{\App\HelperFunction\Helper::Car($id)}}
                             </ul>
 
 
@@ -256,14 +256,14 @@ use App\HelperFunction\Helper;
 
                         <div class="card" style="height:400px;">
 
-                            <div class="slider" style="overflow: hidden">
+                            <div class="slider" style="overflow:hidden ">
 
-                                {{Helper::Image($advert->id)}}
+                                {{\App\HelperFunction\Helper::Image($advert->Id)}}
 
                             </div>
                             <ul id="nav_item">
 
-                                {{Helper::images($advert->id)}}
+                                {{\App\HelperFunction\Helper::images($advert->Id)}}
 
 
                             </ul>
@@ -458,10 +458,10 @@ padding: 10px;">
                         <input type="hidden" id="cost1" v-model="cost1">
                         <input type="hidden" id="cost2" v-model="cost2">
                         <input type="hidden" id="cost3" v-model="cost3">
-                        <input type="hidden" id="advert_id" value="{{$advert->id}}">
+                        <input type="hidden" id="advert_id" value="{{$advert->Id}}">
                     </div>
                     <div style="text-align: right">
-                        <a href="/order/{{$advert->id}}" class="btn btn-success"
+                        <a href="/order/{{$advert->Id}}" class="btn btn-success"
                            id="pardakht" @click="addorder()">
                             {{csrf_field()}}
 
@@ -479,7 +479,7 @@ padding: 10px;">
                 <form action="/deleteadvert" method="post">
 
                     {{csrf_field()}}
-                    <input type="text" value="{{$advert->id}}" id="advert_id">
+                    <input type="text" value="{{$advert->Id}}" id="advert_id">
                     <input type="submit" value="حذف" class="btn btn-danger">
                 </form>
 

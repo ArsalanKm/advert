@@ -43,4 +43,14 @@ class ShowControllers extends Controller
 
         return response()->json($subcat);
     }
+
+    public function show(Request $request){
+        $advert = DB::table('adverts')->where('adverts.Id',$request->Myid)
+            ->leftjoin('images', 'adverts.Id', '=', 'images.advert_id')
+            ->leftjoin('estates', 'adverts.Id', '=', 'estates.advert_id')
+            ->leftjoin('cars', 'adverts.Id', '=', 'cars.advert_id')
+            ->leftjoin('categories', 'adverts.category_id', '=', 'categories.id')
+            ->get();
+        return $advert;
+    }
 }

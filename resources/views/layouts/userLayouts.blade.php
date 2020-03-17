@@ -167,6 +167,14 @@
 
     });
     /*function has bug**/
+    $('.slider2').cycle({
+        fx: 'fade',
+        speed: 'fast',
+        timeout: 1000,
+        pager: '#nav_item2',
+
+
+    });
     $('.slider').cycle({
         fx: 'fade',
         speed: 'fast',

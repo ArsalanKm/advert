@@ -6,7 +6,7 @@
     use Hekmatinasser\Verta\Verta;    ?>
     <div id="app">
 
-        <aside>
+        <aside id="sidebar">
             <div class="col-lg-2">
                 <div class="advert_header">همه ی آگهی ه
                     ا
@@ -20,6 +20,7 @@
                 </ul>
             </div>
         </aside>
+
 
         <section class="col-lg-8" id="Top_filters">
 
@@ -117,7 +118,7 @@
                             <select type="text" class="form-control" style="float: right">
                                 @for($i=1370;$i<=1398;$i++)
                                     <option value="{{$i}}">{{$i}}</option>
-                                    @endfor
+                                @endfor
                             </select>
                         </div>
                         <div class="col-lg-2" style=";position:absolute;right: 19%;top: 50px">
@@ -189,7 +190,7 @@
                             <select type="text" class="form-control" style="float: right">
                                 @for($i=0;$i<5;$i++)
                                     <option value="{{$i}}">{{$i}}</option>
-                                    @endfor
+                                @endfor
                             </select>
                         </div>
 
@@ -236,7 +237,8 @@
 
             <div class="show_adverts_content col-lg-12">
                 <ul class="show_ad">
-                    <li v-for="adverts in advert" v-if="adverts.city=='{{$city}}'">
+                    <li v-for="adverts in advert" v-if="adverts.city=='{{$city}}'" style="cursor: pointer"
+                        @click="ShowAdvert(adverts.Id)">
                         <div class="advert_subject">
                             <h5>
                                 @{{adverts.subject}}
@@ -248,7 +250,7 @@
                             </span>
                             <span v-else>
                                 <span v-for="img in adverts.image.split(',').splice(0,1)">
-                            <img :src="'/images/'+adverts.image" alt="'/images/'+img" width="150"
+                            <img :src="'/images/'+img" alt="'/images/'+img" width="150"
                                  height="150 ">
                                 </span>
                                 </span>
@@ -262,7 +264,8 @@
                             ?>
                             @foreach($advert as $adverts)
                                 <span v-if="adverts.Id=='{{$adverts->Id}}'">
-                            {{  $v->formatDifference(Verta::parse($adverts->date))}}
+
+                            {{ $v->formatDifference(Verta::parse($adverts->date))}}
                                 </span>
                             @endforeach
                         </div>
@@ -313,5 +316,235 @@
             </div>
 
         </section>
+
+
+        <div id="show" class="show col-lg-8">
+            <div class="header col-lg-12">
+                <span class="backbtn col-lg-2">بازگشت</span>
+                <span class="advertAddress col-lg-10">
+                    همه ی آگهی ها
+                </span>
+            </div>
+            <div class="adContent col-lg-12">
+            <span class="col-lg-12" style="display: block;height: 100%" v-for="selectedAd in SelectedAdvert">
+
+                <div class="right col-lg-6">
+                <div class="show_header">
+              <h2> @{{ selectedAd.subject }}</h2>
+                </div>
+                <div class="ad_date">
+
+                    <span style="color: #cccccc">
+                        @{{ selectedAd.date }}
+                    </span>
+                </div>
+                <div class="ad_option" style="position:relative;">
+                    <a class=" mobileInfo btn btn-danger">
+                        دریافت اطلاعات تماس
+                    </a>
+
+                    <a class="StartChat" href="">
+
+                        شروع چت
+                    </a>
+
+                      <a class="makeFavorite" href="">
+
+                       نشان دار کردن
+                    </a>
+                </div>
+                <div class="ad_info col-lg-12">
+                    <ul>
+                        <li>
+                            <span class="info_title">
+                                   دسته بندی
+                            </span>
+                            <span class="info_value">
+@{{ selectedAd.name }}
+                            </span>
+
+                        </li>
+
+                        <li>
+                               <span class="info_title">
+
+                                محل
+
+                            </span>
+                            <span class="info_value">
+@{{ selectedAd.city }}
+
+                            </span>
+
+
+                        </li>
+
+
+                           <li>
+                             <span class="info_title">
+                                نوع آگهی
+
+                            </span>
+                            <span v-if="selectedAd.type==0">
+                            <span class="info_value">
+                                درخواستی
+                            </span>
+                                <span v-else-if="selectedAd.type==1 ">
+                                 <span class="info_value">
+                                فروشی
+                            </span>
+                                </span>
+                            </span>
+                        </li>
+
+
+{{--these three are for estates--}}
+                        <li v-if="selectedAd.advertiser">
+
+                             <span class="info_title">
+                                آگهی دهنده
+
+                            </span>
+                            <span v-if="selectedAd.advertiser==1||selectedAd.advertiser==null">
+                            <span class="info_value">
+                                شخصی
+                            </span>
+                                <span v-else>
+                                 <span class="info_value">
+                                املاک
+                            </span>
+                                </span>
+                            </span>
+                        </li>
+                        <li v-if="selectedAd.area">
+                             <span class="info_title">
+
+                                 متراژ</span>
+
+                                 <span class="info_value">@{{ selectedAd.area }}</span>
+                             </li>
+                        <li v-if="selectedAd.rent">
+                            <span class="info_title">
+قیمت ک</span>
+                            <span class="info_value">@{{ selectedAd.rent }}
+                            </span>
+                        </li>
+{{--these states are for cars --}}
+                        <li v-if="selectedAd.brand">
+
+                             <span class="info_title">
+                                برند
+
+                            </span>
+                            <span class="info_value">
+                                @{{ selectedAd.brand }}
+                            </span>
+
+                        </li>
+                        <li v-if="selectedAd.sunation">
+
+                             <span class="info_title">
+                                کارکرد
+
+                            </span>
+                            <span class="info_value">
+                                @{{ selectedAd.sunation }}
+                            </span>
+
+                        </li>
+                        <li v-if="selectedAd.year">
+
+                             <span class="info_title">
+                                سال
+
+                            </span>
+                            <span class="info_value">
+                                @{{ selectedAd.year }}
+                            </span>
+
+                        </li>
+                        <li v-if="selectedAd.color">
+
+                             <span class="info_title">
+                                رنگ
+
+                            </span>
+                            <span class="info_value">
+                                @{{ selectedAd.color }}
+                            </span>
+
+                        </li>
+                        <li v-if="selectedAd.fee">
+
+                             <span class="info_title">
+                                قیمت
+
+                            </span>
+                            <span class="info_value">
+                                @{{ selectedAd.fee }}
+                            </span>
+
+                        </li>
+
+
+
+
+                    </ul>
+                </div>
+
+                    <div class="ad_explain" style="position: relative">
+                        <span class="info_title">
+توضیحات:
+                        </span>
+                        <div style="padding-right: 38px;margin-top: 10px">
+                            @{{ selectedAd.text }}
+
+                        </div>
+
+                    </div>
+                </div>
+
+{{--for image--}}
+                <div class="left col-lg-6">
+                    <div class="card2" style="height:500px;" v-if="selectedAd.image">
+
+                        <div class="slider2 " style="overflow:hidden ">
+                            <span v-for="img in selectedAd.image.split(',').splice(0,1)">
+
+                            <img :src="'/images/'+img"
+                                 style="width: 350px;height: 350px;margin-left: 110px;margin-top: 10px">;
+                            </span>
+                        </div>
+                        <ul id="nav_item2">
+
+                            <li v-for="img in selectedAd.image.split(',').splice(0,4)">
+     <img :src="'/images/'+img"
+          style="width: 50px;height: 50px;margin-left: 10px;">;
+
+</li>
+
+                        </ul>
+
+
+                    </div>
+                       <div class="card2" style="height:500px;" v-else=>
+
+                        <div class="slider2 " style="overflow:hidden ">
+
+                            <img src="/img/index.png"
+                                 style="width: 350px;height: 350px;margin-left: 110px;margin-top: 10px">;
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </span>
+
+            </div>
+        </div>
+
+
     </div>
 @endsection

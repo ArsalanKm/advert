@@ -66,6 +66,7 @@ class Helper
             $image = explode(',', $img->image);
             foreach ($image as $key => $images) {
 //                echo nl2br($images."\n");
+
                 echo "<img src='/images/$images' >";
 
             }
@@ -91,23 +92,24 @@ class Helper
 
 
     }
-    public  static function modalcar($id){
+
+    public static function modalcar($id)
+    {
 
 
-        $car=Car::where('advert_id',$id)->first();
+        $car = Car::where('advert_id', $id)->first();
 
         if ($car) {
 
-            if($car->type==0){
+            if ($car->type == 0) {
 
-                $type="<span style='color: green;'>فروشی</span>";
+                $type = "<span style='color: green;'>فروشی</span>";
 
-            }elseif ($car->type==1){
-                $type="<span style='color: darkred;'>اجاره ای</span>";
+            } elseif ($car->type == 1) {
+                $type = "<span style='color: darkred;'>اجاره ای</span>";
 
-            }elseif ($car->type==2) {
-                $type="<span style='color: red;'>درخواستی</span>";
-
+            } elseif ($car->type == 2) {
+                $type = "<span style='color: red;'>درخواستی</span>";
 
 
             }
@@ -163,7 +165,7 @@ class Helper
         }
     }
 
-    public  static function modalstate($id)
+    public static function modalstate($id)
     {
 
 

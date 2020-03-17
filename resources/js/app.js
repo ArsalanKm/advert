@@ -76,6 +76,7 @@ const app = new Vue({
         Myid: "",
         maincategoires: [],
         SecondScategory: [],
+        SelectedAdvert: [],
 
 
     },
@@ -91,6 +92,23 @@ const app = new Vue({
 
 
     methods: {
+
+        /* showinf the specific app**/
+        ShowAdvert: function (id) {
+            $('#Top_filters').hide();
+            $('#sidebar').hide();
+            axios.post('/show', {
+                Myid: id
+            })
+                .then((response) => {
+
+                    this.SelectedAdvert = response.data;
+                    $("#show").show();
+                });
+
+        },
+
+
         /* show categories in show advert*/
         showCat: function (id) {
             axios.post('/show_cat', {
@@ -102,8 +120,8 @@ const app = new Vue({
                     $('.dropdown-menu').css("display", "block");
 
                     this.Scategory = response.data;
-                    $.each(this.Scategory,function(key,value){
-                       $('#title').text(value.name)
+                    $.each(this.Scategory, function (key, value) {
+                        $('#title').text(value.name)
                     });
 
 
@@ -125,6 +143,10 @@ const app = new Vue({
             })
                 .then((response) => {
                     this.SecondScategory = response.data;
+                    $.each(this.SecondScategory, function (key, value) {
+                        $('#title').text(value.name)
+                    });
+
                     $('.SubCats').css("display", "none");
                     $('.SecondSubCats').css("display", "block");
                     $('.dropdown-menu').css("display", "block");

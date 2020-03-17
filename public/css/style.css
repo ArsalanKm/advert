@@ -540,5 +540,138 @@ input:checked + .slid:before {
     right: 28px;
 }
 
+#show {
+    display: none;
+    margin: 20px auto 0;
+    font-family: iran;
+}
+
+#show .header {
+    height: 40px;
+    background: #fdfdfd;
+    border-radius: 4px;
+    position: relative;
+    border: 1px solid #eeeeee;
+
+}
+
+.header .backbtn {
+    display: block;
+    border-left: 1px solid #eeeeee;
+    float: right;
+    text-align: right;
+    height: 100%;
+    line-height: 3;
+}
+
+.header .advertAddress {
+    display: block;
+    float: left;
+    text-align: right;
+    height: 100%;
+    line-height: 3;
+}
+
+.adContent {
+    margin-top: 20px;
+    float: right;
+    height: 500px;
+}
+
+.adContent .right {
+    float: right;
+    height: 100%;
+
+}
+
+.adContent .left {
+    float: left;
+    height: 100%;
+}
+
+#show .show_header {
+    text-align: right;
+    margin-top: 20px;
+}
+
+#show .ad_date {
+    text-align: right;
+
+}
+
+#show .mobileInfo {
+    color: white;
+    border-radius: 4px;
+    position: absolute;
+    right: 1px;
+    line-height: 12px;
+    height: 30px;
+}
+#show .StartChat{
+    position: absolute;
+    right: 155px;
+    text-align: center;
+    height: 30px;
+    width: 90px;
+    color: #3f3f3f;
+    border: 1px solid #3f3f3f;
+    border-radius: 4px;
+}
+#show .ad_option{
+    height: 40px;
+}
+#show .ad_option a{
+    cursor: pointer;
+}
+#show .ad_option a:hover{
+color: #3f3f3f !important;
+}
+#show .makeFavorite{
+
+    left: 130px;
+    position: absolute;
+    text-align: center;
+    height: 30px;
+    width: 90px;
+    color: #3f3f3f;
+    border: 1px solid #3f3f3f;
+    border-radius: 4px;
+
+}
+#show .ad_info{
+    height: auto;
+    margin-top: 20px;
+}
+#show .ad_info li{
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    height: 40px;
+    line-height: 3;
+    font-size: 18px;
+
+
+}
+.info_title{
+    position: absolute;
+    right: 1px;
+    color: gray;
+}
+.info_value{
+    left: 5px;
+    color: #3f3f3f;
+}
+#show .ad_explain{
+    height: 150px;
+    color: #3f3f3f;
+    text-align: right;
+    padding: 20px;
+font-size: 18px;
+}
+#nav_item2 li{
+    float: left;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 
 
