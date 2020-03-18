@@ -687,7 +687,50 @@ input:checked + .slid:before {
 
 #mydivar {
     display: none;
+    position: relative;
+    float: right;
+    width: 100%;
+    height: 100%;
+    right: 25%;
+    top: 25px;
 }
-
-
+#tabcontent{
+    top: 120px !important;
+    height: 100%;
+}
+#myTabs{
+    font-family: iran;
+    position: absolute;
+    top: 20px;
+    height: 45px;
+}
+#myTabs li{
+    margin-left: 10px;
+    position: absolute;
+    top: 21px;
+}
+.active2{
+    border-bottom: 1px solid #3f3f3f !important;
+    color: #3f3f3f !important;
+}
+#myTabs li a{
+    color: #cccccc;
+    height: 40px;
+}
+#myTabs li a:hover{
+    font-weight: bold;
+    color: #3f3f3f!important;
+}
+.NoadWarning{
+    margin: 0 auto;
+}
+.NoadWarning h3{
+    text-align: center;
+}
+.entrancWarning h3{
+    text-align: center;
+}
+.modal-backdrop{
+    opacity: 0.2 !important;
+}
 

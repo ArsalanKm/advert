@@ -77,6 +77,7 @@ const app = new Vue({
         maincategoires: [],
         SecondScategory: [],
         SelectedAdvert: [],
+        mobilenumber: "",
 
 
     },
@@ -92,7 +93,20 @@ const app = new Vue({
 
 
     methods: {
-        makeFavorite:function(){
+
+
+        /************login**/
+        addmobile: function () {
+            axios.post('/addmobile', {
+                mobile: this.mobilenumber
+            })
+                .then((response) => {
+
+alert("ok");
+                });
+
+        },
+        makeFavorite: function () {
 
             $('#Top_filters').hide();
             $('#sidebar').hide();
@@ -101,7 +115,7 @@ const app = new Vue({
             $('#mydivar').show();
         },
 
-        back3:function(){
+        back3: function () {
             $('#show').hide();
 
             $('#Top_filters').fadeIn(1000);

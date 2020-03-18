@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeControllers extends Controller
@@ -57,6 +58,23 @@ class HomeControllers extends Controller
         $id = $request->id;
         $category = Category::find($id);
         return response()->json($category);
+
+    }
+
+    public function addmobile(Request $request)
+    {
+        $mobile = $request->mobile;
+        $user = User::where('mobile', $mobile)->first();
+        if ($user) {
+            return $user;
+        }
+        else{
+
+
+
+
+
+        }
 
     }
 }

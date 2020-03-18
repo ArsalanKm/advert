@@ -79,6 +79,9 @@ Route::get("/admin/mainCategories","CategoryControllers@mainCategories");
 Route::post("/show","ShowControllers@show");
 
 
+Route::post("/addmobile","HomeControllers@addmobile");
+
+
 
 
 

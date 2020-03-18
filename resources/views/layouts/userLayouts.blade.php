@@ -166,6 +166,12 @@
         $(".dropdown-menu").toggle();
 
     });
+
+    $("#myTabs li a").click(function () {
+        $("#myTabs li a").removeClass("active2");
+        $(this).toggleClass("active2");
+    });
+
     /*function has bug**/
     $('.slider2').cycle({
         fx: 'fade',

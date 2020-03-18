@@ -546,29 +546,108 @@
         </div>
 
 
+        <div id="mydivar" class="col-lg-6" style="position: relative;">
 
 
-
-        <div id="mydivar">
-
-
-
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-                <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-                <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+            <ul class="nav nav-tabs" id="myTabs">
+                <li class="active" style="right: 27%;"><a data-toggle="tab" href="#myAdverts" style=" ;" class="">آگهی
+                        های من</a>
+                </li>
+                <li style="right: 40%;"><a class="" style="" data-toggle="tab" href="#myFavorites">آگهی های نشان
+                        شده</a></li>
+                <li style=" right: 56%;"><a data-toggle="tab" href="#RecentlySeen" class="" style=" ">بازدید های
+                        اخیر</a></li>
             </ul>
 
-            <div class="tab-content">
-                <div id="home" class="tab-pane fade in active">
-                    <h3>HOME</h3>
-                    <p>Some content.</p>
+            <div class="tab-content" id="tabcontent">
+                <div id="myAdverts" class="tab-pane fade in active">
+                    <div class="entrancWarning">
+                        <h3>برای مشاهده و مدیریت آگهی ها وارد حساب کاربری شوید </h3>
+
+                        <button class="btn btn-danger" style="color: white;height: 40px;display: block;width: 103px;position:absolute;right: 45% " data-toggle="modal" data-target="#myModal">ث
+ورود و ثبت نام
+                        </button>
+                    </div>
+                    <div class="NoadWarning" style="display: none">
+                    <h3>تا به حال در دیوار آگهی ثبت نکرده اید</h3>
+                    <a href="/advert" class="btn btn-danger" style="color: white;height: 40px;display: block;width: 103px;position:absolute;right: 45%">ثبت رایگان
+                        آگهی
+
+                    </a>
+                    </div>
                 </div>
-                <div id="menu1" class="tab-pane fade">
+
+
+{{--my modal --}}
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog" style="max-width: 737px;height: 232px;">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <h4 class="modal-title" style="text-align: right;padding: 10px">ورود و ثبت نام</h4>
+                            <button type="button" class="close" style="position: absolute;
+left: 0;" data-dismiss="modal">&times;</button>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="form-group" style="margin-top: 65px;" id="send_mobile">
+                                    <input type="text" value="+98" disabled  class="form-control" style="float: left;
+margin-left: 244px;
+width: 56px;">
+                                    <input type="text" placeholder="شماره تلفن"  v-model="mobilenumber" class="form-control col-lg-4" style="margin-right: 168px;">
+                                </div>
+
+
+
+                                <div id="code_mobile" style="display: none;">
+                                    <span class="alert alert-success" style="width: 100%;position: absolute;top: 4px;right: 0;text-align: center;">کد تایید با پیامک برای شما ارسال شد.</span>
+
+                                    <div class="form-group" style="margin-top: 65px;" id="">
+
+                                        <input type="text" placeholder="کد تایید 4 رقمی"  v-model="codenumber" class="form-control col-lg-4" style="margin-right: 168px;">
+                                    </div>
+
+                                    <div class="form-group" style="margin-right: 252px;" >
+
+                                        <button type="button" class="btn btn-danger"  @click="addcode()">دریافت کد تایید</button>
+
+
+                                    </div>
+
+                                    <div class="form-group" style="margin-right: 252px;" >
+
+
+                                        <span id="codemobile"></span>
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <div class="form-group" style="margin-right: 252px;" id="send_mobiles">
+
+                                    <button type="button" class="btn btn-danger"  @click="addmobile()">دریافت کد تایید</button>
+
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+{{--my modallll--}}
+
+
+                <div id="myFavorites" class="tab-pane fade">
                     <h3>Menu 1</h3>
                     <p>Some content in menu 1.</p>
                 </div>
-                <div id="menu2" class="tab-pane fade">
+                <div id="RecentlySeen" class="tab-pane fade">
                     <h3>Menu 2</h3>
                     <p>Some content in menu 2.</p>
                 </div>

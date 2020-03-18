@@ -49603,7 +49603,8 @@ var app = new Vue({
     Myid: "",
     maincategoires: [],
     SecondScategory: [],
-    SelectedAdvert: []
+    SelectedAdvert: [],
+    mobilenumber: ""
   },
   mounted: function mounted() {
     this.getcategory();
@@ -49612,6 +49613,14 @@ var app = new Vue({
     $(".send-advert3").hide();
   },
   methods: {
+    /************login**/
+    addmobile: function addmobile() {
+      axios.post('/addmobile', {
+        mobile: this.mobilenumber
+      }).then(function (response) {
+        alert("ok");
+      });
+    },
     makeFavorite: function makeFavorite() {
       $('#Top_filters').hide();
       $('#sidebar').hide();
