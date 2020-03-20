@@ -220,6 +220,7 @@ class Helper
     public static function myAdvert($data)
     {
 
+
         $adverts = DB::table('adverts')->where('adverts.mobile', "09905304009")
             ->leftJoin('images', 'adverts.Id', "=", "images.advert_id")
             ->leftJoin('estates', 'adverts.Id', "=", "estates.advert_id")
@@ -230,9 +231,12 @@ class Helper
             if ($advert->image) {
 
                 $image = "<img src='/images/$advert->image' width='150' height='150'> ";
-            } else {
-                $image = "<img src='/img/index.png' width='150' height='150'> ";
             }
+            else
+                {
+                $image = "<img src='/img/index.png' width='150' height='150'> ";
+
+                }
 
 
             if ($advert->chat == 1) {
@@ -251,7 +255,12 @@ class Helper
             $telegram = "https://telegram.me/share/url?url=" . url('/') . "&text=$advert->subject";
             $twitter = "https://twitter.com/intent/tweet?url=" . url('/') . "&text=$advert->subject";
             $facebook = "https://www.facebook.com/sharer/sharer.php?u=" . url('/') . "&title=$advert->subject";
-
+            if($advert->status==1){
+                $status="<span style='position: absolute;top: -140px;right: ;left: 160px;color: green;'>تایید شده</span>";
+            }
+            else{
+                $status="<span style='position: absolute;top: -140px;right: ;left: 160px;color: green;'>تایید نشده</span>";
+            }
 
             echo "
  <ul class='show_ad'>
@@ -283,6 +292,7 @@ class Helper
          <a href=$facebook class='dropdown-item'>اشتراک در فیسبوک</a>
          <a href=$twitter class='dropdown-item'>اشتراک در توییتر </a>
 </div>
+{$status}
 </div>
 <a href='' style='position:absolute;display: block;left: 30px;bottom: 5px;color: #cccccc'>
 <i class='icon icon-trash'></i>
@@ -296,6 +306,87 @@ class Helper
 ";
         }
 
+
+    }
+
+    public static function FavAdvert($data)
+    {
+        $adverts = DB::table('adverts')->where('adverts.Id', $data)
+            ->leftJoin('images', 'adverts.Id', "=", "images.advert_id")
+            ->leftJoin('estates', 'adverts.Id', "=", "estates.advert_id")
+            ->leftjoin('categories', 'adverts.category_id', '=', 'categories.id')
+            ->leftJoin('cars', 'adverts.Id', "=", "cars.advert_id")->get();
+        echo $data;
+        foreach ($adverts as $advert) {
+
+            if ($advert->image) {
+
+                $image = "<img src='/images/$advert->image' width='150' height='150'> ";
+            } else {
+                $image = "<img src='/img/index.png' width='150' height='150'> ";
+            }
+
+
+            if ($advert->chat == 1) {
+
+                $chats = "<p style='width:45px;text-align: center; font-size:11px; height: 24px; border: 1px solid green;border-radius:5px;'>چت</p>";
+
+            } else {
+                $chats = "";
+            }
+
+
+            $dt = new \DateTime();
+            $v = new Verta($dt);
+            $date = $v->formatDifference(Verta::parse($advert->date));
+
+            $telegram = "https://telegram.me/share/url?url=" . url('/') . "&text=$advert->subject";
+            $twitter = "https://twitter.com/intent/tweet?url=" . url('/') . "&text=$advert->subject";
+            $facebook = "https://www.facebook.com/sharer/sharer.php?u=" . url('/') . "&title=$advert->subject";
+
+
+            echo "
+ <ul class='show_ad' style='float: right'>
+                    <li  style='cursor: pointer'>
+                        <div class='advert_subject'>
+                            <h5>
+                               {$advert->name}
+                            </h5>
+                        </div>
+                        <div class='advert_image'>
+ {$image}
+                        </div>
+
+                        <div class='advert_chat'>
+                    {$chats}
+                        </div>
+
+                             <div class='advert_date'>
+
+                                {$date}
+                        </div>
+
+                        <div class='dropdown' style='text-align: right'>
+                        <button type='button' class='btn btn-primary dropdown-toggle' data-toggle='dropdown' style='width: 120px'>
+                favorite
+</button>
+         <div class='dropdown-menu'>
+         <a href=$telegram class='dropdown-item'>اشتراک در تلگرام</a>
+         <a href=$facebook class='dropdown-item'>اشتراک در فیسبوک</a>
+         <a href=$twitter class='dropdown-item'>اشتراک در توییتر </a>
+</div>
+</div>
+<a href='' style='position:absolute;display: block;left: 30px;bottom: 5px;color: #cccccc'>
+<i class='icon icon-trash'></i>
+حإف از تاریخچه
+</a>
+
+
+
+                    </li>
+
+";
+        }
 
     }
 }

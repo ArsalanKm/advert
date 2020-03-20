@@ -31,16 +31,7 @@
                                placeholder="جست و جو در همه ی آگهی ها">
                     </li>
                     <li class="">
-                        {{--                        <select name="" id="" class="form-control">--}}
-                        {{--                            <option class=" mainCats" v-for="category in categories" :value="category.id"--}}
-                        {{--                                    @click="showCat(category.id)">--}}
-                        {{--                                @{{ category.name }}--}}
-                        {{--                            </option>--}}
-                        {{--                            <option v-for="scat in Scategory">--}}
-                        {{--                                @{{ scat .name }}--}}
 
-                        {{--                            </option>--}}
-                        {{--                        </select>--}}
 
                         <div class="dropdown" style="width: 100%;height: 38px;
                              background: white">
@@ -75,6 +66,9 @@
                                         </h5>
                                     </li>
                                 <li v-for="scat in Scategory" @click="send_category(scat.id)">
+                                                                        <input type="checkbox" v-model="cat"
+                                                                               :value="scat.id">
+
                                     @{{ scat .name }}
                                 </li>
                                     </span>
@@ -90,6 +84,7 @@
                                         </h5>
                                     </li>
                                 <li v-for="scat in SecondScategory" @click="">
+                                    <input type="checkbox" v-model="cat" :value="scat.id">
                                     @{{ scat .name }}
                                 </li>
                                     </span>
@@ -108,26 +103,29 @@
                     <li style="position: relative;top: 10px;width: 100%;height: 268px">
                         <div class="col-lg-1" style="position:absolute;right: 1px">
                             <label for="" style="position: relative;right: -6px;top: 5px">متراژ(متر مربع)</label>
-                            <input type="text" class="form-control" style="float: right" placeholder="از">
+                            <input type="text" class="form-control" style="float: right" placeholder="از"
+                                   v-model="area1">
                         </div>
                         <div class="col-lg-1" style="position:absolute;right: 70px;top: 32px">
-                            <input type="text" class="form-control" style="float: right" placeholder="تا">
+                            <input type="text" class="form-control" style="float: right" placeholder="تا"
+                                   v-model="area2">
                         </div>
                         <div class="col-lg-2" style="position:absolute;right: 19%;top: -8px">
                             <label for="" style="position: relative;right: -135px;top: 5px">سال:</label>
-                            <select type="text" class="form-control" style="float: right">
+                            <select type="text" class="form-control" style="float: right" v-model="year1">
                                 @for($i=1370;$i<=1398;$i++)
-                                    <option value="{{$i}}">{{$i}}</option>
+                                    <option :value="{{$i}}">{{$i}}</option>
                                 @endfor
                             </select>
                         </div>
                         <div class="col-lg-2" style=";position:absolute;right: 19%;top: 50px">
                             <label for="" style="position: relative;right: -43%;top: 10px">تا</label>
 
-                            <select type="text" class="form-control" style="float: right" placeholder="تا">
+                            <select type="text" class="form-control" style="float: right" placeholder="تا"
+                                    v-model="year2">
 
                                 @for($i=1370;$i<=1398;$i++)
-                                    <option value="{{$i}}">{{$i}}</option>
+                                    <option :value="{{$i}}">{{$i}}</option>
                                 @endfor
                             </select>
                         </div>
@@ -135,7 +133,7 @@
                         <div class="col-lg-2" style=";position:absolute;right: 36%;top: -10px">
                             <label for="" style="position: relative;right: -43%;top: 10px">قیمت کل : ا</label>
 
-                            <select type="text" class="form-control" style="float: right">
+                            <select type="text" class="form-control" style="float: right" v-model="totalPrice">
                             </select>
                         </div>
 
@@ -150,15 +148,15 @@
                             <label for="" style="position: relative;right: -43%;top: 10px">نوع : </label>
                             <ul id="type">
                                 <li><label for="">فرقی نمیکند</label>
-                                    <input type="radio">
+                                    <input type="radio" v-model="typeAdvert" :value="0">
                                 </li>
                                 <li><label for="">فروشی</label>
 
-                                    <input type="radio">
+                                    <input type="radio" v-model="typeAdvert" :value="1">
                                 </li>
                                 <li>
                                     <label for="">درخواستی</label>
-                                    <input type="radio">
+                                    <input type="radio" v-model="typeAdvert" :value="2">
                                 </li>
                             </ul>
 
@@ -170,15 +168,15 @@
                             <label for="" style="position: relative;right: -43%;top: 10px">آگهی دهنده : </label>
                             <ul id="Advertiser">
                                 <li><label for="">فرقی نمیکند</label>
-                                    <input type="radio">
+                                    <input type="radio" v-model="advertisor" :value="0">
                                 </li>
                                 <li><label for="">شخصی</label>
 
-                                    <input type="radio">
+                                    <input type="radio" v-model="advertisor" :value="1">
                                 </li>
                                 <li>
                                     <label for="">مشاور املاک</label>
-                                    <input type="radio">
+                                    <input type="radio" v-model="advertisor" :value="2">
                                 </li>
                             </ul>
 
@@ -187,10 +185,12 @@
                         <div class="col-lg-2" style=";position:absolute;right: 1px;top: 120px">
                             <label for="" style="position: relative;right: -43%;top: 10px">تعداد اتاق : ا</label>
 
-                            <select type="text" class="form-control" style="float: right">
-                                @for($i=0;$i<5;$i++)
-                                    <option value="{{$i}}">{{$i}}</option>
-                                @endfor
+                            <select type="text" class="form-control" style="float: right" v-model="room_number">
+                                <option :value="0">بدون اتاق</option>
+                                <option :value="1">یک</option>
+                                <option :value="2">دو</option>
+                                <option :value="3">سه</option>
+                                <option :value="4">چهار</option>
                             </select>
                         </div>
 
@@ -218,18 +218,18 @@
                     <li style="margin-top: 25px;">
                         <span class="col-lg-2" style="position:absolute; right: -16px">عکس دار</span>
                         <label class="switch" style="right: 66px">
-                            <input type="checkbox" class="danger">
+                            <input type="checkbox" class="danger" :value="1" v-model="image_filter">
                             <span class="slid round"></span>
                         </label>
                         <span class="col-lg-2" style="position: absolute;right: 100px">فوری</span>
                         <label class="switch " style="right: 180px">
-                            <input type="checkbox" class="danger">
+                            <input type="checkbox" class="danger" :value="1" v-model="urgent_filter">
                             <span class="slid round"></span>
                         </label>
 
                     </li>
                     <button class="btn btn-danger"
-                            style="color: white;position: relative;top: 40%;height: 37px">جست و جو
+                            style="color: white;position: relative;top: 40%;height: 37px" id="search">جست و جو
                     </button>
                 </ul>
             </div>
@@ -237,7 +237,8 @@
 
             <div class="show_adverts_content col-lg-12">
                 <ul class="show_ad">
-                    <li v-for="adverts in advert" v-if="adverts.city=='{{$city}}'" style="cursor: pointer"
+                    <li v-for="adverts in advert" v-if="adverts.city=='{{$city}}' && filter(adverts) &&SearchFilter(adverts)"
+                        style="cursor: pointer"
                         @click="ShowAdvert(adverts.Id)">
                         <div class="advert_subject">
                             <h5>
@@ -339,6 +340,7 @@
                     </span>
                 </div>
                 <div class="ad_option" style="position:relative;">
+
                     <a class=" mobileInfo btn btn-danger">
                         دریافت اطلاعات تماس
                     </a>
@@ -348,9 +350,10 @@
                         شروع چت
                     </span>
 
-                      <span style="cursor: pointer" class="makeFavorite" href="" @click="makeFavorite()">
+                      <span style="cursor: pointer" class="makeFavorite" href="" @click="makeFavorite(selectedAd)">
 
                        نشان دار کردن
+
                     </span>
                 </div>
                 <div class="ad_info col-lg-12">
@@ -560,9 +563,11 @@
             </ul>
 
             <div class="tab-content" id="tabcontent">
-                @if(empty(Session::get('login')))
 
-                    <div id="myAdverts" class="tab-pane fade in active">
+
+                <div id="myAdverts" class="tab-pane container fade in active">
+                    @if(empty(Session::get('login')))
+
                         <div class="entrancWarning">
                             <h3>برای مشاهده و مدیریت آگهی ها وارد حساب کاربری شوید </h3>
 
@@ -583,100 +588,113 @@
                         </div>
 
                     @else
-                   {{\App\HelperFunction\Helper::myAdvert(Session::get('login'))}}
+                        {{\App\HelperFunction\Helper::myAdvert(Session::get('login'))}}
 
 
 
-</div>
-                @endif
 
 
 
-                {{--my modal --}}
-                <div class="modal" id="myModal">
-                    <div class="modal-dialog" style="max-width: 737px;height: 232px;">
-                        <div class="modal-content">
+                        {{--my modal --}}
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog" style="max-width: 737px;height: 232px;">
+                                <div class="modal-content">
 
-                            <!-- Modal Header -->
-                            <h4 class="modal-title" style="text-align: right;padding: 10px">ورود و ثبت نام</h4>
-                            <button type="button" class="close" style="position: absolute;
+                                    <!-- Modal Header -->
+                                    <h4 class="modal-title" style="text-align: right;padding: 10px">ورود و ثبت
+                                        نام</h4>
+                                    <button type="button" class="close" style="position: absolute;
 left: 0;" data-dismiss="modal">&times;
-                            </button>
-
-                            <!-- Modal body -->
-                            <div class="modal-body">
-                                <div class="form-group" style="margin-top: 65px;" id="send_mobile">
-                                    <input type="text" value="+98" disabled class="form-control" style="float: left;
-margin-left: 244px;
-width: 56px;">
-                                    <input type="text" placeholder="شماره تلفن" v-model="mobilenumber"
-                                           class="form-control col-lg-4" style="margin-right: 168px;">
-                                    <button type="button" class="btn btn-danger" @click="addmobile()">دریافت کد تایید
                                     </button>
 
-                                </div>
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <div class="form-group" style="margin-top: 65px;" id="send_mobile">
+                                            <input type="text" value="+98" disabled class="form-control" style="float: left;
+margin-left: 244px;
+width: 56px;">
+                                            <input type="text" placeholder="شماره تلفن" v-model="mobilenumber"
+                                                   class="form-control col-lg-4" style="margin-right: 168px;">
+                                            <button type="button" class="btn btn-danger" @click="addmobile()">دریافت
+                                                کد تایید
+                                            </button>
+
+                                        </div>
 
 
-                                <div id="code_mobile" style="display: none;">
+                                        <div id="code_mobile" style="display: none;">
                                     <span class="alert alert-success"
                                           style="width: 100%;position: absolute;top: 4px;right: 0;text-align: center;">کد تایید با پیامک برای شما ارسال شد.</span>
 
-                                    <div class="form-group" style="margin-top: 65px;" id="">
+                                            <div class="form-group" style="margin-top: 65px;" id="">
 
-                                        <input type="text" placeholder="کد تایید 4 رقمی" v-model="codenumber"
-                                               class="form-control col-lg-4" style="position: relative;right: 33.5%">
-                                    </div>
-                                    <div class="form-group" style="text-align: center">
+                                                <input type="text" placeholder="کد تایید 4 رقمی"
+                                                       v-model="codenumber"
+                                                       class="form-control col-lg-4"
+                                                       style="position: relative;right: 33.5%">
+                                            </div>
+                                            <div class="form-group" style="text-align: center">
 
-                                        <button type="button" class="btn btn-danger col-lg-4" style="border-radius: 4px"
-                                                @click="verifyCode2()">
-                                            اعمال کد
-                                        </button>
+                                                <button type="button" class="btn btn-danger col-lg-4"
+                                                        style="border-radius: 4px"
+                                                        @click="verifyCode2()">
+                                                    اعمال کد
+                                                </button>
 
 
-                                    </div>
-                                    <div class="form-group" style="text-align: center" id="">
+                                            </div>
+                                            <div class="form-group" style="text-align: center" id="">
 
                                         <span class="col-lg-4">
                                             شماره موبایل:
                                             @{{ UserMobile }}
                                         </span>
-                                    </div>
+                                            </div>
 
 
-                                    <div class="form-group" style="margin-right: 252px;">
+                                            <div class="form-group" style="margin-right: 252px;">
 
 
-                                        <span id="codemobile"></span>
+                                                <span id="codemobile"></span>
+                                            </div>
+
+
+                                        </div>
+
+
+                                        {{--                                <div class="form-group" style="margin-right: 252px;" id="send_mobiles">--}}
+
+                                        {{--                                    <button type="button" class="btn btn-danger"  @click="addmobile()">دریافت کد تایید</button>--}}
+
+                                        {{--                                </div>--}}
+
                                     </div>
 
 
                                 </div>
-
-
-                                {{--                                <div class="form-group" style="margin-right: 252px;" id="send_mobiles">--}}
-
-                                {{--                                    <button type="button" class="btn btn-danger"  @click="addmobile()">دریافت کد تایید</button>--}}
-
-                                {{--                                </div>--}}
-
                             </div>
-
-
                         </div>
-                    </div>
+                    @endif
                 </div>
 
 
                 {{--my modallll--}}
 
 
-                <div id="myFavorites" class="tab-pane fade">
-                    {{Session::get('login')}}
+                <div id="myFavorites" class="tab-pane container fade">
+                    @if(empty(Session::get('show')))
+                        <div><h2>no favorites</h2></div>
+                    @else
+                        @foreach(Session::get('show') as $key=>$value)
+                            {{$key   }}
+                            {{\App\HelperFunction\Helper::FavAdvert($key)}}
+                        @endforeach
 
+                    @endif
 
                 </div>
-                <div id="RecentlySeen" class="tab-pane fade">
+
+                <div id="RecentlySeen" class="tab-pane container fade">
                     <h3>Menu 2</h3>
                     <p>Some content in menu 2.</p>
                 </div>

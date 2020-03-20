@@ -80,6 +80,17 @@ const app = new Vue({
         mobilenumber: "",
         codenumber: "",
         UserMobile: "",
+        cat: [],
+        urgent_filter: [],
+        image_filter: [],
+        room_number: [],
+        advertisor: [],
+        type_advert: [],
+        totalPrice: [],
+        year1: [],
+        year2: [],
+        area1: [],
+        area2: [],
 
 
     },
@@ -96,6 +107,29 @@ const app = new Vue({
 
     methods: {
 
+
+        /**************filter**************/
+        SearchFilter: function (data) {
+            $("#search").click(function () {
+                condole.log(data);
+            })
+        },
+
+        search: function () {
+
+            console.log(this.type_advert);
+            console.log(this.advertisor);
+
+
+        },
+        filter: function (data) {
+            if (this.cat.length == 0) return true;
+            console.log(data.parent_id);
+            return this.cat.includes(data.parent_id);
+
+        },
+
+        /****************filter****************/
         verifyCode2: function () {
             var mobile = this.UserMobile;
             alert(mobile);
@@ -138,15 +172,21 @@ const app = new Vue({
 
         },
 
-        makeFavorite: function () {
+        makeFavorite: function (id) {
+            var Myid = id.Id;
+            axios.post('/addfavorite', {
+                id: Myid
+            })
+                .then((response) => {
+                    console.log(response.data);
+                    $('#Top_filters').hide();
+                    $('#sidebar').hide();
+                    $('#show').hide();
 
-            $('#Top_filters').hide();
-            $('#sidebar').hide();
-            $('#show').hide();
+                    $('#mydivar').show();
+                });
 
-            $('#mydivar').show();
         },
-
         back3: function () {
             $('#show').hide();
 

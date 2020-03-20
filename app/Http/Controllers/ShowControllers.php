@@ -7,6 +7,7 @@ use App\Category;
 use Hekmatinasser\Verta\Verta;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 class ShowControllers extends Controller
 {
@@ -31,6 +32,8 @@ class ShowControllers extends Controller
             ->leftjoin('images', 'adverts.Id', '=', 'images.advert_id')
             ->leftjoin('estates', 'adverts.Id', '=', 'estates.advert_id')
             ->leftjoin('cars', 'adverts.Id', '=', 'cars.advert_id')
+            ->leftjoin('categories', 'adverts.category_id', '=', 'categories.id')
+
             ->paginate(3);
         return $advert;
     }
@@ -44,13 +47,43 @@ class ShowControllers extends Controller
         return response()->json($subcat);
     }
 
-    public function show(Request $request){
-        $advert = DB::table('adverts')->where('adverts.Id',$request->Myid)
+    public function show(Request $request)
+    {
+        $advert = DB::table('adverts')->where('adverts.Id', $request->Myid)
             ->leftjoin('images', 'adverts.Id', '=', 'images.advert_id')
             ->leftjoin('estates', 'adverts.Id', '=', 'estates.advert_id')
             ->leftjoin('cars', 'adverts.Id', '=', 'cars.advert_id')
             ->leftjoin('categories', 'adverts.category_id', '=', 'categories.id')
             ->get();
         return $advert;
+    }
+
+    public function addfavorite(Request $request)
+    {
+        $id = $request->id;
+        $advert = DB::table('adverts')->where('adverts.Id', $id)
+            ->leftjoin('images', 'adverts.Id', '=', 'images.advert_id')
+            ->leftjoin('estates', 'adverts.Id', '=', 'estates.advert_id')
+            ->leftjoin('cars', 'adverts.Id', '=', 'cars.advert_id')
+            ->leftjoin('categories', 'adverts.category_id', '=', 'categories.id')
+            ->get();
+//        return $show = Session::put('show', $advert);
+        if (session::has('show')) {
+
+            $cart = Session::get('show');
+            if (array_key_exists($id, $cart)) {
+                $cart[$id];
+
+            } else {
+                $cart[$id] = 1;
+                Session::put('show', $cart);
+            }
+        } else {
+            $cart = array();
+            $cart[$id] = 1;
+            Session::put('show', $cart);
+        }
+
+        return $cart;
     }
 }
