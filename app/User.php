@@ -11,6 +11,7 @@ use App\Chat;
 class User extends Authenticatable
 {
     use Notifiable;
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
@@ -18,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'mobile',
+        'mobile', 'code'
     ];
 
     /**

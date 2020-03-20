@@ -49604,7 +49604,9 @@ var app = new Vue({
     maincategoires: [],
     SecondScategory: [],
     SelectedAdvert: [],
-    mobilenumber: ""
+    mobilenumber: "",
+    codenumber: "",
+    UserMobile: ""
   },
   mounted: function mounted() {
     this.getcategory();
@@ -49613,11 +49615,35 @@ var app = new Vue({
     $(".send-advert3").hide();
   },
   methods: {
+    verifyCode2: function verifyCode2() {
+      var mobile = this.UserMobile;
+      alert(mobile);
+      axios.post('/verifyShowCode', {
+        code: this.codenumber,
+        mobile: mobile
+      }).then(function (response) {
+        console.log(response);
+
+        if (response.data == "\nyes") {
+          // $("#send_mobile").hide();
+          $("#code_mobile").hide();
+          $("#myModal").hide();
+        } else if (response.data == "\nno") {
+          alert("code is not verify");
+        }
+      });
+    },
+
     /************login**/
     addmobile: function addmobile() {
+      var _this = this;
+
       axios.post('/addmobile', {
         mobile: this.mobilenumber
       }).then(function (response) {
+        $("#send_mobile").hide();
+        $("#code_mobile").show();
+        _this.UserMobile = response.data;
         alert("ok");
       });
     },
@@ -49635,21 +49661,21 @@ var app = new Vue({
 
     /* showinf the specific app**/
     ShowAdvert: function ShowAdvert(id) {
-      var _this = this;
+      var _this2 = this;
 
       $('#Top_filters').hide();
       $('#sidebar').hide();
       axios.post('/show', {
         Myid: id
       }).then(function (response) {
-        _this.SelectedAdvert = response.data;
+        _this2.SelectedAdvert = response.data;
         $("#show").show();
       });
     },
 
     /* show categories in show advert*/
     showCat: function showCat(id) {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.post('/show_cat', {
         Myid: id
@@ -49657,8 +49683,8 @@ var app = new Vue({
         $('.mainCats').css("display", "none");
         $('.SubCats').css("display", "block");
         $('.dropdown-menu').css("display", "block");
-        _this2.Scategory = response.data;
-        $.each(_this2.Scategory, function (key, value) {
+        _this3.Scategory = response.data;
+        $.each(_this3.Scategory, function (key, value) {
           $('#title').text(value.name);
         });
       });
@@ -49670,13 +49696,13 @@ var app = new Vue({
 
     /****show second subcategories in show advert****/
     send_category: function send_category(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       axios.post('/show_cat', {
         Myid: id
       }).then(function (response) {
-        _this3.SecondScategory = response.data;
-        $.each(_this3.SecondScategory, function (key, value) {
+        _this4.SecondScategory = response.data;
+        $.each(_this4.SecondScategory, function (key, value) {
           $('#title').text(value.name);
         });
         $('.SubCats').css("display", "none");
@@ -49693,17 +49719,17 @@ var app = new Vue({
 
     /**show advert function**/
     getadvert: function getadvert() {
-      var _this4 = this;
+      var _this5 = this;
 
       axios.get('/showadvert').then(function (response) {
-        _this4.advert = response.data.data;
+        _this5.advert = response.data.data;
         console.log(response.data.data);
       });
     },
 
     /**************show advert function**************/
     infiniteHandler: function infiniteHandler($state) {
-      var _this5 = this;
+      var _this6 = this;
 
       var limit = this.advert.length / 6 + 2;
       axios.get('/showadvert', {
@@ -49711,7 +49737,7 @@ var app = new Vue({
           page: limit
         }
       }).then(function (response) {
-        _this5.loadMore($state, response);
+        _this6.loadMore($state, response);
       });
     },
     loadMore: function loadMore($state, response) {
@@ -49792,12 +49818,12 @@ var app = new Vue({
       });
     },
     send_advert2: function send_advert2(id) {
-      var _this6 = this;
+      var _this7 = this;
 
       axios.post('/send_advert2', {
         id: id
       }).then(function (response) {
-        _this6.category = response.data;
+        _this7.category = response.data;
         $(".send-advert2").hide();
         $(".sub_heading").hide();
         $(".send-advert").hide();
@@ -49809,13 +49835,13 @@ var app = new Vue({
 
     /********* SendCategorie**********/
     Sendsubcats: function Sendsubcats(id) {
-      var _this7 = this;
+      var _this8 = this;
 
       axios.post('/subcats', {
         id: id
       }).then(function (response) {
         console.log(response.data);
-        _this7.menu = response.data;
+        _this8.menu = response.data;
         $(".send-advert1").hide();
         $(".send-advert2").toggle();
       });
@@ -49823,27 +49849,27 @@ var app = new Vue({
         id: id
       }).then(function (response) {
         console.log(response.data);
-        _this7.catmenus = response.data; // $(".send-advert1").hide();
+        _this8.catmenus = response.data; // $(".send-advert1").hide();
 
         $(".sub_heading").toggle();
       });
     },
     SendAdvert: function SendAdvert(id) {
-      var _this8 = this;
+      var _this9 = this;
 
       axios.post('/parent', {
         id: id
       }).then(function (response) {
         console.log(response.data);
-        _this8.advertcat = response.data;
+        _this9.advertcat = response.data;
         $(".send-advert").hide();
         $(".send-advert1").toggle();
-        console.log(_this8.advertcat);
+        console.log(_this9.advertcat);
       });
       axios.post('/Sendsubmenu', {
         id: id
       }).then(function (response) {
-        _this8.submenus = response.data;
+        _this9.submenus = response.data;
         $(".send-advert").hide();
       })["catch"](function (error) {
         alert('not ok');
@@ -49862,20 +49888,20 @@ var app = new Vue({
       });
     },
     getmaincategory: function getmaincategory() {
-      var _this9 = this;
+      var _this10 = this;
 
       axios.get('/admin/mainCategories').then(function (response) {
-        _this9.maincategoires = response.data;
+        _this10.maincategoires = response.data;
       })["catch"](function (error) {
         console.log(error);
       });
     },
     getcategory: function getcategory() {
-      var _this10 = this;
+      var _this11 = this;
 
       axios.get('/admin/getcategories').then(function (response) {
-        _this10.categories = response.data;
-        console.log(_this10.categories);
+        _this11.categories = response.data;
+        console.log(_this11.categories);
       })["catch"](function (error) {
         console.log(error);
       });

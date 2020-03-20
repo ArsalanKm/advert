@@ -78,6 +78,8 @@ const app = new Vue({
         SecondScategory: [],
         SelectedAdvert: [],
         mobilenumber: "",
+        codenumber: "",
+        UserMobile: "",
 
 
     },
@@ -94,6 +96,31 @@ const app = new Vue({
 
     methods: {
 
+        verifyCode2: function () {
+            var mobile = this.UserMobile;
+            alert(mobile);
+
+            axios.post('/verifyShowCode', {
+                code: this.codenumber,
+                mobile: mobile,
+
+            })
+                .then((response) => {
+                    console.log(response);
+                    if (response.data == "\nyes") {
+                        // $("#send_mobile").hide();
+                        $("#code_mobile").hide();
+                        $("#myModal").hide();
+                    } else if (response.data == "\nno") {
+                        alert("code is not verify");
+
+                    }
+
+
+                });
+
+        },
+
 
         /************login**/
         addmobile: function () {
@@ -102,10 +129,15 @@ const app = new Vue({
             })
                 .then((response) => {
 
-alert("ok");
+                    $("#send_mobile").hide();
+                    $("#code_mobile").show();
+                    this.UserMobile = response.data;
+
+                    alert("ok");
                 });
 
         },
+
         makeFavorite: function () {
 
             $('#Top_filters').hide();

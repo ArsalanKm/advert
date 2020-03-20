@@ -169,6 +169,7 @@ return [
          */
 
         Hekmatinasser\Verta\VertaServiceProvider::class,
+        Chencha\Share\ShareserviceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -231,6 +232,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Kavenegar' => Kavenegar\Laravel\Facade::class,
         'Verta' => Hekmatinasser\Verta\Verta::class,
+        "Share"=>Chencha\Share\ShareFacade::class,
 
     ],
 

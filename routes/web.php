@@ -80,6 +80,7 @@ Route::post("/show","ShowControllers@show");
 
 
 Route::post("/addmobile","HomeControllers@addmobile");
+Route::post("/verifyShowCode","HomeControllers@verifyShowCode");
 
 
 

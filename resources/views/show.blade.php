@@ -560,25 +560,39 @@
             </ul>
 
             <div class="tab-content" id="tabcontent">
-                <div id="myAdverts" class="tab-pane fade in active">
-                    <div class="entrancWarning">
-                        <h3>برای مشاهده و مدیریت آگهی ها وارد حساب کاربری شوید </h3>
+                @if(empty(Session::get('login')))
 
-                        <button class="btn btn-danger" style="color: white;height: 40px;display: block;width: 103px;position:absolute;right: 45% " data-toggle="modal" data-target="#myModal">ث
-ورود و ثبت نام
-                        </button>
-                    </div>
-                    <div class="NoadWarning" style="display: none">
-                    <h3>تا به حال در دیوار آگهی ثبت نکرده اید</h3>
-                    <a href="/advert" class="btn btn-danger" style="color: white;height: 40px;display: block;width: 103px;position:absolute;right: 45%">ثبت رایگان
-                        آگهی
+                    <div id="myAdverts" class="tab-pane fade in active">
+                        <div class="entrancWarning">
+                            <h3>برای مشاهده و مدیریت آگهی ها وارد حساب کاربری شوید </h3>
 
-                    </a>
-                    </div>
-                </div>
+                            <button class="btn btn-danger"
+                                    style="color: white;height: 40px;display: block;width: 103px;position:absolute;right: 45% "
+                                    data-toggle="modal" data-target="#myModal">ث
+                                ورود و ثبت نام
+                            </button>
+                        </div>
+                        <div class="NoadWarning" style="display: none">
+                            <h3>تا به حال در دیوار آگهی ثبت نکرده اید</h3>
+                            <a href="/advert" class="btn btn-danger"
+                               style="color: white;height: 40px;display: block;width: 103px;position:absolute;right: 45%">ثبت
+                                رایگان
+                                آگهی
+
+                            </a>
+                        </div>
+
+                    @else
+                   {{\App\HelperFunction\Helper::myAdvert(Session::get('login'))}}
 
 
-{{--my modal --}}
+
+</div>
+                @endif
+
+
+
+                {{--my modal --}}
                 <div class="modal" id="myModal">
                     <div class="modal-dialog" style="max-width: 737px;height: 232px;">
                         <div class="modal-content">
@@ -586,35 +600,51 @@
                             <!-- Modal Header -->
                             <h4 class="modal-title" style="text-align: right;padding: 10px">ورود و ثبت نام</h4>
                             <button type="button" class="close" style="position: absolute;
-left: 0;" data-dismiss="modal">&times;</button>
+left: 0;" data-dismiss="modal">&times;
+                            </button>
 
                             <!-- Modal body -->
                             <div class="modal-body">
                                 <div class="form-group" style="margin-top: 65px;" id="send_mobile">
-                                    <input type="text" value="+98" disabled  class="form-control" style="float: left;
+                                    <input type="text" value="+98" disabled class="form-control" style="float: left;
 margin-left: 244px;
 width: 56px;">
-                                    <input type="text" placeholder="شماره تلفن"  v-model="mobilenumber" class="form-control col-lg-4" style="margin-right: 168px;">
+                                    <input type="text" placeholder="شماره تلفن" v-model="mobilenumber"
+                                           class="form-control col-lg-4" style="margin-right: 168px;">
+                                    <button type="button" class="btn btn-danger" @click="addmobile()">دریافت کد تایید
+                                    </button>
+
                                 </div>
 
 
-
                                 <div id="code_mobile" style="display: none;">
-                                    <span class="alert alert-success" style="width: 100%;position: absolute;top: 4px;right: 0;text-align: center;">کد تایید با پیامک برای شما ارسال شد.</span>
+                                    <span class="alert alert-success"
+                                          style="width: 100%;position: absolute;top: 4px;right: 0;text-align: center;">کد تایید با پیامک برای شما ارسال شد.</span>
 
                                     <div class="form-group" style="margin-top: 65px;" id="">
 
-                                        <input type="text" placeholder="کد تایید 4 رقمی"  v-model="codenumber" class="form-control col-lg-4" style="margin-right: 168px;">
+                                        <input type="text" placeholder="کد تایید 4 رقمی" v-model="codenumber"
+                                               class="form-control col-lg-4" style="position: relative;right: 33.5%">
+                                    </div>
+                                    <div class="form-group" style="text-align: center">
+
+                                        <button type="button" class="btn btn-danger col-lg-4" style="border-radius: 4px"
+                                                @click="verifyCode2()">
+                                            اعمال کد
+                                        </button>
+
+
+                                    </div>
+                                    <div class="form-group" style="text-align: center" id="">
+
+                                        <span class="col-lg-4">
+                                            شماره موبایل:
+                                            @{{ UserMobile }}
+                                        </span>
                                     </div>
 
-                                    <div class="form-group" style="margin-right: 252px;" >
 
-                                        <button type="button" class="btn btn-danger"  @click="addcode()">دریافت کد تایید</button>
-
-
-                                    </div>
-
-                                    <div class="form-group" style="margin-right: 252px;" >
+                                    <div class="form-group" style="margin-right: 252px;">
 
 
                                         <span id="codemobile"></span>
@@ -624,15 +654,13 @@ width: 56px;">
                                 </div>
 
 
+                                {{--                                <div class="form-group" style="margin-right: 252px;" id="send_mobiles">--}}
 
-                                <div class="form-group" style="margin-right: 252px;" id="send_mobiles">
+                                {{--                                    <button type="button" class="btn btn-danger"  @click="addmobile()">دریافت کد تایید</button>--}}
 
-                                    <button type="button" class="btn btn-danger"  @click="addmobile()">دریافت کد تایید</button>
-
-                                </div>
+                                {{--                                </div>--}}
 
                             </div>
-
 
 
                         </div>
@@ -640,12 +668,13 @@ width: 56px;">
                 </div>
 
 
-{{--my modallll--}}
+                {{--my modallll--}}
 
 
                 <div id="myFavorites" class="tab-pane fade">
-                    <h3>Menu 1</h3>
-                    <p>Some content in menu 1.</p>
+                    {{Session::get('login')}}
+
+
                 </div>
                 <div id="RecentlySeen" class="tab-pane fade">
                     <h3>Menu 2</h3>
