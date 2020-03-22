@@ -49628,29 +49628,59 @@ var app = new Vue({
   methods: {
     /**************filter**************/
     SearchFilter: function SearchFilter(data) {
-      // alert(this.advertiser);.
-      if (this.typeadvert == 0 && this.advertisor == 0) return true;
+      var typeCheck;
+      var advertiserCheck;
+      var roomCheck; //we check that if they are empty value is true
 
-      if (this.typeadvert.length == 0 && this.advertisor.length == 0) {
-        return true;
-      } else if (this.typeadvert == 0 && this.advertisor == data.advertiser) {
-        return true;
-      } else if (this.advertisor == 0 && this.typeadvert == data.type) {
-        return true;
-      } else if (this.typeadvert == data.type && this.advertisor != data.advertiser) {
-        return false;
-      } else if (this.advertisor == data.advertiser && this.typeadvert != data.type) {
-        return false;
-      } else if (this.typeadvert == data.type) {
-        console.log('data.type= ' + data.type);
-        return this.typeadvert;
-      } else if (this.advertisor == data.advertiser) {
-        console.log('data.advertiser = ' + data.advertiser);
-        return this.advertisor;
-      } else if (data.area <= this.area2 && data.area >= this.area1) {
-        console.log('data.area2 =  ' + this.area2);
-        return this.area2;
-      } // if (this.typeadvert.length == 0) return true;
+      if (this.typeadvert.length == 0) typeCheck = true;else typeCheck = false;
+      if (this.advertisor.length == 0) advertiserCheck = true;else advertiserCheck = false;
+      if (this.room_number.length == 0) roomCheck = true;else roomCheck = false;
+
+      if (!typeCheck && !advertiserCheck && !roomCheck) {
+        console.log("here");
+        if (this.advertisor == 0 && this.typeadvert == 0 && this.room_number == data.room_number) return true;else if (this.advertisor == 0 && this.typeadvert == data.type && this.room_number == data.room_number) return true;else if (this.typeadvert == 0 && this.advertisor == data.advertiser && this.room_number == data.room_number) return true;else if (this.advertisor == data.advertiser && this.room_number == data.room_number && this.typeadvert == data.type) {
+          return true;
+        }
+      } else if (typeCheck && advertiserCheck && roomCheck) return true;else if (!typeCheck && advertiserCheck && roomCheck) {
+        if (this.typeadvert == 0) return true;else if (this.typeadvert == data.type) return true;
+      } else if (typeCheck && !advertiserCheck && roomCheck) {
+        if (this.advertisor == 0) return true;else if (this.advertisor == data.advertiser) return true;
+      } else if (typeCheck && advertiserCheck && !roomCheck) {
+        if (this.room_number == data.room_number) return true;
+      } else if (!typeCheck && !advertiserCheck && roomCheck) {
+        if (this.typeadvert == 0 && this.advertisor == 0) return true;else if (this.typeadvert == 0 && this.advertisor == data.advertiser) return true;else if (this.advertisor == 0 && this.typeadvert == data.type) return true;else if (this.typeadvert == data.type && this.advertisor == data.advertiser) return true;
+      } else if (!typeCheck && advertiserCheck && !roomCheck) {
+        if (this.typeadvert == 0 && this.room_number == data.room_number) return true;else if (this.typeadvert == data.type && this.room_number == data.room_number) return true;
+      } else if (typeCheck && !advertiserCheck && !roomCheck) {
+        if (this.advertisor == 0 && this.room_number == data.room_number) return true;else if (this.advertisor == data.advertiser && this.room_number == data.room_number) {
+          return true;
+        }
+      }
+      /*****************************/
+      // if (this.typeadvert == 0 && this.advertisor == 0) return true;
+      //
+      //
+      // if (this.typeadvert.length == 0 && this.advertisor.length == 0) {
+      //     return true;
+      // } else if (this.typeadvert == 0 && this.advertisor == data.advertiser) {
+      //     return true;
+      // } else if (this.advertisor == 0 && this.typeadvert == data.type) {
+      //     return true
+      // } else if (this.typeadvert == data.type && this.advertisor != data.advertiser) {
+      //     return false;
+      // } else if (this.advertisor == data.advertiser && this.typeadvert != data.type) {
+      //     return false
+      // } else if (this.typeadvert == data.type) {
+      //     console.log('data.type= ' + data.type);
+      //     return this.typeadvert;
+      // } else if (this.advertisor == data.advertiser) {
+      //     console.log('data.advertiser = ' + data.advertiser);
+      //     return this.advertisor;
+      // } else if (data.area <= this.area2 && data.area >= this.area1) {
+      //     console.log('data.area2 =  ' + this.area2);
+      //     return this.area2;
+      // }
+      // if (this.typeadvert.length == 0) return true;
       // if (this.typeadvert.length == 0) return true;
       // if (this.area2.length == 0) return true;
       // $("#search").click(function () {
