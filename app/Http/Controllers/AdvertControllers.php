@@ -111,7 +111,6 @@ class AdvertControllers extends Controller
 
             $advert->rent = $textFee1;
 
-            $advert->typeAdvert = $Advertiser;
 
             $advert->advert_id = $ad->id;
             $advert->advertiser = $Advertiser;
@@ -240,7 +239,7 @@ class AdvertControllers extends Controller
             $car->sunation = $runt_time;
             $car->color = $request->color;
 
-            $car->type = $TypeAdvert[0];
+//            $car->type = $TypeAdvert[0];
             $car->fee = $fee;
             $car->advert_id = $ad->id;
 

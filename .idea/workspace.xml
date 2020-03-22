@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="my advert part is almost complete but delete from history is remain ,share is complete and picture appear well">
+    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="184 daghigheye 10">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/HelperFunction/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/HelperFunction/Helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdvertControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdvertControllers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShowControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShowControllers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/userLayouts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/userLayouts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +223,9 @@
       <workItem from="1584430282706" duration="19287000" />
       <workItem from="1584544227943" duration="11041000" />
       <workItem from="1584601234041" duration="21000" />
-      <workItem from="1584601281486" duration="36360000" />
+      <workItem from="1584601281486" duration="36748000" />
+      <workItem from="1584774917302" duration="11927000" />
+      <workItem from="1584869612689" duration="2603000" />
     </task>
     <task id="LOCAL-00001" summary="I have a bug in displaying the advert information all of the adverts shown insntead of one advert">
       <created>1584000611258</created>
@@ -318,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584682262280</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="184 daghigheye 10">
+      <created>1584713919795</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1584713919795</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +369,8 @@
     <MESSAGE value="169 min:6" />
     <MESSAGE value="session 171 finished we want to make login page" />
     <MESSAGE value="my advert part is almost complete but delete from history is remain ,share is complete and picture appear well" />
-    <option name="LAST_COMMIT_MESSAGE" value="my advert part is almost complete but delete from history is remain ,share is complete and picture appear well" />
+    <MESSAGE value="184 daghigheye 10" />
+    <option name="LAST_COMMIT_MESSAGE" value="184 daghigheye 10" />
   </component>
   <component name="WindowStateProjectService">
     <state x="138" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584261705504">
@@ -373,10 +381,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="105" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583760681499" />
-    <state x="0" y="7" key="CommitChangelistDialog2" timestamp="1584682255508">
+    <state x="0" y="7" key="CommitChangelistDialog2" timestamp="1584713911972">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584682255508" />
+    <state x="0" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584713911972" />
     <state width="700" height="187" key="GridCell.Tab.0.bottom" timestamp="1584339983472">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

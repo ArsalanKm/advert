@@ -23,7 +23,7 @@ class ShowControllers extends Controller
     {
         $advert = $this->joinTables();
 
-        return ($advert);
+        return response()->json($advert);
     }
 
     public function joinTables()

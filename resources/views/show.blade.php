@@ -148,15 +148,18 @@
                             <label for="" style="position: relative;right: -43%;top: 10px">نوع : </label>
                             <ul id="type">
                                 <li><label for="">فرقی نمیکند</label>
-                                    <input type="radio" v-model="typeAdvert" :value="0">
+                                    <input type="radio" v-model="typeadvert"
+                                           :value="0" name="typeAdvert" checked="checked">
                                 </li>
                                 <li><label for="">فروشی</label>
 
-                                    <input type="radio" v-model="typeAdvert" :value="1">
+                                    <input type="radio" v-model="typeadvert"
+                                           :value="1" name="typeAdvert">
                                 </li>
                                 <li>
                                     <label for="">درخواستی</label>
-                                    <input type="radio" v-model="typeAdvert" :value="2">
+                                    <input type="radio" v-model="typeadvert"
+                                           :value="2" name="typeAdvert">
                                 </li>
                             </ul>
 
@@ -168,15 +171,18 @@
                             <label for="" style="position: relative;right: -43%;top: 10px">آگهی دهنده : </label>
                             <ul id="Advertiser">
                                 <li><label for="">فرقی نمیکند</label>
-                                    <input type="radio" v-model="advertisor" :value="0">
+                                    <input type="radio" v-model="advertisor"
+                                           :value="0" name="advertisor" checked="checked">
                                 </li>
                                 <li><label for="">شخصی</label>
 
-                                    <input type="radio" v-model="advertisor" :value="1">
+                                    <input type="radio" v-model="advertisor"
+                                           :value="1" name="advertisor">
                                 </li>
                                 <li>
                                     <label for="">مشاور املاک</label>
-                                    <input type="radio" v-model="advertisor" :value="2">
+                                    <input type="radio" v-model="advertisor"
+                                           :value="2" name="advertisor">
                                 </li>
                             </ul>
 
@@ -185,7 +191,8 @@
                         <div class="col-lg-2" style=";position:absolute;right: 1px;top: 120px">
                             <label for="" style="position: relative;right: -43%;top: 10px">تعداد اتاق : ا</label>
 
-                            <select type="text" class="form-control" style="float: right" v-model="room_number">
+                            <select type="text" class="form-control" style="float: right"
+                                    v-model="room_number">
                                 <option :value="0">بدون اتاق</option>
                                 <option :value="1">یک</option>
                                 <option :value="2">دو</option>
@@ -198,15 +205,15 @@
                             <label for="" style="position: relative;right: -43%;top: 10px">حومه شهر : </label>
                             <ul id="shahr">
                                 <li><label for="">فرقی نمیکند</label>
-                                    <input type="radio">
+                                    <input type="radio" name="cityRange">
                                 </li>
                                 <li><label for="">نیست</label>
 
-                                    <input type="radio">
+                                    <input type="radio" name="cityRange">
                                 </li>
                                 <li>
                                     <label for="">هستی</label>
-                                    <input type="radio">
+                                    <input type="radio" name="cityRange">
                                 </li>
                             </ul>
                         </div>
@@ -228,21 +235,20 @@
                         </label>
 
                     </li>
-                    <button class="btn btn-danger"
-                            style="color: white;position: relative;top: 40%;height: 37px" id="search">جست و جو
-                    </button>
+
                 </ul>
             </div>
 
 
             <div class="show_adverts_content col-lg-12">
                 <ul class="show_ad">
-                    <li v-for="adverts in advert" v-if="adverts.city=='{{$city}}' && filter(adverts) &&SearchFilter(adverts)"
+                    <li v-for="adverts in advert" v-if="adverts.city=='{{$city}}' && filter(adverts) && SearchFilter(adverts) "
                         style="cursor: pointer"
                         @click="ShowAdvert(adverts.Id)">
                         <div class="advert_subject">
                             <h5>
                                 @{{adverts.subject}}
+                                @{{adverts.area}}
                             </h5>
                         </div>
                         <div class="advert_image">
