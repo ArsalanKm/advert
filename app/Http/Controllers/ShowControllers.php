@@ -33,6 +33,7 @@ class ShowControllers extends Controller
             ->leftjoin('estates', 'adverts.Id', '=', 'estates.advert_id')
             ->leftjoin('cars', 'adverts.Id', '=', 'cars.advert_id')
             ->leftjoin('categories', 'adverts.category_id', '=', 'categories.id')
+            ->leftjoin('orders', 'adverts.Id', '=', 'orders.advert_id')
 
             ->paginate(3);
         return $advert;

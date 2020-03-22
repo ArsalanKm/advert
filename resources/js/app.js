@@ -81,8 +81,8 @@ const app = new Vue({
         codenumber: "",
         UserMobile: "",
         cat: [],
-        urgent_filter: [],
-        image_filter: [],
+        urgent_filter: '',
+        image_filter: '',
         room_number: [],
         advertisor: [],
         typeadvert: [],
@@ -91,6 +91,7 @@ const app = new Vue({
         year2: [],
         area1: [],
         area2: [],
+        searchInAdverts:'',
 
 
     },
@@ -106,9 +107,43 @@ const app = new Vue({
 
 
     methods: {
+        SearchInAllAds:function(data){
+            if(data.subject==this.searchInAdverts){
+                return data;
+            }
+            else {
+                return true;
+            }
+        },
 
+        // infiniteHandler2:function($state){
+        //     let vm=this;
+        //     axios.get('/showadvert?page='+this.page)
+        //         .then(response=>{
+        //             return response;
+        //         }).then(data=>{
+        //             $.each(data.data.data,function (key,value) {
+        //             vm.advert.push(value);
+        //             });
+        //             $state.loaded();
+        //             this.page=this.page+1;
+        //     })
+        // },
 
         /**************filter**************/
+        checkUrgentFilter:function(data){
+          if(this.urgent_filter==true&&data.cost1=='urgent'){
+              return true;
+          }
+          else if(this.urgent_filter=='')
+              return true;
+        },
+        checkImageFilter: function (data) {
+            console.log(data.image);
+            if (this.image_filter==true&&data.image != null)
+                return true;
+            else if(this.image_filter==''){return true;}
+        },
         SearchFilter: function (data) {
             var typeCheck;
             var advertiserCheck;
@@ -126,8 +161,7 @@ const app = new Vue({
                 else if (this.advertisor == data.advertiser && this.room_number == data.room_number && this.typeadvert == data.type) {
                     return true;
                 }
-            }
-            else if (typeCheck && advertiserCheck && roomCheck)
+            } else if (typeCheck && advertiserCheck && roomCheck)
                 return true;
             else if (!typeCheck && advertiserCheck && roomCheck) {
                 if (this.typeadvert == 0) return true;
@@ -136,11 +170,9 @@ const app = new Vue({
             } else if (typeCheck && !advertiserCheck && roomCheck) {
                 if (this.advertisor == 0) return true;
                 else if (this.advertisor == data.advertiser) return true;
-            }
-            else if (typeCheck && advertiserCheck && !roomCheck) {
+            } else if (typeCheck && advertiserCheck && !roomCheck) {
                 if (this.room_number == data.room_number) return true
-            }
-            else if (!typeCheck && !advertiserCheck && roomCheck) {
+            } else if (!typeCheck && !advertiserCheck && roomCheck) {
                 if (this.typeadvert == 0 && this.advertisor == 0) return true;
                 else if (this.typeadvert == 0 && this.advertisor == data.advertiser) return true;
                 else if (this.advertisor == 0 && this.typeadvert == data.type) return true;

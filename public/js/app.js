@@ -49608,8 +49608,8 @@ var app = new Vue({
     codenumber: "",
     UserMobile: "",
     cat: [],
-    urgent_filter: [],
-    image_filter: [],
+    urgent_filter: '',
+    image_filter: '',
     room_number: [],
     advertisor: [],
     typeadvert: [],
@@ -49617,7 +49617,8 @@ var app = new Vue({
     year1: [],
     year2: [],
     area1: [],
-    area2: []
+    area2: [],
+    searchInAdverts: ''
   },
   mounted: function mounted() {
     this.getcategory();
@@ -49626,7 +49627,39 @@ var app = new Vue({
     $(".send-advert3").hide();
   },
   methods: {
+    SearchInAllAds: function SearchInAllAds(data) {
+      if (data.subject == this.searchInAdverts) {
+        return data;
+      } else {
+        return true;
+      }
+    },
+    // infiniteHandler2:function($state){
+    //     let vm=this;
+    //     axios.get('/showadvert?page='+this.page)
+    //         .then(response=>{
+    //             return response;
+    //         }).then(data=>{
+    //             $.each(data.data.data,function (key,value) {
+    //             vm.advert.push(value);
+    //             });
+    //             $state.loaded();
+    //             this.page=this.page+1;
+    //     })
+    // },
+
     /**************filter**************/
+    checkUrgentFilter: function checkUrgentFilter(data) {
+      if (this.urgent_filter == true && data.cost1 == 'urgent') {
+        return true;
+      } else if (this.urgent_filter == '') return true;
+    },
+    checkImageFilter: function checkImageFilter(data) {
+      console.log(data.image);
+      if (this.image_filter == true && data.image != null) return true;else if (this.image_filter == '') {
+        return true;
+      }
+    },
     SearchFilter: function SearchFilter(data) {
       var typeCheck;
       var advertiserCheck;

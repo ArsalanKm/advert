@@ -28,7 +28,7 @@
                 <ul class="filters col-lg-12">
                     <li class="">
                         <input type="text" class="form-control"
-                               placeholder="جست و جو در همه ی آگهی ها">
+                               placeholder="جست و جو در همه ی آگهی ها" v-model="searchInAdverts">
                     </li>
                     <li class="">
 
@@ -242,13 +242,16 @@
 
             <div class="show_adverts_content col-lg-12">
                 <ul class="show_ad">
-                    <li v-for="adverts in advert" v-if="adverts.city=='{{$city}}' && filter(adverts) && SearchFilter(adverts) "
+                    <li v-for="adverts in advert"
+                        v-if="adverts.city=='{{$city}}' && filter(adverts)
+                            && SearchFilter(adverts) && checkImageFilter(adverts)
+                            && checkUrgentFilter(adverts) && SearchInAllAds(adverts)"
                         style="cursor: pointer"
                         @click="ShowAdvert(adverts.Id)">
                         <div class="advert_subject">
                             <h5>
                                 @{{adverts.subject}}
-                                @{{adverts.area}}
+                                @{{adverts.cost1}}
                             </h5>
                         </div>
                         <div class="advert_image">

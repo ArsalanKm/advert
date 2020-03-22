@@ -407,7 +407,6 @@ use App\HelperFunction\Helper;
 
 
                             </div>
-                        @endif
                         <style>
 
                         </style>
@@ -435,6 +434,7 @@ use App\HelperFunction\Helper;
 
 
                         </div>
+                            @endif
 
                         @if($state)
                             <div class="col-lg-4" style="margin-top: 66px">
@@ -551,7 +551,7 @@ use App\HelperFunction\Helper;
                                 </div>
                             </div>
                         @endif
-                        <div class="col-lg-12">
+                        <div class="col-lg-12" style="margin-top: 160px">
                             @if(($errors->first("mobile")))
                                 <div class="alert alert-danger"
                                      style="position: absolute;top: -54px;right: 14px;width: 96.5%;">
