@@ -49627,10 +49627,26 @@ var app = new Vue({
     $(".send-advert3").hide();
   },
   methods: {
+    uncheck: function uncheck() {
+      $("#allCheck").prop("checked", false);
+      $("#allCheck2").prop("checked", false);
+    },
+    FilterState: function FilterState(data) {
+      if (data == 'allAdverts') {
+        $("#StateFilters").hide();
+        $("#CarFilters").hide();
+      } else if (data.parent_id == 27 || data.id == 27) {
+        $("#StateFilters").show();
+        $("#CarFilters").hide();
+      } else if (data.id == 28 || data.parent_id == 28) {
+        $("#StateFilters").hide();
+        $("#CarFilters").show();
+      }
+    },
     SearchInAllAds: function SearchInAllAds(data) {
-      if (data.subject == this.searchInAdverts) {
+      if (String(data.subject).includes(this.searchInAdverts)) {
         return data;
-      } else {
+      } else if (this.searchInAdverts == '') {
         return true;
       }
     },

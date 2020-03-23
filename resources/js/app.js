@@ -91,7 +91,7 @@ const app = new Vue({
         year2: [],
         area1: [],
         area2: [],
-        searchInAdverts:'',
+        searchInAdverts: '',
 
 
     },
@@ -107,12 +107,33 @@ const app = new Vue({
 
 
     methods: {
-        SearchInAllAds:function(data){
-            if(data.subject==this.searchInAdverts){
-                return data;
+        uncheck: function () {
+            $("#allCheck").prop("checked", false);
+            $("#allCheck2").prop("checked", false);
+        },
+        FilterState: function (data) {
+
+            if(data=='allAdverts'){
+                $("#StateFilters").hide();
+                $("#CarFilters").hide();
             }
-            else {
+            else if (data.parent_id == 27||data.id==27) {
+                $("#StateFilters").show();
+                $("#CarFilters").hide();
+            } else if (data.id == 28||data.parent_id==28) {
+                $("#StateFilters").hide();
+                $("#CarFilters").show();
+            }
+
+        },
+
+        SearchInAllAds: function (data) {
+
+            if (String(data.subject).includes(this.searchInAdverts)) {
+                return data;
+            } else if (this.searchInAdverts == '') {
                 return true;
+
             }
         },
 
@@ -131,18 +152,19 @@ const app = new Vue({
         // },
 
         /**************filter**************/
-        checkUrgentFilter:function(data){
-          if(this.urgent_filter==true&&data.cost1=='urgent'){
-              return true;
-          }
-          else if(this.urgent_filter=='')
-              return true;
+        checkUrgentFilter: function (data) {
+            if (this.urgent_filter == true && data.cost1 == 'urgent') {
+                return true;
+            } else if (this.urgent_filter == '')
+                return true;
         },
         checkImageFilter: function (data) {
             console.log(data.image);
-            if (this.image_filter==true&&data.image != null)
+            if (this.image_filter == true && data.image != null)
                 return true;
-            else if(this.image_filter==''){return true;}
+            else if (this.image_filter == '') {
+                return true;
+            }
         },
         SearchFilter: function (data) {
             var typeCheck;
@@ -299,6 +321,7 @@ const app = new Vue({
                 });
 
         },
+
         back3: function () {
             $('#show').hide();
 
@@ -368,6 +391,7 @@ const app = new Vue({
 
                 });
         },
+
         back2: function () {
             $('.SecondSubCats').css("display", "none");
             $('.SubCats').css("display", "block");
@@ -393,6 +417,7 @@ const app = new Vue({
                 this.loadMore($state, response);
             });
         },
+
         loadMore: function ($state, response) {
             if (response.data.data.length) {
                 this.advert = this.advert.concat(response.data.data);
@@ -592,6 +617,7 @@ const app = new Vue({
 
 
         },
+
         getcategory: function () {
             axios.get('/admin/getcategories')
                 .then(response => {
@@ -604,6 +630,7 @@ const app = new Vue({
 
 
         },
+
         deleteCategory: function () {
             axios.post('/admin/deletecategory', {
                 id: this.p_id,

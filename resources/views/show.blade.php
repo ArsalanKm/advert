@@ -61,13 +61,14 @@
                                         <i class="icon icon-circle-arrow-right"
                                         >
                                         </i>
-                                        <h5>
+                                        <h5 @click="FilterState('allAdverts')">
                                             همه ی آگهی ها
                                         </h5>
                                     </li>
-                                <li v-for="scat in Scategory" @click="send_category(scat.id)">
-                                                                        <input type="checkbox" v-model="cat"
-                                                                               :value="scat.id">
+                                <li v-for="scat in Scategory">
+                                    <input type="checkbox" v-model="cat"
+                                           :value="scat.id" @click="send_category(scat.id); FilterState(scat);"
+                                           id="allCheck">
 
                                     @{{ scat .name }}
                                 </li>
@@ -83,8 +84,9 @@
                                             همه ی آگهی ها
                                         </h5>
                                     </li>
-                                <li v-for="scat in SecondScategory" @click="">
-                                    <input type="checkbox" v-model="cat" :value="scat.id">
+                                <li v-for="scat in SecondScategory">
+                                    <input type="checkbox" v-model="cat" :value="scat.id" @click="FilterState(scat)"
+                                           id="allCheck2">
                                     @{{ scat .name }}
                                 </li>
                                     </span>
@@ -100,7 +102,9 @@
                             </option>
                         </select>
                     </li>
-                    <li style="position: relative;top: 10px;width: 100%;height: 268px">
+
+                    {{-- this li is for the filter of states --}}
+                    <li id="StateFilters" style="position: relative;top: 10px;width: 100%;height: 268px;display: none">
                         <div class="col-lg-1" style="position:absolute;right: 1px">
                             <label for="" style="position: relative;right: -6px;top: 5px">متراژ(متر مربع)</label>
                             <input type="text" class="form-control" style="float: right" placeholder="از"
@@ -217,6 +221,119 @@
                                 </li>
                             </ul>
                         </div>
+
+
+                    </li>
+
+                    <li id="CarFilters" style="position: relative;top: 10px;width: 100%;height: 268px;display: none">
+                        {{-- this is for price  --}}
+                        <div class="col-lg-3" style="position:absolute;right: 1px;text-align: right;top: 40px">
+                            <label for="" style="position: relative;right: -136px;top: -25px">قیمت</label>
+                            <select name="" id="" style="width: 140px;border: 1px solid #cccccc;border-radius: 4px">
+                                <option value="" style="text-align: right">قیمت1</option>
+                                <option value="" style="text-align: right">قیمت1</option>
+                                <option value="" style="text-align: right">قیمت1</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-1" style="position:absolute;right: 1px;top: 80px">
+                            <input type="text" class="form-control" style="float: right" placeholder="از"
+                                   v-model="price1">
+                        </div>
+                        <div class="col-lg-1" style="position:absolute;right: 70px;top: 80px">
+                            <input type="text" class="form-control" style="float: right" placeholder="تا"
+                                   v-model="price2">
+                        </div>
+
+                        <div class="col-lg-2" style="position:absolute;right: 16%;top: 6px">
+                            <label for="" style="position: relative;right: -135px;top: 5px">برند:</label>
+                            <select type="text" class="form-control" style="float: right" v-model="brand">
+                                <option value="" selected>انتخاب کنید</option>
+                                <option value="ام‌وی‌ام::MVM">ام‌وی‌ام::MVM</option>
+                                <option value="بنز::Mercedes-Benz">بنز::Mercedes-Benz</option>
+                                <option value="بی‌ام‌و::BMW">بی‌ام‌و::BMW</option>
+                                <option value="پراید صندوق‌دار::Pride">پراید صندوق‌دار::Pride</option>
+                                <option value="پراید هاچ‌بک::Pride">پراید هاچ‌بک::Pride</option>
+                                <option value="پژو ۲۰۶‍::Peugeot 206">پژو ۲۰۶‍::Peugeot 206</option>
+                                <option value="پژو ۲۰۶‍ صندوق‌دار::Peugeot 206">پژو ۲۰۶‍ صندوق‌دار::Peugeot 206</option>
+                                <option value="پژو ۲۰۷::Peugeot 207">پژو ۲۰۷::Peugeot 207</option>
+                                <option value="پژو ۴۰۵::Peugeot 405">پژو ۴۰۵::Peugeot 405</option>
+                                <option value="پژو پارس::Peugeot Pars">پژو پارس::Peugeot Pars</option>
+                                <option value="پژو روآ / آر‌دی::RD/ROA">پژو روآ / آر‌دی::RD/ROA</option>
+                                <option value="پیکان::Peykan">پیکان::Peykan</option>
+                                <option value="تندر ۹۰::Tondar 90">تندر ۹۰::Tondar 90</option>
+                                <option value="تویوتا::Toyota">تویوتا::Toyota</option>
+                                <option value="تیبا::Tiba">تیبا::Tiba</option>
+                                <option value="دوو::Daewoo">دوو::Daewoo</option>
+                                <option value="رانا::Runna">رانا::Runna</option>
+                                <option value="رنو::Renault">رنو::Renault</option>
+                                <option value="زانتیا::Citroen Xantia">زانتیا::Citroen Xantia</option>
+                                <option value="سمند::Samand">سمند::Samand</option>
+                                <option value="کیا::Kia">کیا::Kia</option>
+                                <option value="گل::Gol">گل::Gol</option>
+                                <option value="لیفان::Lifan">لیفان::Lifan</option>
+                                <option value="مزدا::Mazda">مزدا::Mazda</option>
+                                <option value="نیسان::Nissan">نیسان::Nissan</option>
+                                <option value="وانت">وانت</option>
+                                <option value="هیوندای آزرا::Hyundai Azera">هیوندای آزرا::Hyundai Azera</option>
+                                <option value="هیوندای سوناتا::Hyundai Sonata">هیوندای سوناتا::Hyundai Sonata</option>
+                                <option value="هیوندای (غیره)::Hyundai">هیوندای (غیره)::Hyundai</option>
+                                <option value="سایر">سایر</option>
+                            </select>
+                        </div>
+
+                        <div class="col-lg-2" style="position:absolute;right: 60%;top: 4px">
+                            <label for="" style="position: relative;right: -135px;top: 5px">سال:</label>
+                            <select type="text" class="form-control" style="float: right" v-model="year1">
+                                @for($i=1370;$i<=1398;$i++)
+                                    <option :value="{{$i}}">{{$i}}</option>
+                                @endfor
+                            </select>
+                        </div>
+                        <div class="col-lg-2" style=";position:absolute;right: 60%;top: 64px">
+                            <label for="" style="position: relative;right: -43%;top: 10px">تا</label>
+
+                            <select type="text" class="form-control" style="float: right" placeholder="تا"
+                                    v-model="year2">
+
+                                @for($i=1370;$i<=1398;$i++)
+                                    <option :value="{{$i}}">{{$i}}</option>
+                                @endfor
+                            </select>
+                        </div>
+
+
+                        <div class="col-lg-2" style=";position:absolute;right: 31%;top: -3px">
+                            <label for="" style="position: relative;right: -43%;top: 10px">نوع : </label>
+                            <ul id="type">
+                                <li><label for="">فرقی نمیکند</label>
+                                    <input type="radio" v-model="typeadvert"
+                                           :value="0" name="typeAdvert" checked="checked">
+                                </li>
+                                <li><label for="">فروشی</label>
+
+                                    <input type="radio" v-model="typeadvert"
+                                           :value="1" name="typeAdvert">
+                                </li>
+                                <li>
+                                    <label for="">درخواستی</label>
+                                    <input type="radio" v-model="typeadvert"
+                                           :value="2" name="typeAdvert">
+                                </li>
+                            </ul>
+
+
+                        </div>
+
+                        <div class="col-lg-1" style="position:absolute;left: 108px;top: 24px">
+                            <label for="" style="position:relative;top: 31px;width: 70px">کارکرد (کیلومتر) :</label>
+                            <input type="text" class="form-control" style="float: right" placeholder="از"
+                                   v-model="price1">
+                        </div>
+                        <div class="col-lg-1" style="position:absolute;left: 30px;top: 80px">
+                            <input type="text" class="form-control" style="float: right" placeholder="تا"
+                                   v-model="price2">
+                        </div>
+
 
 
                     </li>
