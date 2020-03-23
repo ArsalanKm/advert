@@ -237,16 +237,16 @@
                         </div>
                         <div class="col-lg-1" style="position:absolute;right: 1px;top: 80px">
                             <input type="text" class="form-control" style="float: right" placeholder="از"
-                                   v-model="price1">
+                                   v-model="carPrice1">
                         </div>
                         <div class="col-lg-1" style="position:absolute;right: 70px;top: 80px">
                             <input type="text" class="form-control" style="float: right" placeholder="تا"
-                                   v-model="price2">
+                                   v-model="carPrice2">
                         </div>
 
                         <div class="col-lg-2" style="position:absolute;right: 16%;top: 6px">
                             <label for="" style="position: relative;right: -135px;top: 5px">برند:</label>
-                            <select type="text" class="form-control" style="float: right" v-model="brand">
+                            <select type="text" class="form-control" style="float: right" v-model="carBrand">
                                 <option value="" selected>انتخاب کنید</option>
                                 <option value="ام‌وی‌ام::MVM">ام‌وی‌ام::MVM</option>
                                 <option value="بنز::Mercedes-Benz">بنز::Mercedes-Benz</option>
@@ -283,9 +283,9 @@
 
                         <div class="col-lg-2" style="position:absolute;right: 60%;top: 4px">
                             <label for="" style="position: relative;right: -135px;top: 5px">سال:</label>
-                            <select type="text" class="form-control" style="float: right" v-model="year1">
+                            <select type="text" class="form-control" style="float: right" v-model="carYear1">
                                 @for($i=1370;$i<=1398;$i++)
-                                    <option :value="{{$i}}">{{$i}}</option>
+                                    <option>{{$i}}</option>
                                 @endfor
                             </select>
                         </div>
@@ -293,10 +293,10 @@
                             <label for="" style="position: relative;right: -43%;top: 10px">تا</label>
 
                             <select type="text" class="form-control" style="float: right" placeholder="تا"
-                                    v-model="year2">
+                                    v-model="carYear2">
 
                                 @for($i=1370;$i<=1398;$i++)
-                                    <option :value="{{$i}}">{{$i}}</option>
+                                    <option>{{$i}}</option>
                                 @endfor
                             </select>
                         </div>
@@ -306,17 +306,17 @@
                             <label for="" style="position: relative;right: -43%;top: 10px">نوع : </label>
                             <ul id="type">
                                 <li><label for="">فرقی نمیکند</label>
-                                    <input type="radio" v-model="typeadvert"
+                                    <input type="radio" v-model="carTypeadvert"
                                            :value="0" name="typeAdvert" checked="checked">
                                 </li>
                                 <li><label for="">فروشی</label>
 
-                                    <input type="radio" v-model="typeadvert"
+                                    <input type="radio" v-model="carTypeadvert"
                                            :value="1" name="typeAdvert">
                                 </li>
                                 <li>
                                     <label for="">درخواستی</label>
-                                    <input type="radio" v-model="typeadvert"
+                                    <input type="radio" v-model="carTypeadvert"
                                            :value="2" name="typeAdvert">
                                 </li>
                             </ul>
@@ -324,16 +324,15 @@
 
                         </div>
 
-                        <div class="col-lg-1" style="position:absolute;left: 108px;top: 24px">
-                            <label for="" style="position:relative;top: 31px;width: 70px">کارکرد (کیلومتر) :</label>
+                        <div class="col-lg-1" style="position:absolute;left: 108px;top: 51px">
+                            <label for="" style="position:relative;top: 7px;width: 80px">کارکرد (کیلومتر) :</label>
                             <input type="text" class="form-control" style="float: right" placeholder="از"
-                                   v-model="price1">
+                                   v-model="carSunation1">
                         </div>
                         <div class="col-lg-1" style="position:absolute;left: 30px;top: 80px">
                             <input type="text" class="form-control" style="float: right" placeholder="تا"
-                                   v-model="price2">
+                                   v-model="carSunation2">
                         </div>
-
 
 
                     </li>
@@ -362,7 +361,8 @@
                     <li v-for="adverts in advert"
                         v-if="adverts.city=='{{$city}}' && filter(adverts)
                             && SearchFilter(adverts) && checkImageFilter(adverts)
-                            && checkUrgentFilter(adverts) && SearchInAllAds(adverts)"
+                            && checkUrgentFilter(adverts) && SearchInAllAds(adverts)
+                            && CarFilters(adverts) && BrandFilter(adverts) &&carTypeFilter(adverts)"
                         style="cursor: pointer"
                         @click="ShowAdvert(adverts.Id)">
                         <div class="advert_subject">

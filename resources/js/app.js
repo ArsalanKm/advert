@@ -92,7 +92,14 @@ const app = new Vue({
         area1: [],
         area2: [],
         searchInAdverts: '',
-
+        carSunation2: [],
+        carSunation1: [],
+        carTypeadvert: [],
+        carYear2: [],
+        carYear1: [],
+        carBrand: [],
+        carPrice1: [],
+        carPrice2: [],
 
     },
 
@@ -111,16 +118,64 @@ const app = new Vue({
             $("#allCheck").prop("checked", false);
             $("#allCheck2").prop("checked", false);
         },
+        carTypeFilter: function (data) {
+            if (this.carTypeadvert.length == 0 || this.carTypeadvert == 0) return true;
+            if (this.carTypeadvert==data.type){return true}
+        },
+        BrandFilter: function (data) {
+            if (String(data.brand).includes(this.carBrand)) return true;
+            else if (this.carBrand.length == 0) return tr;
+        },
+        CarFilters: function (data) {
+            var checkPrice;
+            var checkSunation;
+            var checkYear;
+            if (this.carYear1.length == 0 || this.carYear2.length == 0) checkYear = false; else checkYear = true;
+            if (this.carPrice1.length == 0 || this.carPrice2.length == 0) checkPrice = false; else checkPrice = true;
+            if (this.carSunation1.length == 0 || this.carSunation2.length == 0) checkSunation = false; else checkSunation = true;
+
+
+            if (!checkSunation && !checkPrice && !checkYear) return true;
+            else if (checkPrice && checkSunation && !checkYear) {
+                if (parseInt(data.fee) <= parseInt(this.carPrice2) && parseInt(data.fee) >= parseInt(this.carPrice1) && parseInt(data.sunation) <= parseInt(this.carSunation2)) {
+                    return true;
+                }
+            } else if (checkPrice && !checkSunation && !checkYear) {
+
+                if (parseInt(data.fee) <= parseInt(this.carPrice2) && parseInt(data.fee) >= parseInt(this.carPrice1)) return true;
+            } else if (!checkPrice && checkSunation && !checkYear) {
+                if (parseInt(data.sunation) <= parseInt(this.carSunation2) && parseInt(data.sunation) >= parseInt(this.carSunation1)) return true;
+            } else if (!checkPrice && !checkSunation && checkYear) {
+
+                if (parseInt(data.year) <= parseInt(this.carYear2) && parseInt(data.year) >= parseInt(this.carYear1)) return true;
+            } else if (!checkPrice && checkSunation && checkYear) {
+                if (parseInt(data.sunation) <= parseInt(this.carSunation2) && parseInt(data.sunation) >= parseInt(this.carSunation1)
+                    && parseInt(data.year) <= parseInt(this.carYear2) && parseInt(data.year) >= parseInt(this.carYear1))
+                    return true;
+            } else if (checkPrice && !checkSunation && checkYear) {
+                if (parseInt(data.fee) <= parseInt(this.carPrice2) && parseInt(data.fee) >= parseInt(this.carPrice1)
+                    && parseInt(data.year) <= parseInt(this.carYear2) && parseInt(data.year) >= parseInt(this.carYear1)) return true;
+
+            } else if (checkPrice && checkSunation && checkYear) {
+
+                if (parseInt(data.year) <= parseInt(this.carYear2) && parseInt(data.year) >= parseInt(this.carYear1) &&
+                    parseInt(data.fee) <= parseInt(this.carPrice2) && parseInt(data.fee) >= parseInt(this.carPrice1) &&
+                    parseInt(data.sunation) <= parseInt(this.carSunation2) && parseInt(data.sunation) >= parseInt(this.carSunation1)
+                ) {
+                    return true;
+                }
+
+            }
+        },
         FilterState: function (data) {
 
-            if(data=='allAdverts'){
+            if (data == 'allAdverts') {
                 $("#StateFilters").hide();
                 $("#CarFilters").hide();
-            }
-            else if (data.parent_id == 27||data.id==27) {
+            } else if (data.parent_id == 27 || data.id == 27) {
                 $("#StateFilters").show();
                 $("#CarFilters").hide();
-            } else if (data.id == 28||data.parent_id==28) {
+            } else if (data.id == 28 || data.parent_id == 28) {
                 $("#StateFilters").hide();
                 $("#CarFilters").show();
             }
