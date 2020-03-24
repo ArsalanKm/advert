@@ -383,6 +383,18 @@ input:checked + .slid:before {
     display: block;
     border-radius: 7px;
 }
+.urgentBtn {
+    text-align: center;
+    width: 40px;
+    background: #ca2604;
+    color: white;
+    height: 30px;
+    display: block;
+    border-radius: 7px;
+    position: absolute;
+    right: 70px;
+    top: 110px;
+}
 
 .mainCats option {
     text-align: right;
@@ -450,6 +462,10 @@ input:checked + .slid:before {
     right: 5px;
     top: 10px;
 }
+
+
+
+
 
 
 .dropdown-menu.show {
@@ -733,4 +749,87 @@ input:checked + .slid:before {
 .modal-backdrop{
     opacity: 0.2 !important;
 }
+#sidebarMainCats {
+    width: 200px !important;
+}
+#sidebarSubCats{
+    width: 200px !important;
+}
+#sidebarSubCats li{
+    height: 40px !important;
+}
+#sidebarSecondSubCats{
+    width: 200px !important;
+}
+#sidebarSecondSubCats li{
+    height: 40px !important;
+}
+
+.mainCats2 option {
+    text-align: right;
+    padding-right: 20px;
+    border-bottom: 1px solid #eeeeee;
+    height: 40px;
+    padding-top: 8px;
+    cursor: pointer;
+}
+
+.SubCats2 {
+    display: block;
+    width: 371px;
+    height: 40px;
+}
+
+.SecondSubCats2 {
+    display: block;
+    width: 371px;
+    height: 40px;
+}
+
+.subCats2 li {
+    width: 100% !important;
+    text-align: right;
+    border-bottom: 1px solid #eeeeee;
+    padding-right: 10px;
+    padding-top: 10px;
+    line-height: 2.5;
+    cursor: pointer;
+    position: relative;
+}
+
+.subCats2 li h5 {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.subCats2 li i {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.SecondsubCats2 li {
+    width: 100% !important;
+    text-align: right;
+    border-bottom: 1px solid #eeeeee;
+    padding-right: 10px;
+    padding-top: 10px;
+    line-height: 2.5;
+    cursor: pointer;
+    position: relative;
+}
+
+.SecondsubCats2 li h5 {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.SecondsubCats2 li i {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
 

@@ -8,15 +8,51 @@
 
         <aside id="sidebar">
             <div class="col-lg-2">
-                <div class="advert_header">همه ی آگهی ه
+                <div class="advert_header" @click="asideAllAdvert()">همه ی آگهی ه
                     ا
                 </div>
                 <ul class="catList">
-                    <li>املاک</li>
-                    <li>املاک</li>
-                    <li>املاک</li>
-                    <li>املاک</li>
-                    <li>املاک</li>
+                                     <span class="mainCats2" id="sidebarMainCats" style="display: block;width: 371px">
+
+                                    <option class="" v-for="category in maincategoires"
+                                            :value="category.id"
+                                            @click="sideBarShowCat(category.id)">
+                                    @{{ category.name }}
+                                    </option>
+
+                                    </span>
+
+
+                    <span class="SubCats2" id="sidebarSubCats" style="display: none">
+                                    <li @click="sideBarBack()">
+                                        <i class="icon icon-circle-arrow-right"
+                                        >
+                                        </i>
+
+                                    </li>
+                                <li v-for="scat in Scategory">
+                                    <input type="checkbox" v-model="cat"
+                                           :value="scat.id" @click="sideBarSend_category(scat.id); FilterState(scat);"
+                                           id="allCheck">
+
+                                    @{{ scat .name }}
+                                </li>
+                                    </span>
+
+
+                    <span class="SecondSubCats3" id="sidebarSecondSubCats" style="display: none">
+                                    <li @click="sideBarBack2()">
+                                        <i class="icon icon-circle-arrow-right"
+                                        >
+                                        </i>
+
+                                    </li>
+                                <li v-for="scat in SecondScategory">
+                                    <input type="checkbox" v-model="cat" :value="scat.id" @click="FilterState(scat)"
+                                           id="allCheck2">
+                                    @{{ scat .name }}
+                                </li>
+                                    </span>
                 </ul>
             </div>
         </aside>
@@ -405,7 +441,13 @@
                             <span v-else>
 
                                 </span>
+
                         </div>
+                        <span class="urgentBtn" v-if="adverts.cost1=='urgent'">
+                                 <p style="border: 1px solid red;border-radius: 5px;height: 100%">
+                                    فوری
+                                </p>
+                            </span>
                         <div class="advert_price">
 
                             <span v-if="adverts.typeAdvert==0">

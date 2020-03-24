@@ -114,6 +114,61 @@ const app = new Vue({
 
 
     methods: {
+
+        sideBarShowCat:function(id){
+            axios.post('/show_cat', {
+                Myid: id
+            })
+                .then((response) => {
+                    $('#sidebarMainCats').css("display", "none");
+                    $('#sidebarSubCats').css("display", "block");
+                    // $('.dropdown-menu').css("display", "block");
+
+                    this.Scategory = response.data;
+                    $.each(this.Scategory, function (key, value) {
+                        $('#title').text(value.name)
+                    });
+
+
+                });
+        },
+        asideAllAdvert:function(){
+            $("#StateFilters").hide();
+            $("#CarFilters").hide();
+            $('#sidebarSubCats').css("display", "none");
+            $('#sidebarSecondSubCats').css("display", "none");
+
+            $('#sidebarMainCats').css("display", "block");
+        },
+        sideBarBack:function(){
+            $('#sidebarSubCats').css("display", "none");
+            $('#sidebarMainCats').css("display", "block");
+
+        },
+
+        sideBarSend_category:function(id){
+            axios.post('/show_cat', {
+                Myid: id
+            })
+                .then((response) => {
+                    this.SecondScategory = response.data;
+                    $.each(this.SecondScategory, function (key, value) {
+                        $('#title').text(value.name)
+                    });
+
+                    $('#sidebarSubCats').css("display", "none");
+                    $('#sidebarSecondSubCats').css("display", "block");
+                    // $('.dropdown-menu').css("display", "block");
+
+
+                });
+        },
+        sideBarBack2:function(){
+            $('#sidebarSecondSubCats').css("display", "none");
+            $('#sidebarSubCats').css("display", "block");
+
+        },
+
         uncheck: function () {
             $("#allCheck").prop("checked", false);
             $("#allCheck2").prop("checked", false);
@@ -172,6 +227,7 @@ const app = new Vue({
             if (data == 'allAdverts') {
                 $("#StateFilters").hide();
                 $("#CarFilters").hide();
+
             } else if (data.parent_id == 27 || data.id == 27) {
                 $("#StateFilters").show();
                 $("#CarFilters").hide();
@@ -179,6 +235,7 @@ const app = new Vue({
                 $("#StateFilters").hide();
                 $("#CarFilters").show();
             }
+
 
         },
 

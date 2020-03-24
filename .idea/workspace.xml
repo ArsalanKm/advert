@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="session 189 finished and state filters and car filters open when they should open :)">
+    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="session 194 finished successfully and CarFilters and Estate Filters are working great">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
@@ -224,7 +225,8 @@
       <workItem from="1584601281486" duration="36748000" />
       <workItem from="1584774917302" duration="11927000" />
       <workItem from="1584869612689" duration="12825000" />
-      <workItem from="1584947034244" duration="18159000" />
+      <workItem from="1584947034244" duration="18299000" />
+      <workItem from="1585038517322" duration="7876000" />
     </task>
     <task id="LOCAL-00001" summary="I have a bug in displaying the advert information all of the adverts shown insntead of one advert">
       <created>1584000611258</created>
@@ -345,7 +347,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584960384498</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="session 194 finished successfully and CarFilters and Estate Filters are working great">
+      <created>1584982353130</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1584982353130</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +403,8 @@
     <MESSAGE value="filter bar asase noe agahi va agahi dahande va tedade otagh morattab shod" />
     <MESSAGE value="session 188 finished" />
     <MESSAGE value="session 189 finished and state filters and car filters open when they should open :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="session 189 finished and state filters and car filters open when they should open :)" />
+    <MESSAGE value="session 194 finished successfully and CarFilters and Estate Filters are working great" />
+    <option name="LAST_COMMIT_MESSAGE" value="session 194 finished successfully and CarFilters and Estate Filters are working great" />
   </component>
   <component name="WindowStateProjectService">
     <state x="138" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584261705504">
@@ -405,10 +415,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="105" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583760681499" />
-    <state x="0" y="7" key="CommitChangelistDialog2" timestamp="1584960380062">
+    <state x="0" y="7" key="CommitChangelistDialog2" timestamp="1584982349380">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584960380062" />
+    <state x="0" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584982349380" />
     <state width="700" height="187" key="GridCell.Tab.0.bottom" timestamp="1584339983472">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
