@@ -49626,7 +49626,8 @@ var app = new Vue({
     carYear1: [],
     carBrand: [],
     carPrice1: [],
-    carPrice2: []
+    carPrice2: [],
+    chatmobilenumber: ""
   },
   mounted: function mounted() {
     this.getcategory();
@@ -49635,6 +49636,25 @@ var app = new Vue({
     $(".send-advert3").hide();
   },
   methods: {
+    verifyCode3: function verifyCode3() {
+      var mobile = this.chatmobilenumber;
+      alert('mobile' + mobile);
+      alert(this.codenumber);
+      axios.post('/verifyShowCode', {
+        code: this.codenumber,
+        mobile: mobile
+      }).then(function (response) {
+        console.log('new response : ' + response);
+
+        if (response.data == "\nyes") {
+          $("#send_mobile").hide();
+          $("#code_mobile").hide();
+          $("#myModal").hide();
+        } else if (response.data == "\nno") {
+          alert("code is not verify");
+        }
+      });
+    },
     sideBarShowCat: function sideBarShowCat(id) {
       var _this = this;
 
@@ -49839,7 +49859,8 @@ var app = new Vue({
     /****************filter****************/
     verifyCode2: function verifyCode2() {
       var mobile = this.UserMobile;
-      alert(mobile);
+      alert('mobile' + mobile);
+      alert('code' + this.codenumber);
       axios.post('/verifyShowCode', {
         code: this.codenumber,
         mobile: mobile
@@ -49865,7 +49886,7 @@ var app = new Vue({
       }).then(function (response) {
         $("#send_mobile").hide();
         $("#code_mobile").show();
-        _this3.UserMobile = response.data;
+        _this3.UserMobile = _this3.mobilenumber;
         alert("ok");
       });
     },

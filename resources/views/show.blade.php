@@ -513,10 +513,10 @@
                         دریافت اطلاعات تماس
                     </a>
 
-                    <span class="StartChat" href="">
+                    <a class="StartChat" :href="'/chat/'+selectedAd.Id">
 
                         شروع چت
-                    </span>
+                    </a>
 
                       <span style="cursor: pointer" class="makeFavorite" href="" @click="makeFavorite(selectedAd)">
 

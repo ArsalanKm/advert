@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdvertsTable extends Migration
+class CreateChatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateAdvertsTable extends Migration
      */
     public function up()
     {
-        Schema::table('adverts', function (Blueprint $table) {
+        Schema::table('chats', function (Blueprint $table) {
             //
-            $table->date('date');
+            $table->string('image');
         });
     }
 
@@ -26,9 +26,9 @@ class CreateAdvertsTable extends Migration
      */
     public function down()
     {
-        Schema::table('adverts', function (Blueprint $table) {
+        Schema::table('chats', function (Blueprint $table) {
             //
-            $table->date('date');
+            $table->string('image');
         });
     }
 }

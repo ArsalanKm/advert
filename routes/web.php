@@ -84,6 +84,10 @@ Route::post("/verifyShowCode","HomeControllers@verifyShowCode");
 
 Route::post("/addfavorite","ShowControllers@addfavorite");
 
+Route::get('/chat/{id?}',"ChatControllers@index");
+
+
+
 
 
 

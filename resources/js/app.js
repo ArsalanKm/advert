@@ -100,6 +100,7 @@ const app = new Vue({
         carBrand: [],
         carPrice1: [],
         carPrice2: [],
+        chatmobilenumber:"",
 
     },
 
@@ -114,7 +115,31 @@ const app = new Vue({
 
 
     methods: {
+        verifyCode3: function () {
+            var mobile = this.chatmobilenumber;
+            alert('mobile'+mobile);
+            alert(this.codenumber);
 
+            axios.post('/verifyShowCode', {
+                code: this.codenumber,
+                mobile: mobile,
+
+            })
+                .then((response) => {
+                    console.log('new response : '+response);
+                    if (response.data == "\nyes") {
+                        $("#send_mobile").hide();
+                        $("#code_mobile").hide();
+                        $("#myModal").hide();
+                    } else if (response.data == "\nno") {
+                        alert("code is not verify");
+
+                    }
+
+
+                });
+
+        },
         sideBarShowCat:function(id){
             axios.post('/show_cat', {
                 Myid: id
@@ -378,7 +403,8 @@ const app = new Vue({
         /****************filter****************/
         verifyCode2: function () {
             var mobile = this.UserMobile;
-            alert(mobile);
+            alert('mobile'+mobile);
+            alert('code'+this.codenumber);
 
             axios.post('/verifyShowCode', {
                 code: this.codenumber,
@@ -411,7 +437,7 @@ const app = new Vue({
 
                     $("#send_mobile").hide();
                     $("#code_mobile").show();
-                    this.UserMobile = response.data;
+                    this.UserMobile = this.mobilenumber;
 
                     alert("ok");
                 });
