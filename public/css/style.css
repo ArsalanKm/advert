@@ -967,3 +967,50 @@ input:checked + .slid:before {
     text-align: right;
     line-height: 30px;
 }
+.chat_text{
+    position: relative;
+    height: 100%;
+}
+.conversationWarning{
+    margin: 0 auto;
+    background: #eeeeee;
+    position: absolute;
+    right: 17%;
+    top: 12%;
+    height: 85px;
+    width: 400px;
+    border-radius: 4px;
+}
+.conversationRule{
+    position: absolute;
+    top: 15px;
+    width: 100%;
+    padding: 0;
+    text-align: right;
+    padding-right: 10px;
+}
+.conversationRule li{
+    height: 30px;
+    margin-bottom: 5px;
+    position: relative;
+}
+.conversationRule li i{
+    position: absolute;
+    right: 0px;
+    top: 2px;
+}
+.conversationRule li span{
+    position: absolute;
+    right: 15px;
+}
+.userInput{
+    position: absolute;
+    bottom: 45px;
+    width: 100%;
+    right: -6px;
+}
+.userInput input{
+    width: 98%;
+    border: 1px solid ;
+}
+

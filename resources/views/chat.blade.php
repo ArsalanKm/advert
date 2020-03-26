@@ -6,7 +6,7 @@
 
         @if(empty(Session::get('login')))
             <div class="card">
-                <div class="form-group" style="margin-top: 65px;position: relative;left: -33.5%" id="send_mobile">
+                <div class="form-group" style="margin-top: 65px;position: relative;" id="send_mobile">
                     <input type="text" value="+98" disabled class="form-control" style="float: left;
 margin-left: 244px;
 width: 56px;">
@@ -93,21 +93,60 @@ width: 56px;">
                     </div>
 
                     <div class="col-lg-4" style="float: right;padding-right: 0">
-                        <div class="chat_users" style="border: 1px solid #eeeeee">
-                            <div class="chat_header">
+                        <div class="chat_users" style="height: 100%;border: 1px solid #eeeeee">
 
-                            </div>
-                            <div class="show_users">
-                                {{$id}}
-                            </div>
+                            @foreach($advert as $adverts)
+                                <span style="background: #e3f2fd;display: block;height: 70px">
+                                    @if($adverts->image==null)
+                                        <span style="float: right">
+                                        <img src="/img/index.png" style="width: 50px;height: 50px;margin:8px">
+                                        </span>
+                                    @else
+                                        <span style="float: right" style="width: 50px;height: 50px;margin: 8px">
+                                        <img src="/images/{{$adverts->image}}">
+                                        </span>
+                                    @endif
+                                    <p class="chat_title"
+                                       style="margin: 0;text-align: right;width: 80%;font-weight: bold;font-size: 13pt">
+                                        {{$adverts->subject}}
+
+                                    </p>
+                                    <p class="chat_text" style="margin: 0;text-align: right;width: 80%;font-size: 11pt">
+                                        {{$adverts->chat_text}}
+
+                                    </p>
+                                    </span>
+                            @endforeach
+
+
                         </div>
 
                     </div>
                     <div class="col-lg-8">
                         <div class="chat_text">
-                            <div class="text_header">
-
+                            <div class="conversationWarning">
+                                <ul class="conversationRule">
+                                    <li>
+                                        <i class="icon icon-linux"></i>
+                                        <span>لطفا از ارسال اطلاعات محرمانه مانند رمز عبور و کد تایید خود داری نمایید.</span>
+                                    </li>
+                                    <li>
+                                        <i class="icon icon-linux"></i>
+                                        <span>
+                                            در صورت مشاهده هرگونه تخلف می توانید کاربر متخلف را مسدود کنید.
+                                        </span>
+                                    </li>
+                                </ul>
                             </div>
+
+                            <div class="userInput" style="direction: rtl" >
+                                <img src="/img/index.svg" style="position: absolute;right: -20px; width: 24px;height: 27px;cursor:pointer;">
+                                <input type="text" placeholder="پیام خود را بنویسید...." >
+                                <i class="icon icon-paper-clip" style="position: absolute;left: -15px;top: 5px;cursor: pointer;color: gray;width: 30px;height: 30px">
+
+                                </i>
+                            </div>
+
                         </div>
                     </div>
                 </div>

@@ -24,7 +24,8 @@ class Chat extends Model
      * chat model has n-to-n relation between advert class
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function advert(){
+    public function advert()
+    {
         return $this->belongsToMany(Advert::class);
     }
 
@@ -32,7 +33,13 @@ class Chat extends Model
      * each chat has many chatimages
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function chatImage(){
+    public function chatImage()
+    {
         return $this->hasMany(ChatImage::class);
+    }
+
+    public function getSelfMessageAttribute()
+    {
+        return $this->user_id===auth()->user()->id;
     }
 }

@@ -23,6 +23,8 @@ Vue.use(require('vue-infinite-loading'));
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('chatComponent', require('./components/chatComponent.vue').default);
+Vue.component('chatMessageComponent', require('./components/chatMessageComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -100,7 +102,7 @@ const app = new Vue({
         carBrand: [],
         carPrice1: [],
         carPrice2: [],
-        chatmobilenumber:"",
+        chatmobilenumber: "",
 
     },
 
@@ -117,7 +119,7 @@ const app = new Vue({
     methods: {
         verifyCode3: function () {
             var mobile = this.chatmobilenumber;
-            alert('mobile'+mobile);
+            alert('mobile' + mobile);
             alert(this.codenumber);
 
             axios.post('/verifyShowCode', {
@@ -126,7 +128,7 @@ const app = new Vue({
 
             })
                 .then((response) => {
-                    console.log('new response : '+response);
+                    console.log('new response : ' + response);
                     if (response.data == "\nyes") {
                         $("#send_mobile").hide();
                         $("#code_mobile").hide();
@@ -140,7 +142,7 @@ const app = new Vue({
                 });
 
         },
-        sideBarShowCat:function(id){
+        sideBarShowCat: function (id) {
             axios.post('/show_cat', {
                 Myid: id
             })
@@ -157,7 +159,7 @@ const app = new Vue({
 
                 });
         },
-        asideAllAdvert:function(){
+        asideAllAdvert: function () {
             $("#StateFilters").hide();
             $("#CarFilters").hide();
             $('#sidebarSubCats').css("display", "none");
@@ -165,13 +167,13 @@ const app = new Vue({
 
             $('#sidebarMainCats').css("display", "block");
         },
-        sideBarBack:function(){
+        sideBarBack: function () {
             $('#sidebarSubCats').css("display", "none");
             $('#sidebarMainCats').css("display", "block");
 
         },
 
-        sideBarSend_category:function(id){
+        sideBarSend_category: function (id) {
             axios.post('/show_cat', {
                 Myid: id
             })
@@ -188,7 +190,7 @@ const app = new Vue({
 
                 });
         },
-        sideBarBack2:function(){
+        sideBarBack2: function () {
             $('#sidebarSecondSubCats').css("display", "none");
             $('#sidebarSubCats').css("display", "block");
 
@@ -200,7 +202,9 @@ const app = new Vue({
         },
         carTypeFilter: function (data) {
             if (this.carTypeadvert.length == 0 || this.carTypeadvert == 0) return true;
-            if (this.carTypeadvert==data.type){return true}
+            if (this.carTypeadvert == data.type) {
+                return true
+            }
         },
         BrandFilter: function (data) {
             if (String(data.brand).includes(this.carBrand)) return true;
@@ -403,8 +407,8 @@ const app = new Vue({
         /****************filter****************/
         verifyCode2: function () {
             var mobile = this.UserMobile;
-            alert('mobile'+mobile);
-            alert('code'+this.codenumber);
+            alert('mobile' + mobile);
+            alert('code' + this.codenumber);
 
             axios.post('/verifyShowCode', {
                 code: this.codenumber,
