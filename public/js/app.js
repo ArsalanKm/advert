@@ -50452,6 +50452,13 @@ var app = new Vue({
       }).then(function (response) {
         location.href = "/admin/advert";
       })["catch"](function (error) {});
+    },
+    users: function users() {
+      var _this14 = this;
+
+      axios.get('/showuser').then(function (response) {
+        _this14.advert = response.data;
+      });
     }
   }
 });

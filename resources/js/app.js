@@ -804,6 +804,11 @@ const app = new Vue({
                 .catch((error) => {
                 });
 
+        },
+        users:function () {
+                axios.get('/showuser').then(response =>{
+                    this.advert=response.data;
+                })
         }
 
 
