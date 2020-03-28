@@ -9,6 +9,7 @@ class Chat extends Model
     //
     protected $table = "chats";
     public $timestamps = false;
+    protected $fillable=['chat_text','date','chat_image','advert_id','sender_id'];
 
     /**
      * chat model has n-to-n relation between user class

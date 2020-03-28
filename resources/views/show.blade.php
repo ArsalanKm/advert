@@ -513,7 +513,7 @@
                         دریافت اطلاعات تماس
                     </a>
 
-                    <a class="StartChat" :href="'/chat/'+selectedAd.Id">
+                    <a class="StartChat" href="#" data-toggle="modal" :data-target="'#chatModal'+selectedAd.Id">
 
                         شروع چت
                     </a>
@@ -711,6 +711,55 @@
                     </div>
                 </div>
 
+                        <div class="modal fade" :id="'chatModal'+selectedAd.Id" role="dialog">
+                            <div class="modal-dialog" style="max-width: 737px;height: 232px;">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <h4 class="modal-title" style="text-align: right;padding: 10px">فرستادن پیام
+                                        نام</h4>
+                                    <button type="button" class="close" style="position: absolute;
+left: 0;" data-dismiss="modal">&times;
+
+
+                                    </button>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body" style="height: 200px">
+                                        <form action="/sendmessage" method="post">
+                                            @csrf
+                                        <div class="form-group" style="position:relative;width: 100%;top: 30px">
+                                            {{Session::get('login')}}
+                                            @if(!empty(Session::get('login')))
+                                                <input type="hidden"  placeholder="شماره موبایل"
+                                                       name="user_id" value="{{Session::get('login')->id}}">
+
+                                            @else
+                                                <input style="width: 100%;border: 1px solid #cccccc" type="text"
+                                                       name="user_id" placeholder="شماره موبایل">
+                                            @endif
+
+                                            <textarea name="message" id=""
+                                                      style="width: 100%;border: 1px solid #cccccc;color: #ca0600;text-align: right">
+                                                متن پیام خود را در اینجا بنویسید....
+                                            </textarea>
+                                            <input type="hidden" :value="selectedAd.Id" name="advert_id">
+
+                                        </div>
+                                        <button type="submit" class="btn btn-danger" style="position: relative;left: 90%;top: 25%;width: 63px;
+height: 35px;">
+                                            فرستادن پیام
+                                        </button>
+                                        </form>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
             </span>
 
             </div>
@@ -842,6 +891,14 @@ width: 56px;">
                                 </div>
                             </div>
                         </div>
+
+
+
+                        {{--   chat modal --}}
+                        {{--my modal --}}
+
+
+
                     @endif
                 </div>
 

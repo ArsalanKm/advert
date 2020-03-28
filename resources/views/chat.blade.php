@@ -61,6 +61,9 @@ width: 56px;">
 
 
             </div>
+
+
+
         @else
 
 
@@ -103,7 +106,7 @@ width: 56px;">
                                         </span>
                                     @else
                                         <span style="float: right" style="width: 50px;height: 50px;margin: 8px">
-                                        <img src="/images/{{$adverts->image}}">
+                                        <img src="/images/{{$adverts->image}}" style="width: 50px;height: 50px">
                                         </span>
                                     @endif
                                     <p class="chat_title"
@@ -139,13 +142,24 @@ width: 56px;">
                                 </ul>
                             </div>
 
-                            <div class="userInput" style="direction: rtl" >
-                                <img src="/img/index.svg" style="position: absolute;right: -20px; width: 24px;height: 27px;cursor:pointer;">
-                                <input type="text" placeholder="پیام خود را بنویسید...." >
-                                <i class="icon icon-paper-clip" style="position: absolute;left: -15px;top: 5px;cursor: pointer;color: gray;width: 30px;height: 30px">
+                            {{-- composers I dont have any idea--}}
 
-                                </i>
-                            </div>
+                          <div class="content" class="scrollbar" style="background: white">
+                              <ul class="messages">
+
+                                  <chat-log>
+
+                                  </chat-log>
+
+
+                              </ul>
+                          </div>
+                            <chat-composer>
+
+
+
+
+                            </chat-composer>
 
                         </div>
                     </div>

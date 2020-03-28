@@ -23,8 +23,10 @@ Vue.use(require('vue-infinite-loading'));
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('chatComponent', require('./components/chatComponent.vue').default);
-Vue.component('chatMessageComponent', require('./components/chatMessageComponent.vue').default);
+Vue.component('chat-component', require('./components/chatComponent.vue').default);
+Vue.component('chat-message', require('./components/chatMessageComponent.vue').default);
+Vue.component('chat-composer', require('./components/ChatComposer.vue').default);
+Vue.component('chat-log', require('./components/ChatLog.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -420,6 +422,7 @@ const app = new Vue({
                     if (response.data == "\nyes") {
                         // $("#send_mobile").hide();
                         $("#code_mobile").hide();
+                        location.reload();
                         $("#myModal").hide();
                     } else if (response.data == "\nno") {
                         alert("code is not verify");

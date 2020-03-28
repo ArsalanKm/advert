@@ -2,16 +2,16 @@
     <li class="media messages">
         <div class="media-body">
             <div class="media">
-                <a class="pull-left" href="">
+                <a class="pull-left" href="#">
                     <img src="" alt="" class="">
                 </a>
                 <div class="media-body">
-                    <span>
-                    متن چت
-                    </span>
-                    <span>
+                        <span>
+                            متن چت
+                        </span>
+                        <span>
 
-                    </span>
+                        </span>
                     <small class="text-muted">
 
                     </small>

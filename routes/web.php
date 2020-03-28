@@ -86,6 +86,8 @@ Route::post("/addfavorite","ShowControllers@addfavorite");
 
 Route::get('/chat/{id?}',"ChatControllers@index");
 
+Route::post('/sendmessage','ChatControllers@sendmessage');
+
 
 
 

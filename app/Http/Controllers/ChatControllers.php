@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Advert;
+use App\Chat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,6 +21,24 @@ class ChatControllers extends Controller
             ->get();
 
         return view('chat', ['id' => $id, 'advert' => $advert]);
+    }
+
+    public function sendmessage(Request $request){
+        $chat_text=$request->message;
+        $advert_id=$request->advert_id;
+        $sender_id=$request->user_id;
+        $message=Chat::create(
+[
+    'chat_text'=>$chat_text,
+    'advert_id'=>$advert_id,
+    'sender_id'=>$sender_id,
+
+]
+        );
+        if($message){
+            return redirect('/chat/'.$advert_id);
+        }
+
     }
 
 }
