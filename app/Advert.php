@@ -35,7 +35,7 @@ public function Car(){
      */
 public function user(){
 
-    return $this->belongsToMany(User::class);
+    return $this->belongsTo(User::class);
 }
 
     /**

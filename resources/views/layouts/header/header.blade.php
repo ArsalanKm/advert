@@ -159,6 +159,11 @@
         <a href="">
             تماس با ما
         </a>
+        @if(!empty(session('login')))
+        <a href="/logout">
+            خروج
+        </a>
+            @endif
 
     </div>
     <div class="SelectorCity">

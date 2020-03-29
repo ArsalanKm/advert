@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Advert;
 use App\Chat;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -46,5 +47,14 @@ class ChatControllers extends Controller
             ->get();
         return $advert;
     }
+
+    public function privateMessages(User $user){
+        $pvCommunication=Chat::with('user')
+       ->where(['user_id'=>auth()->user()->id,
+           'receiver_id'=>$user->id])->orWhere(function ($query) use ($user){
+               $query->where(['user_id'=>$user->id,'receiver_id'=>auth()->user()->id])->get();
+            });
+    }
+
 
 }

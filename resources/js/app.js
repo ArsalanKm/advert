@@ -106,6 +106,7 @@ const app = new Vue({
         carPrice1: [],
         carPrice2: [],
         chatmobilenumber: "",
+        chats:[],
 
     },
 
@@ -126,7 +127,7 @@ const app = new Vue({
         },
         getChatAdverts:function(){
             axios.get('/showuser').then(response=>{
-               this.advert=response.data;
+               this.chats=response.data;
 
 
             });

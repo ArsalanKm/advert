@@ -1,6 +1,6 @@
 <template>
     <ul class="mychats" style="margin: 10px">
-        <li v-for=" adverts in advert" v-if="adverts.sender_id==sender_id" click="advertChat(adverts.advert_id)">
+        <li v-for=" adverts in chats" v-if="adverts.user_id==sender_id" click="advertChat(adverts.advert_id)">
                                         <span style="float: right" v-if="adverts.image==null">
 
                                             <img src="/img/index.png" style="width: 50px;height: 50px;margin:8px">

@@ -6,6 +6,8 @@ use App\Category;
 use App\User;
 use Illuminate\Http\Request;
 use Session;
+use  Auth;
+
 
 class HomeControllers extends Controller
 {
@@ -67,10 +69,13 @@ class HomeControllers extends Controller
     {
         $mobile = $request->mobile;
         $code = rand(100, 9999);
-        $user = User::firstOrCreate([
-            'mobile' => $request->mobile,
-            'code' => $code
-        ]);
+        $user = User::where('mobile', $mobile)->first();
+        if ($user) {
+            $user = User::where('mobile', $mobile)->update(['code' => $code]);
+        } else {
+            $user = User::create(['mobile' => $mobile, 'code' => $code]);
+        }
+
         if ($user) {
             try {
                 $api = new \Kavenegar\KavenegarApi("5671714B5377432B5849577563654861325077422B5A6E51762B4F306A6B41474E6949696C4A6E7A426F6F3D");
@@ -114,10 +119,19 @@ class HomeControllers extends Controller
 
         if ($x) {
             Session::put('login', $x);
+            \Illuminate\Support\Facades\Auth::login($x);
             return 'yes';
         } else {
             return "no";
         }
+    }
+
+    public function logout()
+    {
+        echo "first" . Session('login');
+
+        Session::forget('login');
+        echo "last" . Session('login');
     }
 }
 

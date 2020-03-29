@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
@@ -88,9 +89,15 @@ Route::get('/chat', "ChatControllers@index");
 
 Route::post('/sendmessage', 'ChatControllers@sendmessage');
 Route::get('/showuser', 'ChatControllers@showuser');
+Route::get('/logout','HomeControllers@logout');
+
+Route::get('/private-messages/{user}','ChatControllers@privateMessages');
+Route::post('/private-messages/{user}','ChatControllers@sendPrivateMessages');
 
 
 
+Route::get('/test','HomeController@index');
 
 
 
+Route::get('/home', 'HomeController@index')->name('home');

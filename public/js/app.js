@@ -37700,8 +37700,8 @@ var render = function() {
   return _c(
     "ul",
     { staticClass: "mychats", staticStyle: { margin: "10px" } },
-    _vm._l(_vm.advert, function(adverts) {
-      return adverts.sender_id == _vm.sender_id
+    _vm._l(_vm.chats, function(adverts) {
+      return adverts.user_id == _vm.sender_id
         ? _c("li", { attrs: { click: "advertChat(adverts.advert_id)" } }, [
             adverts.image == null
               ? _c("span", { staticStyle: { float: "right" } }, [
@@ -50055,7 +50055,8 @@ var app = new Vue({
     carBrand: [],
     carPrice1: [],
     carPrice2: [],
-    chatmobilenumber: ""
+    chatmobilenumber: "",
+    chats: []
   },
   mounted: function mounted() {
     this.getcategory();
@@ -50070,7 +50071,7 @@ var app = new Vue({
       var _this = this;
 
       axios.get('/showuser').then(function (response) {
-        _this.advert = response.data;
+        _this.chats = response.data;
       });
     },
     verifyCode3: function verifyCode3() {

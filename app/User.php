@@ -53,9 +53,9 @@ class User extends Authenticatable
      * n-to-n relation between user and chat we right belongs to many in both side
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function chat()
+    public function messages()
     {
-        return $this->belongsToMany(Chat::class);
+        return $this->HasMany(Chat::class);
     }
 
 }

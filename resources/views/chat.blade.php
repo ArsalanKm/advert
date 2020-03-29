@@ -121,10 +121,14 @@ width: 56px;">
                             {{--                                                                </span>--}}
                             {{--                                                        @endforeach--}}
 
+                            <?php
+                            $user = Auth::user();
 
-                            <user-log :advert="advert" :sender_id= "'{{Session::get('login')->mobile}}'">
+                            echo 'helo'.$user;
+                            ?>
+                                                        <user-log :advert="chats" :sender_id= "'{{auth()->user()->id}}'">
 
-                            </user-log>
+                                                        </user-log>
 
                         </div>
 
