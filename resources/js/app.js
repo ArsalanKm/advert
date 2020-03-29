@@ -27,6 +27,7 @@ Vue.component('chat-component', require('./components/chatComponent.vue').defaul
 Vue.component('chat-message', require('./components/chatMessageComponent.vue').default);
 Vue.component('chat-composer', require('./components/ChatComposer.vue').default);
 Vue.component('chat-log', require('./components/ChatLog.vue').default);
+Vue.component('user-log', require('./components/userLog.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -113,12 +114,24 @@ const app = new Vue({
         this.getcategory();
         this.getadvert();
         this.getmaincategory();
+        this.getChatAdverts();
         $(".send-advert3").hide();
 
     },
 
 
     methods: {
+        advertChat:function(){
+
+        },
+        getChatAdverts:function(){
+            axios.get('/showuser').then(response=>{
+               this.advert=response.data;
+
+
+            });
+
+        },
         verifyCode3: function () {
             var mobile = this.chatmobilenumber;
             alert('mobile' + mobile);

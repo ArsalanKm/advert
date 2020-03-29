@@ -96,31 +96,35 @@ width: 56px;">
                     </div>
 
                     <div class="col-lg-4" style="float: right;padding-right: 0">
-                        <div class="chat_users" style="height: 100%;border: 1px solid #eeeeee">
+                        <div class="chat_users">
 
-                            @foreach($advert as $adverts)
-                                <span style="background: #e3f2fd;display: block;height: 70px">
-                                    @if($adverts->image==null)
-                                        <span style="float: right">
-                                        <img src="/img/index.png" style="width: 50px;height: 50px;margin:8px">
-                                        </span>
-                                    @else
-                                        <span style="float: right" style="width: 50px;height: 50px;margin: 8px">
-                                        <img src="/images/{{$adverts->image}}" style="width: 50px;height: 50px">
-                                        </span>
-                                    @endif
-                                    <p class="chat_title"
-                                       style="margin: 0;text-align: right;width: 80%;font-weight: bold;font-size: 13pt">
-                                        {{$adverts->subject}}
+                            {{--                                                        @foreach($advert as $adverts)--}}
+                            {{--                                                            <span style="background: #e3f2fd;display: block;height: 70px">--}}
+                            {{--                                                                @if($adverts->image==null)--}}
+                            {{--                                                                    <span style="float: right">--}}
+                            {{--                                                                    <img src="/img/index.png" style="width: 50px;height: 50px;margin:8px">--}}
+                            {{--                                                                    </span>--}}
+                            {{--                                                                @else--}}
+                            {{--                                                                    <span style="float: right" style="width: 50px;height: 50px;margin: 8px">--}}
+                            {{--                                                                    <img src="/images/{{$adverts->image}}" style="width: 50px;height: 50px">--}}
+                            {{--                                                                    </span>--}}
+                            {{--                                                                @endif--}}
+                            {{--                                                                <p class="chat_title"--}}
+                            {{--                                                                   style="margin: 0;text-align: right;width: 80%;font-weight: bold;font-size: 13pt">--}}
+                            {{--                                                                    {{$adverts->subject}}--}}
 
-                                    </p>
-                                    <p class="chat_text" style="margin: 0;text-align: right;width: 80%;font-size: 11pt">
-                                        {{$adverts->chat_text}}
+                            {{--                                                                </p>--}}
+                            {{--                                                                <p class="chat_text" style="margin: 0;text-align: right;width: 80%;font-size: 11pt">--}}
+                            {{--                                                                    {{$adverts->chat_text}}--}}
 
-                                    </p>
-                                    </span>
-                            @endforeach
+                            {{--                                                                </p>--}}
+                            {{--                                                                </span>--}}
+                            {{--                                                        @endforeach--}}
 
+
+                            <user-log :advert="advert" :sender_id= "'{{Session::get('login')->mobile}}'">
+
+                            </user-log>
 
                         </div>
 
@@ -144,19 +148,17 @@ width: 56px;">
 
                             {{-- composers I dont have any idea--}}
 
-                          <div class="content" class="scrollbar" style="background: white">
-                              <ul class="messages">
+                            <div class="content" class="scrollbar" style="background: white">
+                                <ul class="messages">
 
-                                  <chat-log>
+                                    <chat-log>
 
-                                  </chat-log>
+                                    </chat-log>
 
 
-                              </ul>
-                          </div>
+                                </ul>
+                            </div>
                             <chat-composer>
-
-
 
 
                             </chat-composer>

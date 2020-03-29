@@ -10,12 +10,13 @@ use Illuminate\Support\Facades\DB;
 class ChatControllers extends Controller
 {
     //
-    public function index($id)
+    public function index()
     {
 
 
-        return view('chat', ['id' => $id]);
+        return view('chat');
     }
+
 
     public function sendmessage(Request $request){
         $chat_text=$request->message;
@@ -30,12 +31,13 @@ class ChatControllers extends Controller
 ]
         );
         if($message){
-            return redirect('/chat/'.$advert_id);
+            return redirect('/chat');
         }
 
     }
+
     public function showuser(Request $request){
-        $advert = DB::table('adverts')->where('adverts.Id', $id)
+        $advert = DB::table('adverts')
             ->leftjoin('images', 'adverts.Id', '=', 'images.advert_id')
             ->leftjoin('estates', 'adverts.Id', '=', 'estates.advert_id')
             ->leftjoin('cars', 'adverts.Id', '=', 'cars.advert_id')

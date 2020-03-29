@@ -731,8 +731,8 @@ left: 0;" data-dismiss="modal">&times;
                                         <div class="form-group" style="position:relative;width: 100%;top: 30px">
                                             {{Session::get('login')}}
                                             @if(!empty(Session::get('login')))
-                                                <input type="hidden"  placeholder="شماره موبایل"
-                                                       name="user_id" value="{{Session::get('login')->id}}">
+                                                <input type="hidden" placeholder="شماره موبایل"
+                                                       name="user_id" value="{{Session::get('login')->mobile}}">
 
                                             @else
                                                 <input style="width: 100%;border: 1px solid #cccccc" type="text"

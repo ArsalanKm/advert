@@ -69,25 +69,25 @@ Route::post("/addorder", "OrderControllers@addorder");
 we have to put this directory in VerifyCsrfToken */
 Route::post("/buyback", 'OrderControllers@buyback');
 /* show advert*/
-Route::get('/city/{city}','ShowControllers@index');
+Route::get('/city/{city}', 'ShowControllers@index');
 
 Route::get("/showadvert", 'ShowControllers@showadvert');
 
-Route::post("/show_cat","ShowControllers@show_cat");
-Route::get("/admin/mainCategories","CategoryControllers@mainCategories");
+Route::post("/show_cat", "ShowControllers@show_cat");
+Route::get("/admin/mainCategories", "CategoryControllers@mainCategories");
 
-Route::post("/show","ShowControllers@show");
+Route::post("/show", "ShowControllers@show");
 
 
-Route::post("/addmobile","HomeControllers@addmobile");
-Route::post("/verifyShowCode","HomeControllers@verifyShowCode");
+Route::post("/addmobile", "HomeControllers@addmobile");
+Route::post("/verifyShowCode", "HomeControllers@verifyShowCode");
 
-Route::post("/addfavorite","ShowControllers@addfavorite");
+Route::post("/addfavorite", "ShowControllers@addfavorite");
 
-Route::get('/chat/{id?}',"ChatControllers@index");
+Route::get('/chat', "ChatControllers@index");
 
-Route::post('/sendmessage','ChatControllers@sendmessage');
-Route::post('/showuser','ChatControllers@showuser');
+Route::post('/sendmessage', 'ChatControllers@sendmessage');
+Route::get('/showuser', 'ChatControllers@showuser');
 
 
 

@@ -915,30 +915,37 @@ input:checked + .slid:before {
     top: 15px;
     font-size: 11pt
 }
-.modal-title{
+
+.modal-title {
     position: absolute;
     right: 0;
 }
-.line{
+
+.line {
     width: 100%;
     border: 1px solid #eeeeee;
     margin-top: 5px;
 }
-.chatOptions{
+
+.chatOptions {
     position: relative;
 }
-.chatOptions ul{
+
+.chatOptions ul {
     margin-top: 5px;
 }
-.chatOptions ul li{
+
+.chatOptions ul li {
     height: 37.5px;
 }
-.chatOptions li i{
+
+.chatOptions li i {
     position: absolute;
     right: 33px;
     font-size: 15pt
 }
-.chatOptions li span{
+
+.chatOptions li span {
     position: absolute;
     display: block;
     width: 88%;
@@ -948,16 +955,19 @@ input:checked + .slid:before {
     text-align: right;
     line-height: 30px;
 }
-.modal-footer{
+
+.modal-footer {
     border: none !important;
     bottom: 10px;
 }
-.modal-footer  i{
+
+.modal-footer i {
     position: absolute;
     right: 33px;
     font-size: 15pt
 }
-.modal-footer  span{
+
+.modal-footer span {
     position: absolute;
     display: block;
     width: 88%;
@@ -967,11 +977,13 @@ input:checked + .slid:before {
     text-align: right;
     line-height: 30px;
 }
-.chat_text{
+
+.chat_text {
     position: relative;
     height: 100%;
 }
-.conversationWarning{
+
+.conversationWarning {
     margin: 0 auto;
     background: #eeeeee;
     position: absolute;
@@ -981,7 +993,8 @@ input:checked + .slid:before {
     width: 400px;
     border-radius: 4px;
 }
-.conversationRule{
+
+.conversationRule {
     position: absolute;
     top: 15px;
     width: 100%;
@@ -989,28 +1002,45 @@ input:checked + .slid:before {
     text-align: right;
     padding-right: 10px;
 }
-.conversationRule li{
+
+.conversationRule li {
     height: 30px;
     margin-bottom: 5px;
     position: relative;
 }
-.conversationRule li i{
+
+.conversationRule li i {
     position: absolute;
     right: 0px;
     top: 2px;
 }
-.conversationRule li span{
+
+.conversationRule li span {
     position: absolute;
     right: 15px;
 }
-.userInput{
+
+.userInput {
     position: absolute;
     bottom: 45px;
     width: 100%;
     right: -6px;
 }
-.userInput input{
+
+.userInput input {
     width: 98%;
-    border: 1px solid ;
+    border: 1px solid;
+}
+
+.mychats li {
+    height: 70px;
+    border-top: 1px solid #cccccc;
+    cursor: pointer;
+}
+
+.chat_users {
+    height: 100%;
+    border: 1px solid #eeeeee;
+    overflow-y: scroll;
 }
 
