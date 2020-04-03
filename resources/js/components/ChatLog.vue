@@ -1,15 +1,17 @@
 <template>
     <ul class="media-list message">
-        <chat-message>
-
-
-        </chat-message>
+        <li v-for="msg in message">
+            {{msg.chat_text}}
+        </li>
     </ul>
 </template>
 
 <script>
+
     export default {
-        name: "ChatLog"
+        props:['message'],
+        name: "ChatLog",
+
     }
 </script>
 

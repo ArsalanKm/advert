@@ -1043,4 +1043,17 @@ input:checked + .slid:before {
     border: 1px solid #eeeeee;
     overflow-y: scroll;
 }
+.chatText{
+    height: 100%;
+}
+#chatArea{
+    position: relative !important;
+    top: 45% !important;
+    width: 100% !important;
+    border-radius: 4px !important;
+}
+.chat_body{
+    height: 80%;
+    overflow-y: scroll;
+}
 

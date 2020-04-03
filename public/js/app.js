@@ -1942,8 +1942,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['message'],
   name: "ChatLog"
 });
 
@@ -2079,11 +2079,75 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['sender_id', 'advert'],
   data: function data() {
     return {
-      message: ""
+      message: []
     };
   },
   methods: {
@@ -47474,8 +47538,10 @@ var render = function() {
   return _c(
     "ul",
     { staticClass: "media-list message" },
-    [_c("chat-message")],
-    1
+    _vm._l(_vm.message, function(msg) {
+      return _c("li", [_vm._v("\n        " + _vm._s(msg.chat_text) + "\n    ")])
+    }),
+    0
   )
 }
 var staticRenderFns = []
@@ -47621,98 +47687,228 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
     _c(
-      "ul",
-      { staticClass: "mychats", staticStyle: { margin: "10px" } },
-      _vm._l(_vm.advert, function(adverts) {
-        return adverts.user_id == _vm.sender_id
-          ? _c("li", { attrs: { click: _vm.chat(1, 2, adverts.user_id) } }, [
-              _c("input", {
-                attrs: { type: "hidden", id: "user_id" },
-                domProps: { value: adverts.user_id }
-              }),
-              _vm._v(" "),
-              adverts.image == null
-                ? _c("span", { staticStyle: { float: "right" } }, [
-                    _c("img", {
-                      staticStyle: {
-                        width: "50px",
-                        height: "50px",
-                        margin: "8px"
-                      },
-                      attrs: { src: "/img/index.png" }
-                    })
-                  ])
-                : _c(
-                    "span",
+      "div",
+      {
+        staticClass: "col-lg-4",
+        staticStyle: { float: "right", "padding-right": "0" }
+      },
+      [
+        _c("div", { staticClass: "chat_users" }, [
+          _c(
+            "ul",
+            { staticClass: "mychats", staticStyle: { margin: "10px" } },
+            _vm._l(_vm.advert, function(adverts) {
+              return adverts.user_id == _vm.sender_id
+                ? _c(
+                    "li",
                     {
-                      staticStyle: {
-                        float: "right",
-                        width: "50px",
-                        height: "50px",
-                        margin: "8px"
+                      on: {
+                        click: function($event) {
+                          return _vm.chat(1, 2, adverts.user_id)
+                        }
                       }
                     },
                     [
-                      _c("img", {
-                        staticStyle: {
-                          width: "50px",
-                          height: "50px",
-                          margin: "8px"
+                      _c("input", {
+                        attrs: { type: "hidden", id: "user_id" },
+                        domProps: { value: adverts.user_id }
+                      }),
+                      _vm._v(" "),
+                      adverts.image == null
+                        ? _c("span", { staticStyle: { float: "right" } }, [
+                            _c("img", {
+                              staticStyle: {
+                                width: "50px",
+                                height: "50px",
+                                margin: "8px"
+                              },
+                              attrs: { src: "/img/index.png" }
+                            })
+                          ])
+                        : _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                float: "right",
+                                width: "50px",
+                                height: "50px",
+                                margin: "8px"
+                              }
+                            },
+                            [
+                              _c("img", {
+                                staticStyle: {
+                                  width: "50px",
+                                  height: "50px",
+                                  margin: "8px"
+                                },
+                                attrs: { src: "/images/" + adverts.image }
+                              })
+                            ]
+                          ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        {
+                          staticClass: "chat_title",
+                          staticStyle: {
+                            margin: "0",
+                            "text-align": "right",
+                            width: "80%",
+                            "font-weight": "bold",
+                            "font-size": "13pt"
+                          }
                         },
-                        attrs: { src: "/images/" + adverts.image }
-                      })
+                        [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(adverts.subject) +
+                              "\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "p",
+                        {
+                          staticClass: "chat_text",
+                          staticStyle: {
+                            margin: "0",
+                            "text-align": "right",
+                            width: "80%",
+                            "font-size": "11pt"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(adverts.chat_text) +
+                              "\n\n                    "
+                          )
+                        ]
+                      )
                     ]
-                  ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "chat_title",
-                  staticStyle: {
-                    margin: "0",
-                    "text-align": "right",
-                    width: "80%",
-                    "font-weight": "bold",
-                    "font-size": "13pt"
-                  }
-                },
-                [
-                  _vm._v(
-                    "\n                " +
-                      _vm._s(adverts.subject) +
-                      "\n            "
                   )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "p",
-                {
-                  staticClass: "chat_text",
-                  staticStyle: {
-                    margin: "0",
-                    "text-align": "right",
-                    width: "80%",
-                    "font-size": "11pt"
-                  }
-                },
-                [
-                  _vm._v(
-                    "\n                " +
-                      _vm._s(adverts.chat_text) +
-                      "\n\n            "
-                  )
-                ]
-              )
-            ])
-          : _vm._e()
-      }),
-      0
-    )
+                : _vm._e()
+            }),
+            0
+          )
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-lg-8" }, [
+      _c("div", { staticClass: "chatText" }, [
+        _c(
+          "div",
+          { staticClass: "chat_body" },
+          [
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "content scrollbar",
+                staticStyle: { background: "white" },
+                attrs: { id: "chatArea" }
+              },
+              [
+                _c(
+                  "ul",
+                  { staticClass: "messages", staticStyle: { padding: "0px" } },
+                  [_c("chat-log", { attrs: { message: _vm.message } })],
+                  1
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("chat-composer")
+          ],
+          1
+        )
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "chat_navbar col-lg-12" }, [
+      _c("div", { staticClass: "right" }, [
+        _c("span", [
+          _c("i", {
+            staticClass: "icon icon-cog",
+            staticStyle: { color: "#ca0600", cursor: "pointer" },
+            attrs: { "data-toggle": "modal", "data-target": "#myModal" }
+          }),
+          _vm._v(" "),
+          _c("h5", [_vm._v("چت دیوار ")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "left" }, [
+        _c("div", { staticClass: "icons" }, [
+          _c("i", {
+            staticClass: "icon icon-phone",
+            staticStyle: {
+              "margin-left": "5px",
+              color: "#ca0600",
+              cursor: "pointer"
+            }
+          }),
+          _vm._v(" "),
+          _c("i", {
+            staticClass: "icon icon-ellipsis-vertical",
+            staticStyle: {
+              "margin-left": "15px",
+              color: "#ca0600",
+              cursor: "pointer"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "chat_header" }, [
+          _c("h5", [_vm._v("گوشی سامسونگ ")]),
+          _vm._v(" "),
+          _c("span", { staticClass: "chat_name" }, [_vm._v("alireza")])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "conversationWarning" }, [
+      _c("ul", { staticClass: "conversationRule" }, [
+        _c("li", [
+          _c("i", { staticClass: "icon icon-linux" }),
+          _vm._v(" "),
+          _c("span", [
+            _vm._v(
+              "لطفا از ارسال اطلاعات محرمانه مانند رمز عبور و کد تایید خود داری نمایید."
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("i", { staticClass: "icon icon-linux" }),
+          _vm._v(" "),
+          _c("span", [
+            _vm._v(
+              "\n                                        در صورت مشاهده هرگونه تخلف می توانید کاربر متخلف را مسدود کنید.\n                                    "
+            )
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

@@ -71,55 +71,34 @@ width: 56px;">
 
             <div class="col-lg-8" style="margin: 0 auto;margin-top: 30px">
                 <div class="chat">
-                    <div class="chat_navbar col-lg-12">
-                        <div class="right">
-                    <span>
-                    <i class="icon icon-cog" style="color: #ca0600;cursor: pointer" data-toggle="modal"
-                       data-target="#myModal"></i>
-                   <h5>چت دیوار </h5>
-                    </span>
-                        </div>
-                        <div class="left">
-                            <div class="icons">
+{{--                    <div class="chat_navbar col-lg-12">--}}
+{{--                        <div class="right">--}}
+{{--                    <span>--}}
+{{--                    <i class="icon icon-cog" style="color: #ca0600;cursor: pointer" data-toggle="modal"--}}
+{{--                       data-target="#myModal"></i>--}}
+{{--                   <h5>چت دیوار </h5>--}}
+{{--                    </span>--}}
+{{--                        </div>--}}
+{{--                        <div class="left">--}}
+{{--                            <div class="icons">--}}
 
-                                <i class="icon icon-phone" style="margin-left: 5px;color: #ca0600;cursor:pointer;"></i>
-                                <i class="icon icon-ellipsis-vertical"
-                                   style="margin-left: 15px;color: #ca0600;cursor: pointer"></i>
-                            </div>
-                            <div class="chat_header" s>
-                                <h5>گوشی سامسونگ </h5>
-                                <span class="chat_name">alireza</span>
+{{--                                <i class="icon icon-phone" style="margin-left: 5px;color: #ca0600;cursor:pointer;"></i>--}}
+{{--                                <i class="icon icon-ellipsis-vertical"--}}
+{{--                                   style="margin-left: 15px;color: #ca0600;cursor: pointer"></i>--}}
+{{--                            </div>--}}
+{{--                            <div class="chat_header" s>--}}
+{{--                                <h5>گوشی سامسونگ </h5>--}}
+{{--                                <span class="chat_name">alireza</span>--}}
 
-                            </div>
+{{--                            </div>--}}
 
-                        </div>
-                    </div>
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <div class="col-lg-4" style="float: right;padding-right: 0">
-                        <div class="chat_users">
 
-                            {{--                                                        @foreach($advert as $adverts)--}}
-                            {{--                                                            <span style="background: #e3f2fd;display: block;height: 70px">--}}
-                            {{--                                                                @if($adverts->image==null)--}}
-                            {{--                                                                    <span style="float: right">--}}
-                            {{--                                                                    <img src="/img/index.png" style="width: 50px;height: 50px;margin:8px">--}}
-                            {{--                                                                    </span>--}}
-                            {{--                                                                @else--}}
-                            {{--                                                                    <span style="float: right" style="width: 50px;height: 50px;margin: 8px">--}}
-                            {{--                                                                    <img src="/images/{{$adverts->image}}" style="width: 50px;height: 50px">--}}
-                            {{--                                                                    </span>--}}
-                            {{--                                                                @endif--}}
-                            {{--                                                                <p class="chat_title"--}}
-                            {{--                                                                   style="margin: 0;text-align: right;width: 80%;font-weight: bold;font-size: 13pt">--}}
-                            {{--                                                                    {{$adverts->subject}}--}}
+{{--                    <div class="col-lg-4" style="float: right;padding-right: 0">--}}
+{{--                        <div class="chat_users">--}}
 
-                            {{--                                                                </p>--}}
-                            {{--                                                                <p class="chat_text" style="margin: 0;text-align: right;width: 80%;font-size: 11pt">--}}
-                            {{--                                                                    {{$adverts->chat_text}}--}}
-
-                            {{--                                                                </p>--}}
-                            {{--                                                                </span>--}}
-                            {{--                                                        @endforeach--}}
 
                             <?php
                             $user = \Illuminate\Support\Facades\Auth::user();
@@ -130,45 +109,46 @@ width: 56px;">
 
                             </user-log>
 
-                        </div>
+{{--                        </div>--}}
 
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="chat_text">
-                            <div class="conversationWarning">
-                                <ul class="conversationRule">
-                                    <li>
-                                        <i class="icon icon-linux"></i>
-                                        <span>لطفا از ارسال اطلاعات محرمانه مانند رمز عبور و کد تایید خود داری نمایید.</span>
-                                    </li>
-                                    <li>
-                                        <i class="icon icon-linux"></i>
-                                        <span>
-                                            در صورت مشاهده هرگونه تخلف می توانید کاربر متخلف را مسدود کنید.
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
+{{--                    </div>--}}
 
-                            {{-- composers I dont have any idea--}}
+{{--                    <div class="col-lg-8">--}}
+{{--                        <div class="chat_text">--}}
+{{--                            <div class="conversationWarning">--}}
+{{--                                <ul class="conversationRule">--}}
+{{--                                    <li>--}}
+{{--                                        <i class="icon icon-linux"></i>--}}
+{{--                                        <span>لطفا از ارسال اطلاعات محرمانه مانند رمز عبور و کد تایید خود داری نمایید.</span>--}}
+{{--                                    </li>--}}
+{{--                                    <li>--}}
+{{--                                        <i class="icon icon-linux"></i>--}}
+{{--                                        <span>--}}
+{{--                                            در صورت مشاهده هرگونه تخلف می توانید کاربر متخلف را مسدود کنید.--}}
+{{--                                        </span>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
 
-                            <div class="content" class="scrollbar" style="background: white">
-                                <ul class="messages">
+{{--                            --}}{{-- composers I dont have any idea--}}
 
-                                    <chat-log>
+{{--                            <div class="content" class="scrollbar" style="background: white">--}}
+{{--                                <ul class="messages">--}}
 
-                                    </chat-log>
+{{--                                    <chat-log>--}}
 
-
-                                </ul>
-                            </div>
-                            <chat-composer>
+{{--                                    </chat-log>--}}
 
 
-                            </chat-composer>
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                            <chat-composer>--}}
 
-                        </div>
-                    </div>
+
+{{--                            </chat-composer>--}}
+
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
 
