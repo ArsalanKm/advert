@@ -122,13 +122,13 @@ width: 56px;">
                             {{--                                                        @endforeach--}}
 
                             <?php
-                            $user = Auth::user();
+                            $user = \Illuminate\Support\Facades\Auth::user();
 
-                            echo 'helo'.$user;
                             ?>
-                                                        <user-log :advert="chats" :sender_id= "'{{auth()->user()->id}}'">
 
-                                                        </user-log>
+                            <user-log :advert="chats" :sender_id="'{{$user->id}}'">
+
+                            </user-log>
 
                         </div>
 

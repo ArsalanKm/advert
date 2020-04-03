@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="session 207 finished successfully and chat page create with vue components">
+    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="208 finished successfully and auth not create successfullt">
+      <change afterPath="$PROJECT_DIR$/app/Events/MessageSent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/advert.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/advert.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Advert.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Advert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Chat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Chat.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatControllers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeControllers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/userLog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/userLog.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/chat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chat.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,6 +145,8 @@
       <path value="$PROJECT_DIR$/vendor/hekmatinasser/verta" />
       <path value="$PROJECT_DIR$/vendor/hekmatinasser/notowo" />
       <path value="$PROJECT_DIR$/vendor/chencha/share" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YQI9bwl9w6vfzB0VFVR1xwUnrQ" />
@@ -157,7 +164,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
@@ -239,7 +246,12 @@
       <workItem from="1585120696824" duration="14429000" />
       <workItem from="1585205435317" duration="10667000" />
       <workItem from="1585382164865" duration="13667000" />
-      <workItem from="1585463094004" duration="15604000" />
+      <workItem from="1585463094004" duration="15973000" />
+      <workItem from="1585509608816" duration="1700000" />
+      <workItem from="1585518964902" duration="373000" />
+      <workItem from="1585589182642" duration="1108000" />
+      <workItem from="1585637966955" duration="7431000" />
+      <workItem from="1585917412280" duration="3619000" />
     </task>
     <task id="LOCAL-00001" summary="I have a bug in displaying the advert information all of the adverts shown insntead of one advert">
       <created>1584000611258</created>
@@ -409,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585472279171</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="208 finished successfully and auth not create successfullt">
+      <created>1585488855278</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1585488855278</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +459,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="I have a bug in displaying the advert information all of the adverts shown insntead of one advert" />
     <MESSAGE value="dar safheye ertegha ba har tik mablagho morede nazar ezafe mishavad" />
     <MESSAGE value="I finished session 143 and today 22 esfand i should finished until 145 par" />
     <MESSAGE value="session 144 finished and I finished the conditions in manage.blade.php and now  we are going to create show.blade.php" />
@@ -465,7 +483,8 @@
     <MESSAGE value="session 205 finished successfully andafter we click on the chat_btn we send message and redirect user to the chat Page" />
     <MESSAGE value="middle of session 206&#10;and can't finished beacuse this does stupid things" />
     <MESSAGE value="session 207 finished successfully and chat page create with vue components" />
-    <option name="LAST_COMMIT_MESSAGE" value="session 207 finished successfully and chat page create with vue components" />
+    <MESSAGE value="208 finished successfully and auth not create successfullt" />
+    <option name="LAST_COMMIT_MESSAGE" value="208 finished successfully and auth not create successfullt" />
   </component>
   <component name="WindowStateProjectService">
     <state x="138" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584261705504">
@@ -476,14 +495,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="105" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585207519340" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1585472275748">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1585488851978">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585472275748" />
-    <state x="165" y="170" key="FileChooserDialogImpl" timestamp="1585386615450">
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585488851978" />
+    <state x="165" y="170" key="FileChooserDialogImpl" timestamp="1585510169037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="165" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585386615450" />
+    <state x="165" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585510169037" />
     <state width="726" height="184" key="GridCell.Tab.0.bottom" timestamp="1585131786360">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -504,10 +523,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="187" y="232" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1583761835778" />
-    <state x="210" y="351" key="NewPhpFileDialog" timestamp="1585059035315">
+    <state x="210" y="351" key="NewPhpFileDialog" timestamp="1585644933708">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="210" y="351" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1585059035315" />
+    <state x="210" y="351" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1585644933708" />
     <state x="279" y="58" key="SettingsEditor" timestamp="1583651296940">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

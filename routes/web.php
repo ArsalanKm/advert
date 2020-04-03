@@ -101,3 +101,4 @@ Route::get('/test','HomeController@index');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+

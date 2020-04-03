@@ -80,7 +80,7 @@ class HomeControllers extends Controller
             try {
                 $api = new \Kavenegar\KavenegarApi("5671714B5377432B5849577563654861325077422B5A6E51762B4F306A6B41474E6949696C4A6E7A426F6F3D");
                 $sender = "10004346";
-                $message = "ارسلان بهترین برنامه نویس کد تایید :  " . $user->code;
+                $message = "ارسلان بهترین برنامه نویس کد تایید :  " .$code;
                 $receptor = $request->mobile;
                 $result = $api->Send($sender, $receptor, $message);
                 if ($result) {

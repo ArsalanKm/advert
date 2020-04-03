@@ -739,6 +739,7 @@ left: 0;" data-dismiss="modal">&times;
                                                        name="user_id" placeholder="شماره موبایل">
                                             @endif
 
+
                                             <textarea name="message" id=""
                                                       style="width: 100%;border: 1px solid #cccccc;color: #ca0600;text-align: right">
                                                 متن پیام خود را در اینجا بنویسید....
