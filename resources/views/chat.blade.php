@@ -105,7 +105,7 @@ width: 56px;">
 
                             ?>
 
-                            <user-log :advert="chats" :sender_id="'{{$user->id}}'">
+                            <user-log :advert="chats" :sender_id="'{{$user->u_id}}'">
 
                             </user-log>
 

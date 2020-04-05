@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="session 209 finished and installed pusher sucssesfully">
+    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="210 finished and design of chat almost completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeControllers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ChatLog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ChatLog.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/userLog.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/userLog.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShowControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShowControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/chat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chat.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +241,7 @@
       <workItem from="1585518964902" duration="373000" />
       <workItem from="1585589182642" duration="1108000" />
       <workItem from="1585637966955" duration="7431000" />
-      <workItem from="1585917412280" duration="9427000" />
+      <workItem from="1585917412280" duration="14747000" />
     </task>
     <task id="LOCAL-00001" summary="I have a bug in displaying the advert information all of the adverts shown insntead of one advert">
       <created>1584000611258</created>
@@ -425,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585921672696</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="210 finished and design of chat almost completed">
+      <created>1585942525975</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1585942525975</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +463,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="I finished session 143 and today 22 esfand i should finished until 145 par" />
     <MESSAGE value="session 144 finished and I finished the conditions in manage.blade.php and now  we are going to create show.blade.php" />
     <MESSAGE value="session 150 finished successfully and design of the adverts in city page finished almost" />
     <MESSAGE value="bug fixed in add Estate and Car adverts and both of them worth awesome now, showing the adverts of city work well.tomorrow I will want to add date to boxes in show." />
@@ -481,7 +487,8 @@
     <MESSAGE value="session 207 finished successfully and chat page create with vue components" />
     <MESSAGE value="208 finished successfully and auth not create successfullt" />
     <MESSAGE value="session 209 finished and installed pusher sucssesfully" />
-    <option name="LAST_COMMIT_MESSAGE" value="session 209 finished and installed pusher sucssesfully" />
+    <MESSAGE value="210 finished and design of chat almost completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="210 finished and design of chat almost completed" />
   </component>
   <component name="WindowStateProjectService">
     <state x="138" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584261705504">
@@ -492,10 +499,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="105" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585207519340" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1585921669289">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1585942523944">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585921669289" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585942523944" />
     <state x="165" y="170" key="FileChooserDialogImpl" timestamp="1585510169037">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

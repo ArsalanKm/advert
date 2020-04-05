@@ -25,7 +25,7 @@ class ChatControllers extends Controller
     {
         $chat_text = $request->message;
         $advert_id = $request->advert_id;
-        $sender_id = $request->user_id;
+        $sender_id = request()->user()->id;
         $message = Chat::create(
             [
                 'chat_text' => $chat_text,
@@ -35,6 +35,7 @@ class ChatControllers extends Controller
             ]
         );
         if ($message) {
+
             return redirect('/chat');
         }
 

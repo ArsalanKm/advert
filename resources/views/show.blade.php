@@ -726,14 +726,13 @@ left: 0;" data-dismiss="modal">&times;
 
                                     <!-- Modal body -->
                                     <div class="modal-body" style="height: 200px">
-                                        <form action="/sendmessage" method="post">
+                                        <form :action="sendmessage" method="post">
                                             @csrf
                                         <div class="form-group" style="position:relative;width: 100%;top: 30px">
                                             {{Session::get('login')}}
                                             @if(!empty(Session::get('login')))
                                                 <input type="hidden" placeholder="شماره موبایل"
-                                                       name="user_id" value="{{Session::get('login')->mobile}}">
-
+                                                       name="user_id" value="{{\Illuminate\Support\Facades\Auth::user()->id}}">
                                             @else
                                                 <input style="width: 100%;border: 1px solid #cccccc" type="text"
                                                        name="user_id" placeholder="شماره موبایل">

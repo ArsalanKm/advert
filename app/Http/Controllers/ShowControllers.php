@@ -34,7 +34,6 @@ class ShowControllers extends Controller
             ->leftjoin('cars', 'adverts.Id', '=', 'cars.advert_id')
             ->leftjoin('categories', 'adverts.category_id', '=', 'categories.id')
             ->leftjoin('orders', 'adverts.Id', '=', 'orders.advert_id')
-
             ->paginate(3);
         return $advert;
     }
@@ -53,6 +52,7 @@ class ShowControllers extends Controller
         $advert = DB::table('adverts')->where('adverts.Id', $request->Myid)
             ->leftjoin('images', 'adverts.Id', '=', 'images.advert_id')
             ->leftjoin('estates', 'adverts.Id', '=', 'estates.advert_id')
+            ->leftjoin('users', 'adverts.mobile', '=', 'users.mobile')
             ->leftjoin('cars', 'adverts.Id', '=', 'cars.advert_id')
             ->leftjoin('categories', 'adverts.category_id', '=', 'categories.id')
             ->get();

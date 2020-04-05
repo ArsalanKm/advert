@@ -39,6 +39,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    protected $primaryKey='u_id';
 
     /**
      * function for one to n relation between user and advert each user has many adverts

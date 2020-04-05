@@ -87,7 +87,7 @@ Route::post("/addfavorite", "ShowControllers@addfavorite");
 
 Route::get('/chat', "ChatControllers@index");
 
-Route::post('/sendmessage', 'ChatControllers@sendmessage');
+Route::post('/sendmessage', 'ChatControllers@sendmessage')->middleware("auth");
 Route::get('/showuser', 'ChatControllers@showuser');
 Route::get('/logout','HomeControllers@logout');
 
