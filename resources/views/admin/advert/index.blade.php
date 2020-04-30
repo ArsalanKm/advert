@@ -28,6 +28,7 @@ use App\HelperFunction\Helper;
 
                             <tr>
                                 <th>شماره آگهی</th>
+                                <th>تاریخ آگهی</th>
                                 <th>موضوع آگهی</th>
                                 <th>ایمیل</th>
                                 <th>موبایل</th>
@@ -44,9 +45,9 @@ use App\HelperFunction\Helper;
 
                             @foreach($advert as $adverts)
                                 <tr>
-                                    <td>{{$adverts->id}}</td>
+                                    <td>{{$adverts->Id}}</td>
                                     <td style="cursor: pointer;" data-toggle="modal"
-                                        data-target="#Modal{{$adverts->id}}">{{$adverts->subject}}</td>
+                                        data-target="#Modal{{$adverts->Id}}">{{$adverts->subject}}</td>
                                     <td>{{$adverts->email}}</td>
                                     <td>{{$adverts->mobile}}</td>
                                     <td>{{$adverts->city}}</td>
@@ -67,11 +68,11 @@ use App\HelperFunction\Helper;
                                         @if($adverts->check ==1)
 
                                             <i class="icon icon-ok-circle" style="color: #1c7430;cursor: pointer;"
-                                               @click="set_status('{{$adverts->id}}')"></i>
+                                               @click="set_status('{{$adverts->Id}}')"></i>
 
                                         @elseif($adverts->check ==0)
                                             <i class="icon icon-remove" style="color: red;cursor: pointer;"
-                                               @click="set_status('{{$adverts->id}}')"></i>
+                                               @click="set_status('{{$adverts->Id}}')"></i>
 
 
                                         @endif
@@ -80,7 +81,7 @@ use App\HelperFunction\Helper;
 
                                         <form action="/admin/removeadvert" method="post">
                                             {{csrf_field()}}
-                                            <input type="hidden" value="{{$adverts->id}}" name="advert_id">
+                                            <input type="hidden" value="{{$adverts->Id}}" name="advert_id">
                                             <button type="submit" style="border: none;box-shadow: none;"><i
                                                     class="icon icon-trash" style="color: red"></i></button>
 
@@ -116,7 +117,7 @@ use App\HelperFunction\Helper;
 
         @foreach($advert as $adverts)
 
-            <div class="modal " id="Modal{{$adverts->id}}" tabindex="-1" role="dialog"
+            <div class="modal " id="Modal{{$adverts->Id}}" tabindex="-1" role="dialog"
                  aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document" style="margin: 1.75rem 18% !important;">
                     <div class="modal-content" style="width: 900px !important;">
@@ -128,9 +129,9 @@ use App\HelperFunction\Helper;
                         </div>
                         <div class="modal-body">
 
-                            {{Helper::modalcar($adverts->id)}}
+                            {{Helper::modalcar($adverts->Id)}}
 
-                            {{Helper::modalstate($adverts->id)}}
+                            {{Helper::modalstate($adverts->Id)}}
 
                         </div>
 

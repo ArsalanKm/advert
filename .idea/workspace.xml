@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="210 finished and design of chat almost completed">
+    <list default="true" id="9642e1a2-34f1-4b39-a0fe-4a03fa21f9c6" name="Default" comment="want to push in github .com">
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckAdmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_27_125318_table_orders.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1587988502.x.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/b1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/confused.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/order/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/errors/404.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ChatControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ChatControllers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShowControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShowControllers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/chat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/chat.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ManageControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ManageControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrderControllers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderControllers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/advert/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/advert/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/manage.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/manage.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -154,23 +168,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\advert\public\img" />
+      <recent name="C:\xampp\htdocs\advert\public\css" />
+      <recent name="C:\xampp\htdocs\advert\resources\js" />
+      <recent name="C:\xampp\htdocs\advert\public\fonts" />
+      <recent name="C:\xampp\htdocs\advert\public\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\advert\public" />
       <recent name="C:\xampp\htdocs\advert\resources\views\layouts" />
       <recent name="C:\xampp\htdocs\advert\resources" />
       <recent name="C:\xampp\htdocs\advert\resources\assets" />
       <recent name="C:\xampp\htdocs\advert\resources\views\admin" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\advert\public\css" />
-      <recent name="C:\xampp\htdocs\advert\resources\js" />
-      <recent name="C:\xampp\htdocs\advert\public\fonts" />
-      <recent name="C:\xampp\htdocs\advert\public\js" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -242,6 +257,12 @@
       <workItem from="1585589182642" duration="1108000" />
       <workItem from="1585637966955" duration="7431000" />
       <workItem from="1585917412280" duration="14747000" />
+      <workItem from="1586115544815" duration="861000" />
+      <workItem from="1586197649494" duration="616000" />
+      <workItem from="1586199008805" duration="31000" />
+      <workItem from="1586200473944" duration="131000" />
+      <workItem from="1587989770491" duration="5661000" />
+      <workItem from="1588057587365" duration="9222000" />
     </task>
     <task id="LOCAL-00001" summary="I have a bug in displaying the advert information all of the adverts shown insntead of one advert">
       <created>1584000611258</created>
@@ -432,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585942525975</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="want to push in github .com">
+      <created>1586115685698</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1586115685698</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +491,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="session 144 finished and I finished the conditions in manage.blade.php and now  we are going to create show.blade.php" />
     <MESSAGE value="session 150 finished successfully and design of the adverts in city page finished almost" />
     <MESSAGE value="bug fixed in add Estate and Car adverts and both of them worth awesome now, showing the adverts of city work well.tomorrow I will want to add date to boxes in show." />
     <MESSAGE value="I add date to advert using Verta package and the next session I want to do infinity scroll with vue.js with a costomize packages of vue.js" />
@@ -488,7 +515,8 @@
     <MESSAGE value="208 finished successfully and auth not create successfullt" />
     <MESSAGE value="session 209 finished and installed pusher sucssesfully" />
     <MESSAGE value="210 finished and design of chat almost completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="210 finished and design of chat almost completed" />
+    <MESSAGE value="want to push in github .com" />
+    <option name="LAST_COMMIT_MESSAGE" value="want to push in github .com" />
   </component>
   <component name="WindowStateProjectService">
     <state x="138" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584261705504">
@@ -499,14 +527,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="105" y="182" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585207519340" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1585942523944">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1586115667755">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585942523944" />
-    <state x="165" y="170" key="FileChooserDialogImpl" timestamp="1585510169037">
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1586115667755" />
+    <state x="165" y="170" key="FileChooserDialogImpl" timestamp="1586199039782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="165" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585510169037" />
+    <state x="165" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586199039782" />
     <state width="726" height="184" key="GridCell.Tab.0.bottom" timestamp="1585131786360">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -527,14 +555,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="187" y="232" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1583761835778" />
-    <state x="210" y="351" key="NewPhpFileDialog" timestamp="1585644933708">
+    <state x="210" y="351" key="NewPhpFileDialog" timestamp="1588063619642">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="210" y="351" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1585644933708" />
+    <state x="210" y="351" key="NewPhpFileDialog/0.0.1536.824@0.0.1536.824" timestamp="1588063619642" />
     <state x="279" y="58" key="SettingsEditor" timestamp="1583651296940">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="279" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583651296940" />
+    <state x="0" y="145" key="Vcs.Push.Dialog.v2" timestamp="1586115817688">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1586115817688" />
     <state x="477" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1583650221915">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -551,5 +583,16 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="46" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1584173400826" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/OrderControllers.php</url>
+          <line>83</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -129,10 +129,9 @@ class HomeControllers extends Controller
 
     public function logout()
     {
-        echo "first" . Session('login');
 
         Session::forget('login');
-        echo "last" . Session('login');
+        return redirect("/");
     }
 }
 

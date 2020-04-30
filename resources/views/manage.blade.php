@@ -479,7 +479,8 @@ padding: 10px;">
                 <form action="/deleteadvert" method="post">
 
                     {{csrf_field()}}
-                    <input type="text" value="{{$advert->Id}}" id="advert_id">
+                    {{$advert}}
+                    <input type="text" value="{{$advert->Id}}" id="advert_id" name="advert_id">
                     <input type="submit" value="حذف" class="btn btn-danger">
                 </form>
 

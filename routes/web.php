@@ -25,6 +25,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/advert', 'AdminControllers@advert');
     Route::post('/removeadvert', 'AdminControllers@removeadvert');
     Route::post('/status', 'AdminControllers@status');
+    Route::get("/order","AdminControllers@orders");
+    Route::post("/removeorder","AdminControllers@orders");
 
 
 });

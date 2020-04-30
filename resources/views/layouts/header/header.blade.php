@@ -171,8 +171,9 @@
         <i class="icon icon-angle-down"></i>
     </div>
     <div class="logo">
-
-        <img src="img/divar.svg" style="">
+<a href="/">
+        <img src="img/divar.svg" style="cursor:pointer;">
+</a>
     </div>
 </header>
 

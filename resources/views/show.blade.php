@@ -719,7 +719,7 @@
                                     <h4 class="modal-title" style="text-align: right;padding: 10px">فرستادن پیام
                                         نام</h4>
                                     <button type="button" class="close" style="position: absolute;
-left: 0;" data-dismiss="modal">&times;
+                                                left: 0;" data-dismiss="modal">&times;
 
 
                                     </button>
@@ -747,7 +747,7 @@ left: 0;" data-dismiss="modal">&times;
 
                                         </div>
                                         <button type="submit" class="btn btn-danger" style="position: relative;left: 90%;top: 25%;width: 63px;
-height: 35px;">
+                                                    height: 35px;">
                                             فرستادن پیام
                                         </button>
                                         </form>
@@ -803,33 +803,24 @@ height: 35px;">
 
                             </a>
                         </div>
-
-                    @else
-                        {{\App\HelperFunction\Helper::myAdvert(Session::get('login'))}}
-
-
-
-
-
-
-                        {{--my modal --}}
                         <div class="modal" id="myModal">
                             <div class="modal-dialog" style="max-width: 737px;height: 232px;">
                                 <div class="modal-content">
 
                                     <!-- Modal Header -->
                                     <h4 class="modal-title" style="text-align: right;padding: 10px">ورود و ثبت
-                                        نام</h4>
+                                        نام
+                                    </h4>
                                     <button type="button" class="close" style="position: absolute;
-left: 0;" data-dismiss="modal">&times;
+                                            left: 0;" data-dismiss="modal">&times;
                                     </button>
 
                                     <!-- Modal body -->
                                     <div class="modal-body">
                                         <div class="form-group" style="margin-top: 65px;" id="send_mobile">
                                             <input type="text" value="+98" disabled class="form-control" style="float: left;
-margin-left: 244px;
-width: 56px;">
+                                                        margin-left: 244px;
+                                                        width: 56px;">
                                             <input type="text" placeholder="شماره تلفن" v-model="mobilenumber"
                                                    class="form-control col-lg-4" style="margin-right: 168px;">
                                             <button type="button" class="btn btn-danger" @click="addmobile()">دریافت
@@ -891,6 +882,10 @@ width: 56px;">
                                 </div>
                             </div>
                         </div>
+
+                    @else
+                        {{\App\HelperFunction\Helper::myAdvert(Session::get('login'))}}
+                        {{--my modal --}}
 
 
 

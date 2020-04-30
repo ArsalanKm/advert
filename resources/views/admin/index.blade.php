@@ -4,64 +4,77 @@
 @section('content')
     <div class="card">
 
-        <div class="col-lg-9" style="text-align: right;max-width: 100%">
+        <div class="col-lg-9" id="tablesInfo" style="text-align: right;max-width: 100%">
             <div class="test">
                 <div class="col-lg-3">
                     <div class="content">
                         <i class="icon-user">
-                            <p>
-                                1
-                            </p>
-                            <span>
-                    total users
-                </span>
+
 
                         </i>
+                        <p>
+                            {{$userCount}}
+                        </p>
+                        <a>
+                            تعداد کل مشتریان
+                        </a>
 
                     </div>
                 </div>
 
-                <div class="col-lg-3">
-                    <div class="content">
-                        <i class="icon-comment">
-                            <p>
-                                1
-                            </p>
-                            <span>
-                    total comments
-                </span>
 
-                        </i>
-
-                    </div>
-                </div>
 
 
                 <div class="col-lg-3">
                     <div class="content">
                         <i class="icon-user">
-                            <p>
-                                1
-                            </p>
-                            <span>
-total advertisements
-                </span>
+
 
                         </i>
-
+                        <p>
+                            {{$advertCount}}
+                        </p>
+                        <a href="/admin/advert">
+                            تعداد کل آگهی ها
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="content">
                         <i class="icon-shopping-cart">
-                            <p>
-                                1
-                            </p>
-                            <span>
-                    total orders
-                </span>
+
 
                         </i>
+                        <p>
+                            {{$orderCount}}
+                        </p>
+                        <a href="/admin/orders">
+                            تعداد کل سفرش ها
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <?php
+                    $totalCash=0;
+
+                    foreach ($orders as $order) {
+                        if ($order->status==1){
+                            $totalCash+=(int)$order->price;
+                        }
+                    }
+
+                    ?>
+
+                    <div class="content">
+                        <i class="icon-money">
+                        </i>
+                        <p>
+                            {{$totalCash}}
+                        </p>
+                        <a href="/admin/orders" style="margin-right: 60px">
+                           مقدار سود
+                        </a>
 
                     </div>
                 </div>

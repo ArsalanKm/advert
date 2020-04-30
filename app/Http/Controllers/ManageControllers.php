@@ -95,9 +95,8 @@ class ManageControllers extends Controller
     public function deleteadvert(Request $request)
     {
         $advert_id = $request->advert_id;
-        $advert = Advert::find($advert_id)->delete();
+        $advert = Advert::where('Id',$advert_id)->delete();
         return redirect('/advert');
-
     }
 
 }

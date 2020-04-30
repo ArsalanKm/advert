@@ -98,4 +98,9 @@ class OrderControllers extends Controller
             return " not ok";
         }
     }
+    public function removeorder(Request $request){
+
+        $order=Order::where("id",$request->order_id)->delete();
+        return redirect("/admin/order");
+    }
 }
